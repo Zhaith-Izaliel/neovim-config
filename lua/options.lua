@@ -14,7 +14,8 @@ if (vim.fn.exists('+colorcolumn')) then
   vim.o.colorcolumn = '80'
   vim.cmd.highlight({'ColorColumn', 'ctermbg=9'})
 end
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1
+vim.o.conceallevel = 1
 
 -- Indentation
 vim.o.ai = true
@@ -42,9 +43,8 @@ if (vim.fn.empty(vim.fn.glob(nvim_tmp_directory))) then
 end
 vim.o.directory = nvim_tmp_directory
 
--- Disable inline error messages
 vim.diagnostic.config {
-  virtual_text = false,
-  underline = false,
+  virtual_text = true,
+  underline = true,
   signs = true,          -- Keep gutter signs
 }

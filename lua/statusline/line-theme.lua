@@ -8,6 +8,7 @@ function M.setup()
   end
   galaxyline_colors.catppuccin = {
     bg = catppuccin_colors.crust,
+    bg_alt = catppuccin_colors.mantle,
     fg = catppuccin_colors.text,
     fg_alt = catppuccin_colors.subtext0,
     yellow = catppuccin_colors.yellow,

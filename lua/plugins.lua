@@ -36,33 +36,6 @@ nnoremap('<C-Space><Down>', '<Cmd>KittyNavigateDown<CR>', 'Kitty Navigator: Navi
 nnoremap('<C-Space><Up>', '<Cmd>KittyNavigateUp<CR>', 'Kitty Navigator: Navigate up between splits.')
 nnoremap('<C-Space><Right>', '<Cmd>KittyNavigateRight<CR>', 'Kitty Navigator: Navigate right between splits.')
 
--- Neotree
-vim.g.neo_tree_remove_legacy_commands = 1
-
-vim.fn.sign_define("DiagnosticSignError",
-{text = " ", texthl = "DiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarn",
-{text = " ", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInfo",
-{text = " ", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint",
-{text = "", texthl = "DiagnosticSignHint"})
-
-nnoremap('<Leader>tt', '<Cmd>Neotree<CR>', 'Neotree: Open Neotree.')
-
-require("neo-tree").setup({
-  close_if_last_window = true,
-  default_component_configs = {
-    git_status = {
-      symbols = {
-        -- Change type
-        added     = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
-        modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-      }
-    },
-  }
-})
-
 -- Git signs
 require('gitsigns').setup {
   current_line_blame = true,

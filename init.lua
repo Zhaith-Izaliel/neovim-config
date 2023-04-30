@@ -1,5 +1,6 @@
 require('options')
 require('keymaps')
+require('autocmd')
 require('themes')
 require('statusline')
 require('treesitter')
