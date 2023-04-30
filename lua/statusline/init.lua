@@ -8,25 +8,8 @@ local gls = gl.section
 local colors = require('galaxyline.themes.colors').catppuccin
 local condition = require('galaxyline.condition')
 
--- Galaxyline providers
-local vcs = require("galaxyline.providers.vcs")
-
 -- Custom Providers
 local custom_providers = require('statusline.custom-providers')
-
-
---- Return a separator for the branch section if there are at least one
---- modification in the git repo.
-function BranchSeparator()
-  local separator = '  '
-  if not vcs.diff_add()
-    or not vcs.diff_remove()
-    or not vcs.diff_modified()
-  then
-    return separator
-  end
-  return ''
-end
 
 -- Applying Sections
 gls.left = {
@@ -63,9 +46,22 @@ gls.left = {
       provider = 'GitBranch',
       icon = ' ',
       condition = condition.check_git_workspace,
-      separator = BranchSeparator(),
+      separator = ' ',
       separator_highlight = { colors.fg_alt, colors.bg_alt },
       highlight = { colors.magenta, colors.bg_alt, 'BOLD' }
+    }
+  },
+  {
+    BranchSeparator = {
+      provider = function()
+        local vcs = require("galaxyline.providers.vcs")
+        local boolean = vcs.diff_add()
+          or vcs.diff_remove()
+          or vcs.diff_modified()
+        return custom_providers.ConditionalSeparator(boolean, ' ')
+      end,
+      condition = condition.check_git_workspace,
+      highlight = { colors.fg, colors.bg_alt, }
     }
   },
   {
@@ -98,6 +94,12 @@ gls.left = {
 
 gls.mid = {
   {
+    FirstSeparator = {
+      provider = function() return ' ' end,
+      highlight = { colors.bg, colors.bg_alt }
+    }
+  },
+  {
     LspIconBold = {
       provider = function() return ' ' end,
       highlight = { colors.orange, colors.bg_alt, 'BOLD' },
@@ -106,9 +108,20 @@ gls.mid = {
   {
     LspClient = {
       provider = 'GetLspClient',
-      separator = '  ',
-      separator_highlight = { colors.fg, colors.bg_alt },
       highlight = { colors.orange, colors.bg_alt },
+    }
+  },
+  {
+    DiagnosticSeparator = {
+      provider = function()
+        local diagnostic = require("galaxyline.providers.diagnostic")
+        local boolean = diagnostic.get_diagnostic_error() ~= ""
+          or diagnostic.get_diagnostic_warn() ~= ""
+          or diagnostic.get_diagnostic_hint() ~= ""
+          or diagnostic.get_diagnostic_info() ~= ""
+        return custom_providers.ConditionalSeparator(boolean, '   ')
+      end,
+      highlight = { colors.fg, colors.bg_alt, }
     }
   },
   {
@@ -136,9 +149,18 @@ gls.mid = {
     DiagnosticInfo = {
       provider = 'DiagnosticInfo',
       icon = ' ',
+      separator =  ' ',
+      separator_highlight = { colors.bg_alt, colors.bg },
       highlight = { colors.fg_alt, colors.bg_alt, 'BOLD' },
     }
   },
+  {
+    LastSeparator = {
+      provider = function() return ' ' end,
+      highlight = { colors.bg_alt, colors.bg }
+    }
+  },
+
 }
 
 gls.right = {
