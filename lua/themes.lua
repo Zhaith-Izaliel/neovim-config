@@ -2,6 +2,9 @@
 -- ---Color Theme---
 -- -----------------
 
+-- Icon theme
+require('nvim-web-devicons').setup()
+
 -- Catppuccin theme
 require('catppuccin').setup({
   flavour = 'macchiato',
