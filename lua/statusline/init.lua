@@ -8,8 +8,25 @@ local gls = gl.section
 local colors = require('galaxyline.themes.colors').catppuccin
 local condition = require('galaxyline.condition')
 
+-- Galaxyline providers
+local vcs = require("galaxyline.providers.vcs")
+
 -- Custom Providers
 local custom_providers = require('statusline.custom-providers')
+
+
+--- Return a separator for the branch section if there are at least one
+--- modification in the git repo.
+function BranchSeparator()
+  local separator = '  '
+  if not vcs.diff_add()
+    or not vcs.diff_remove()
+    or not vcs.diff_modified()
+  then
+    return separator
+  end
+  return ''
+end
 
 -- Applying Sections
 gls.left = {
@@ -46,7 +63,7 @@ gls.left = {
       provider = 'GitBranch',
       icon = ' ',
       condition = condition.check_git_workspace,
-      separator = '  ',
+      separator = BranchSeparator(),
       separator_highlight = { colors.fg_alt, colors.bg_alt },
       highlight = { colors.magenta, colors.bg_alt, 'BOLD' }
     }
