@@ -50,4 +50,10 @@ function M.exprnnoremap(lhs, rhs, desc, opts) M.exprnoremap('n', lhs, rhs, desc,
 
 function M.exprinoremap(lhs, rhs, desc, opts) M.exprnoremap('i', lhs, rhs, desc, opts) end
 
+function M.count(table)
+  local count = 0
+  for _ in pairs(table) do count = count + 1 end
+  return count
+end
+
 return M

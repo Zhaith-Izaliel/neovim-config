@@ -107,7 +107,7 @@ gls.mid = {
   },
   {
     LspClient = {
-      provider = 'GetLspClient',
+      provider = custom_providers.GetLspClient,
       highlight = { colors.orange, colors.bg_alt },
     }
   },

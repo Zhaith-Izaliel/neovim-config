@@ -1,4 +1,5 @@
 local colors = require("galaxyline.themes.colors").catppuccin
+local Utils = require("utils")
 local M = {}
 
 function ViModeColor(mode)
@@ -76,6 +77,22 @@ end
 --- modification in the git repo.
 function M.ConditionalSeparator(condition, separator)
   return condition and separator or ' '
+end
+
+function M.GetLspClient()
+  local clients = vim.lsp.buf_get_clients()
+
+  local count = Utils.count(clients)
+
+  if count == 0 then
+    return 'No Active Lsp'
+  end
+
+  if(count > 1) then
+    return (clients[1].name .. ' [+' .. count - 1 .. ' more]')
+  end
+
+  return clients[1].name
 end
 
 return M

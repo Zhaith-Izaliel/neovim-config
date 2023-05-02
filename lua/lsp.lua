@@ -138,6 +138,7 @@ lspconfig.tailwindcss.setup {} -- TailwindCSS
 
 lspconfig.vuels.setup {} -- Vue
 
-lspconfig.clangd.setup {} -- C/C++
+-- TEMP: because I didn't do my homework like a fool
+-- lspconfig.clangd.setup {} -- C/C++
 
 lspconfig.gopls.setup {} -- Go
