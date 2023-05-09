@@ -83,7 +83,12 @@ end
 
 function M.GetLspClient()
   local stringClients = lspclient.get_lsp_client()
-  local clients = Utils.split(stringClients, ",%s")
+
+  if stringClients == "No Active Lsp" then
+    return stringClients
+  end
+
+  local clients = Utils.split(stringClients, ", ")
 
   local count = Utils.count(clients)
 
