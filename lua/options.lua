@@ -37,11 +37,7 @@ vim.o.spell = true
 vim.o.spelllang = 'en,fr'
 
 -- Swap files
-local nvim_tmp_directory = os.getenv( 'HOME' ) .. '/.config/nvim/tmp'
-if (vim.fn.empty(vim.fn.glob(nvim_tmp_directory))) then
-  vim.cmd([[silent !mkdir -p ]] .. nvim_tmp_directory)
-end
-vim.o.directory = nvim_tmp_directory
+vim.o.directory = Nvim_tmp_directory
 
 vim.diagnostic.config {
   virtual_text = true,
