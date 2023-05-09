@@ -97,13 +97,7 @@ lspconfig.eslint.setup { -- JS/TS
   end,
 }
 
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.html.setup { -- HTML
-  capabilities = capabilities,
-}
+lspconfig.html.setup {} -- HTML
 
 lspconfig.stylelint_lsp.setup { -- CSS/SCSS/Less
   settings = {
@@ -130,15 +124,23 @@ lspconfig.stylelint_lsp.setup { -- CSS/SCSS/Less
   }
 }
 
+lspconfig.tailwindcss.setup {} -- TailwindCSS
+
 lspconfig.hls.setup { -- Haskell
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
 }
 
-lspconfig.tailwindcss.setup {} -- TailwindCSS
+lspconfig.jsonls.setup {}
+
 
 lspconfig.vuels.setup {} -- Vue
 
--- TEMP: because I didn't do my homework like a fool
--- lspconfig.clangd.setup {} -- C/C++
+lspconfig.clangd.setup {} -- C/C++
+
+lspconfig.cmake.setup {} -- CMake
 
 lspconfig.gopls.setup {} -- Go
+
+lspconfig.omnisharp.setup {
+  cmd = { "dotnet", omnisharp_path },
+}
