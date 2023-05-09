@@ -1,6 +1,8 @@
+require('globals')
 require('options')
 require('keymaps')
 require('autocmd')
+require('commands')
 require('themes')
 require('statusline')
 require('treesitter')
