@@ -12,8 +12,8 @@ local vnoremap = Utils.vnoremap
 -- local xnoremap = Utils.xnoremap
 local inoremap = Utils.inoremap
 -- local tnoremap = Utils.tnoremap
-local nmap = Utils.nmap
-local imap = Utils.imap
+-- local nmap = Utils.nmap
+-- local imap = Utils.imap
 -- local xmap = Utils.xmap
 
 -- Leader
@@ -35,7 +35,7 @@ vnoremap('<A-Down>', ":m '>+1<CR>gv=gv", 'Move the selected lines down.')
 
 -- Show white-space characters
 vim.o.list = false
-vim.o.listchars = [[eol:$,tab:·\ ,trail:·,extends:>,precedes:<,nbsp:_]]
+vim.o.listchars = [[eol:¬,tab:>-,space:·,extends:>,precedes:<,nbsp:_,conceal:×]]
 vim.cmd.highlight({'SpecialKey', 'term=standout', 'ctermfg=darkgrey', 'guifg=darkgrey'})
 nnoremap('<F3>', '<cmd>set list! list?<CR>', 'Show invisible characters like tabs and white-spaces.')
 

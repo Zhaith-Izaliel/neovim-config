@@ -9,13 +9,6 @@ local Utils = require('utils')
 local nnoremap = Utils.nnoremap
 local noremap = Utils.noremap
 
-
--- Setup language servers.
-local lspconfig = require('lspconfig')
--- lspconfig.pyright.setup {}
--- lspconfig.tsserver.setup {}
-
-
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -44,9 +37,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- ---Other plugins using LSP and working as LSP---
+-- ---Server Configurations---
 
--- Rust Tools
+-- Setup language servers.
+local lspconfig = require('lspconfig')
+
+-- Rust
 -- TODO: add description for keymap
 local rt = require('rust-tools')
 rt.setup({
@@ -59,3 +55,92 @@ rt.setup({
     end,
   },
 })
+
+-- Go
+require('go').setup {}
+
+-- DEPRECATED: will have to move to `lua_ls` when nixpkgs updates lsp-config.
+lspconfig.sumneko_lua.setup { -- Lua
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+lspconfig.pyright.setup {} -- Python
+
+lspconfig.nil_ls.setup {} -- Nix
+
+lspconfig.eslint.setup { -- JS/TS
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+}
+
+lspconfig.html.setup {} -- HTML
+
+lspconfig.stylelint_lsp.setup { -- CSS/SCSS/Less
+  settings = {
+    stylelintplus = {
+      -- Config to remove warnings for tailwindcss
+      config = {
+        ['at-rule-no-unknown'] = {
+          true,
+          {
+            ignoreAtRules = {
+              'apply',
+              'layer',
+              'responsive',
+              'screen',
+              'tailwind',
+              'variants',
+            },
+          },
+        },
+        ['declaration-block-trailing-semicolon'] = 'null',
+        ['no-descending-specificity'] = 'null',
+      }
+    }
+  }
+}
+
+lspconfig.tailwindcss.setup {} -- TailwindCSS
+
+lspconfig.hls.setup { -- Haskell
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
+
+lspconfig.jsonls.setup {}
+
+
+lspconfig.vuels.setup {} -- Vue
+
+lspconfig.clangd.setup {} -- C/C++
+
+lspconfig.cmake.setup {} -- CMake
+
+lspconfig.gopls.setup {} -- Go
+
+lspconfig.omnisharp.setup {
+  cmd = { "dotnet", omnisharp_path },
+}

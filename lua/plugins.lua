@@ -6,7 +6,7 @@
 local Utils = require('utils')
 
 local noremap = Utils.noremap
--- local exprnnoremap = Utils.exprnnoremap
+local exprmap = Utils.exprmap
 local nnoremap = Utils.nnoremap
 local vnoremap = Utils.vnoremap
 -- local xnoremap = Utils.xnoremap
@@ -26,51 +26,15 @@ nnoremap('S', function() require('pounce').pounce { input = {reg="/"} } end, 'Po
 
 -- Neogen
 require('neogen').setup({ snippet_engine = 'luasnip' })
-vim.keymap.set('n', '<Leader>nf', require('neogen').generate, { 
-  silent = true,
-  desc = 'Neogen: Generate annotation for the block under the cursor.' 
-})
+nnoremap('<Leader>nf', require('neogen').generate, 'Neogen: Generate annotation for the block under the cursor.')
 
 -- Vim Kitty Navigator
 vim.g.kitty_navigator_no_mappings = 1
 
-vim.keymap.set('n', '<C-Space><Left>', '<Cmd>KittyNavigateLeft<CR>', {
-  desc = 'Kitty Navigator: Navigate left between splits.',
-  silent = true,
-})
-vim.keymap.set('n', '<C-Space><Down>', '<Cmd>KittyNavigateDown<CR>', {
-  desc = 'Kitty Navigator: Navigate down between splits.',
-  silent = true,
-})
-vim.keymap.set('n', '<C-Space><Up>', '<Cmd>KittyNavigateUp<CR>', {
-  desc = 'Kitty Navigator: Navigate up between splits.',
-  silent = true,
-})
-vim.keymap.set('n', '<C-Space><Right>', '<Cmd>KittyNavigateRight<CR>', {
-  desc = 'Kitty Navigator: Navigate right between splits.',
-  silent = true,
-})
-
--- Neotree
-vim.g.neo_tree_remove_legacy_commands = 1
-
-vim.fn.sign_define("DiagnosticSignError",
-{text = " ", texthl = "DiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarn",
-{text = " ", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInfo",
-{text = " ", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint",
-{text = "", texthl = "DiagnosticSignHint"})
-
-vim.keymap.set('n', '<Leader>tt', '<Cmd>Neotree<CR>', {
-  desc = 'Neotree: Open Neotree.',
-  silent = true,
-})
-
-require("neo-tree").setup({
-  close_if_last_window = true,
-}
+nnoremap('<C-Space><Left>', '<Cmd>KittyNavigateLeft<CR>', 'Kitty Navigator: Navigate left between splits.')
+nnoremap('<C-Space><Down>', '<Cmd>KittyNavigateDown<CR>', 'Kitty Navigator: Navigate down between splits.')
+nnoremap('<C-Space><Up>', '<Cmd>KittyNavigateUp<CR>', 'Kitty Navigator: Navigate up between splits.')
+nnoremap('<C-Space><Right>', '<Cmd>KittyNavigateRight<CR>', 'Kitty Navigator: Navigate right between splits.')
 
 -- Git signs
 require('gitsigns').setup {
@@ -109,10 +73,7 @@ require('colorizer').setup {
   },
 }
 
-vim.keymap.set('n', '<Leader>tc', ':ColorizerToggle<CR>', { 
-  silent = true,
-  desc = 'Colorizer: Toggle on/off.'
-})
+nnoremap('<Leader>tc', ':ColorizerToggle<CR>', 'Colorizer: Toggle on/off.')
 
 -- Todo-Comments
 local todoCommentsConfig = {
@@ -162,18 +123,10 @@ require('Comment').setup {
 -- Telescope
 require('telescope').setup()
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {
-  desc = 'Telescope: Find files.'
-})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {
-  desc = 'Telescope: Live grep.'
-})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {
-  desc = 'Telescope: Switch buffers.'
-})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {
-  desc = 'Telescope: Show help tags.'
-})
+nnoremap('<leader>ff', builtin.find_files, 'Telescope: Find files.')
+nnoremap('<leader>fg', builtin.live_grep, 'Telescope: Live grep.')
+nnoremap('<leader>fb', builtin.buffers, 'Telescope: Switch buffers.')
+nnoremap('<leader>fh', builtin.help_tags, 'Telescope: Show help tags.')
 
 -- Which Key
 require('which-key').setup()
@@ -184,48 +137,28 @@ require('neoclip').setup {
   enable_persistent_history = true,
   continuous_sync = true,
 }
-vim.keymap.set('n', '<Leader>p', '<cmd>Telescope neoclip<CR>', {
-  desc = 'Neoclip: Show yanking history',
-})
+nnoremap('<Leader>p', '<cmd>Telescope neoclip<CR>', 'Neoclip: Show yanking history')
 
 -- LuaSnip
 local luasnip = require('luasnip')
-vim.keymap.set('i','<Tab>',
+exprmap('i','<Tab>',
 function()
   if luasnip.expand_or_jumpable() then
     return luasnip.expand_or_jump()
   end
   return '<Tab>'
 end,
-{
-  silent = true,
-  remap = true,
-  expr = true,
-  desc = 'LuaSnip: Expand snippet or jump to next tabstop.',
-}
-)
+'LuaSnip: Expand snippet or jump to next tabstop.')
 
-vim.keymap.set({'i', 's'}, '<S-Tab>', function() luasnip.jump(-1) end, {
-silent = true,
-desc = 'LuaSnip: Jump to previous tabstop.',
-})
+noremap({'i', 's'}, '<S-Tab>', function() luasnip.jump(-1) end, 'LuaSnip: Jump to previous tabstop.')
 
-vim.keymap.set('s', '<Tab>', function() luasnip.jump(1) end, {
-silent = true,
-desc = 'LuaSnip: Jump to next tabstop.',
-})
+noremap('s', '<Tab>', function() luasnip.jump(1) end, 'LuaSnip: Jump to next tabstop.')
 
-vim.keymap.set({'i', 's'}, '<C-E>',
+exprmap({'i', 's'}, '<C-E>',
 function()
   if luasnip.choice_active() then
     return luasnip.next_choice()
   end
   return '<C-E>'
 end,
-{
-  silent = true,
-  expr = true,
-  remap = true,
-  desc = 'LuaSnip: Change choices in choiceNodes.',
-}
-)
+'LuaSnip: Change choices in choiceNodes.')

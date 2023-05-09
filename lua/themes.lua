@@ -2,7 +2,13 @@
 -- ---Color Theme---
 -- -----------------
 
+-- Icon theme
+require('nvim-web-devicons').setup()
+
 -- Catppuccin theme
+-- colors
+local macchiato = require("catppuccin.palettes").get_palette "macchiato"
+
 require('catppuccin').setup({
   flavour = 'macchiato',
   background = {
@@ -27,6 +33,9 @@ require('catppuccin').setup({
         enabled = true,
         enable_ui = true, -- enable nvim-dap-ui
     },
+  },
+  custom_highlights = {
+    StatusLine = { fg = macchiato.text, bg = macchiato.crust },
   },
 })
 
