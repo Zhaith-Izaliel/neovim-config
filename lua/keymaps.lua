@@ -40,7 +40,7 @@ vim.cmd.highlight({'SpecialKey', 'term=standout', 'ctermfg=darkgrey', 'guifg=dar
 nnoremap('<F3>', '<cmd>set list! list?<CR>', 'Show invisible characters like tabs and white-spaces.')
 
 -- Change case
-inoremap('<C-U>', '<Esc>g~awwi', 'Change case of the current word.')
+inoremap('<C-U>', '<Esc>g~awgi', 'Change case of the current word.')
 
 -- Diagnostics
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
