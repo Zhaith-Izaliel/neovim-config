@@ -3,8 +3,8 @@
 -- ---------
 
 vim.g.coq_settings = {
+  auto_start = 'shut-up',
   xdg = true,
 }
 
 require('coq')
-vim.cmd([[:COQnow --shut-up]])
