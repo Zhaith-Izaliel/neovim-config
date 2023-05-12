@@ -16,6 +16,7 @@ if (vim.fn.exists('+colorcolumn')) then
 end
 vim.o.cmdheight = 1
 vim.o.conceallevel = 1
+vim.o.laststatus = 3 -- Status line for focused window only
 
 -- Indentation
 vim.o.ai = true

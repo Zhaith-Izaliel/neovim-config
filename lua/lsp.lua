@@ -135,7 +135,7 @@ lspconfig.jsonls.setup {}
 
 lspconfig.vuels.setup {} -- Vue
 
-lspconfig.clangd.setup {} -- C/C++
+lspconfig.ccls.setup {} -- C/C++
 
 lspconfig.cmake.setup {} -- CMake
 
