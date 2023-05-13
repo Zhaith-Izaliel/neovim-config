@@ -51,7 +51,7 @@ local colorizer_options_css = {
 }
 
 require('colorizer').setup {
-  filetypes = { 
+  filetypes = {
     '*',
     css = colorizer_options_css,
     sass = colorizer_options_css,
@@ -119,14 +119,6 @@ require('Comment').setup {
     extra = false,
   },
 }
-
--- Telescope
-require('telescope').setup()
-local builtin = require('telescope.builtin')
-nnoremap('<leader>ff', builtin.find_files, 'Telescope: Find files.')
-nnoremap('<leader>fg', builtin.live_grep, 'Telescope: Live grep.')
-nnoremap('<leader>fb', builtin.buffers, 'Telescope: Switch buffers.')
-nnoremap('<leader>fh', builtin.help_tags, 'Telescope: Show help tags.')
 
 -- Which Key
 require('which-key').setup()

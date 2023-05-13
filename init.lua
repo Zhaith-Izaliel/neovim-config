@@ -10,4 +10,5 @@ require('lsp')
 require('dap-config')
 require('completion')
 require('plugins')
+require('telescope-config')
 
