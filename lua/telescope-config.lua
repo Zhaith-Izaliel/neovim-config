@@ -19,13 +19,6 @@ local nnoremap = Utils.nnoremap
 local Telescope = require('telescope')
 Telescope.setup {
   extensions = {
-    media_files = {
-      -- filetypes whitelist
-      -- defaults to {'png', 'jpg', 'mp4', 'webm', 'pdf'}
-      filetypes = {'png', 'webp', 'jpg', 'jpeg', 'webm', 'pdf'},
-      -- find command (defaults to `fd`)
-      find_cmd = 'rg'
-    },
     bibtex = {
       -- Use context awareness
       context = true,
@@ -36,7 +29,6 @@ Telescope.setup {
   },
 }
 
-Telescope.load_extension('media_files')
 Telescope.load_extension('bibtex')
 Telescope.load_extension('zoxide')
 
@@ -52,4 +44,3 @@ nnoremap('<leader>fh', builtin.help_tags, 'Telescope: Show help tags.')
 nnoremap('<leader>fcd', extensions.zoxide.list, 'Telescope: Show Zoxide.')
 nnoremap('<leader>fbt', '<CMD>Telescope bibtex<CR>', 'Telescope: Find Bibtex entries.')
 nnoremap('<leader>fs', '<CMD>Telescope symbols<CR>', 'Telescope: Pick symbols.')
-nnoremap('<leader>fimg', '<CMD>Telescope media_files<CR>', 'Telescope: Copy media file\'s path.')

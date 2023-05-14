@@ -54,7 +54,9 @@ gls.left = {
   },
   {
     GitBranch = {
-      provider = 'GitBranch',
+      provider = function()
+        return custom_providers.GetGitBranch(12)
+      end,
       icon = ' ',
       condition = condition.check_git_workspace,
       separator = ' ',
