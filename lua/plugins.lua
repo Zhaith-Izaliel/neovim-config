@@ -154,3 +154,6 @@ function()
   return '<C-E>'
 end,
 'LuaSnip: Change choices in choiceNodes.')
+
+-- Surround
+require('nvim-surround').setup()

@@ -37,7 +37,7 @@ require('catppuccin').setup({
   },
   custom_highlights = {
     StatusLine = { fg = macchiato.text, bg = macchiato.crust },
-    ['@text.todo'] = { fg = macchiato.flamingo } -- remove TODO highlight
+    ['@text.todo'] = { bg = macchiato.flamingo } -- remove TODO highlight
   },
 })
 
@@ -53,8 +53,4 @@ sign("DapBreakpointCondition", { text = "◉", texthl = "DapBreakpointCondition"
 sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
 
 -- Apply Theme
-require('catppuccin').compile()
 vim.cmd.colorscheme('catppuccin')
-require("catppuccin.lib.highlighter").syntax({
-    ['@text.todo'] = { fg = macchiato.flamingo }
-})
