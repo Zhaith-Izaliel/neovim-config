@@ -8,8 +8,8 @@ local nnoremap = Utils.nnoremap;
 local templates = Notes_directory .. '/Templates'
 local template_daily = templates .. '/DailyNote.md'
 local template_weekly = templates .. '/WeeklyNote.md'
-local daily_dir = '/Daily'
-local weekly_dir = '/Weekly'
+local daily_dir = 'daily'
+local weekly_dir = 'weekly'
 local image_subdir = 'imgs'
 
 require('telekasten').setup {
@@ -18,36 +18,33 @@ require('telekasten').setup {
   template_new_daily = template_daily,
   template_new_weekly = template_weekly,
   image_subdir = image_subdir,
-  daily = Notes_directory .. '/Notes' .. daily_dir,
-  weekly = Notes_directory .. '/Notes' .. weekly_dir,
+  dailies = daily_dir,
+  weeklies = weekly_dir,
   media_previewer = 'viu-previewer',
   vaults = {
     work = {
       home = Notes_directory .. '/Work',
       image_subdir = image_subdir,
-      daily = Notes_directory .. '/Work' .. daily_dir,
-      weekly = Notes_directory .. '/Work' .. weekly_dir,
+      dailies = daily_dir,
+      weeklies = weekly_dir,
       templates = templates,
       template_new_daily = template_daily,
       template_new_weekly = template_weekly,
     },
     curriculum = {
       home = Notes_directory .. '/Curriculum',
-      daily = Notes_directory .. '/Curriculum' .. daily_dir,
-      weekly = Notes_directory .. '/Curriculum' .. weekly_dir,
       image_subdir = image_subdir,
       templates = templates,
-      template_new_daily = template_daily,
-      template_new_weekly = template_weekly,
+      dailies_create_nonexisting = false,
+      weeklies_create_nonexisting = false,
+
     },
     cheatsheets = {
       home = Notes_directory .. '/Cheatsheets',
       image_subdir = image_subdir,
-      daily = Notes_directory .. '/Cheatsheets' .. daily_dir,
-      weekly = Notes_directory .. '/Cheatsheets' .. weekly_dir,
+      dailies_create_nonexisting = false,
+      weeklies_create_nonexisting = false,
       templates = templates,
-      template_new_daily = template_daily,
-      template_new_weekly = template_weekly,
     },
   },
 

@@ -54,3 +54,4 @@ nnoremap('<Leader>l', '<Cmd>call setqflist([])<CR>', 'Clear quick-fixes list.')
 noremap({'n', 'v'}, '<Leader>c', '<Cmd>let @/ = ""<CR>', 'Clear last search.', {
   buffer = true,
 })
+noremap({'n', 'v'}, '<Leader>y', '"+y', 'Copy to system clipboard.')
