@@ -21,9 +21,11 @@ require('telekasten').setup {
   dailies = daily_dir,
   weeklies = weekly_dir,
   media_previewer = 'viu-previewer',
+  extension = ".norg",
   vaults = {
     work = {
       home = NOTES_DIRECTORY .. '/Work',
+      extension = ".norg",
       image_subdir = image_subdir,
       dailies = daily_dir,
       weeklies = weekly_dir,
@@ -33,14 +35,15 @@ require('telekasten').setup {
     },
     curriculum = {
       home = NOTES_DIRECTORY .. '/Curriculum',
+      extension = ".norg",
       image_subdir = image_subdir,
       templates = templates,
       dailies_create_nonexisting = false,
       weeklies_create_nonexisting = false,
-
     },
     cheatsheets = {
       home = NOTES_DIRECTORY .. '/Cheatsheets',
+      extension = ".norg",
       image_subdir = image_subdir,
       dailies_create_nonexisting = false,
       weeklies_create_nonexisting = false,
@@ -54,15 +57,46 @@ require('telekasten').setup {
 nnoremap('<leader>tp', '<cmd>Telekasten panel<CR>', 'Telekasten: Open panel.')
 
 -- Most used functions
-nnoremap('<leader>tv', '<cmd>Telekasten switch_vault<CR>', 'Telekasten: Switch vault.')
-nnoremap('<leader>tf', '<cmd>Telekasten find_notes<CR>', 'Telekasten: Find notes.')
-nnoremap('<leader>tg', '<cmd>Telekasten search_notes<CR>', 'Telekasten: Search notes.')
-nnoremap('<leader>td', '<cmd>Telekasten goto_today<CR>', 'Telekasten: Go to today')
-nnoremap('<leader>tz', '<cmd>Telekasten follow_link<CR>', 'Telekasten: Follow link')
-nnoremap('<leader>tn', '<cmd>Telekasten new_note<CR>', 'Telekasten: New Note')
-nnoremap('<leader>tt', '<cmd>Telekasten new_templated_note<CR>', 'Telekasten: New templated note')
-nnoremap('<leader>tc', '<cmd>Telekasten show_calendar<CR>', 'Telekasten: Show calendar')
-nnoremap('<leader>tb', '<cmd>Telekasten show_backlinks<CR>', 'Telekasten: Show backlinks')
-nnoremap('<leader>tI', '<cmd>Telekasten insert_img_link<CR>', 'Telekasten: insert image link')
-nnoremap('<leader>to', '<cmd>Telekasten toggle_todo<CR>', 'Telekasten: Toggle todo.')
+nnoremap('<leader>tv', '<cmd>Telekasten switch_vault<CR>',
+  'Telekasten: Switch vault.')
+nnoremap('<leader>tf', '<cmd>Telekasten find_notes<CR>',
+  'Telekasten: Find notes.')
+nnoremap('<leader>tg', '<cmd>Telekasten search_notes<CR>',
+  'Telekasten: Search notes.')
+nnoremap('<leader>td', '<cmd>Telekasten goto_today<CR>',
+  'Telekasten: Go to today')
+nnoremap('<leader>tz', '<cmd>Telekasten follow_link<CR>',
+  'Telekasten: Follow link')
+nnoremap('<leader>tn', '<cmd>Telekasten new_note<CR>',
+  'Telekasten: New Note')
+nnoremap('<leader>tt', '<cmd>Telekasten new_templated_note<CR>',
+  'Telekasten: New templated note')
+nnoremap('<leader>tc', '<cmd>Telekasten show_calendar<CR>',
+  'Telekasten: Show calendar')
+nnoremap('<leader>tb', '<cmd>Telekasten show_backlinks<CR>',
+  'Telekasten: Show backlinks')
+nnoremap('<leader>tI', '<cmd>Telekasten insert_img_link<CR>',
+  'Telekasten: insert image link')
+
+
+
+require('neorg').setup {
+  load = {
+    ['core.defaults'] = {}, -- Loads default behaviour
+    ['core.integrations.treesitter'] = {
+      config = {
+        install_parsers = false,
+      },
+    },
+    ['core.concealer'] = {}, -- Adds pretty icons to your documents
+    ['core.export.markdown'] = {},
+    ['core.dirman'] = { -- Manages Neorg workspaces
+      config = {
+        workspaces = {
+          notes = NOTES_DIRECTORY .. '/Notes',
+        },
+      },
+    },
+  },
+}
 
