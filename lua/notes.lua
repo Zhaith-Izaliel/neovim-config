@@ -5,7 +5,7 @@
 local Utils = require('utils')
 local nnoremap = Utils.nnoremap;
 
-local templates = Notes_directory .. '/Templates'
+local templates = NOTES_DIRECTORY .. '/Templates'
 local template_daily = templates .. '/DailyNote.md'
 local template_weekly = templates .. '/WeeklyNote.md'
 local daily_dir = 'daily'
@@ -13,7 +13,7 @@ local weekly_dir = 'weekly'
 local image_subdir = 'imgs'
 
 require('telekasten').setup {
-  home = Notes_directory .. '/Notes',
+  home = NOTES_DIRECTORY .. '/Notes',
   templates = templates,
   template_new_daily = template_daily,
   template_new_weekly = template_weekly,
@@ -23,7 +23,7 @@ require('telekasten').setup {
   media_previewer = 'viu-previewer',
   vaults = {
     work = {
-      home = Notes_directory .. '/Work',
+      home = NOTES_DIRECTORY .. '/Work',
       image_subdir = image_subdir,
       dailies = daily_dir,
       weeklies = weekly_dir,
@@ -32,7 +32,7 @@ require('telekasten').setup {
       template_new_weekly = template_weekly,
     },
     curriculum = {
-      home = Notes_directory .. '/Curriculum',
+      home = NOTES_DIRECTORY .. '/Curriculum',
       image_subdir = image_subdir,
       templates = templates,
       dailies_create_nonexisting = false,
@@ -40,7 +40,7 @@ require('telekasten').setup {
 
     },
     cheatsheets = {
-      home = Notes_directory .. '/Cheatsheets',
+      home = NOTES_DIRECTORY .. '/Cheatsheets',
       image_subdir = image_subdir,
       dailies_create_nonexisting = false,
       weeklies_create_nonexisting = false,
@@ -65,3 +65,4 @@ nnoremap('<leader>tc', '<cmd>Telekasten show_calendar<CR>', 'Telekasten: Show ca
 nnoremap('<leader>tb', '<cmd>Telekasten show_backlinks<CR>', 'Telekasten: Show backlinks')
 nnoremap('<leader>tI', '<cmd>Telekasten insert_img_link<CR>', 'Telekasten: insert image link')
 nnoremap('<leader>to', '<cmd>Telekasten toggle_todo<CR>', 'Telekasten: Toggle todo.')
+
