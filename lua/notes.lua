@@ -89,14 +89,16 @@ require('neorg').setup {
       },
     },
     ['core.concealer'] = {}, -- Adds pretty icons to your documents
+    ['core.export'] = {},
     ['core.export.markdown'] = {},
-    ['core.dirman'] = { -- Manages Neorg workspaces
+    ['core.presenter'] = {
       config = {
-        workspaces = {
-          notes = NOTES_DIRECTORY .. '/Notes',
-        },
+        zen_mode = 'zen-mode',
       },
     },
+    -- TEMP: waiting to install Neovim 0.9.0 to make it compatible
+    -- ['core.ui.calendar'] = {},
+    -- ['core.integrations.telescope'] = {},
   },
 }
 
