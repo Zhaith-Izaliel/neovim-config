@@ -39,7 +39,7 @@ vim.o.listchars = [[eol:¬,tab:>-,space:·,extends:>,precedes:<,nbsp:_,conceal:�
 vim.cmd.highlight({'SpecialKey', 'term=standout', 'ctermfg=darkgrey', 'guifg=darkgrey'})
 nnoremap('<F3>', '<cmd>set list! list?<CR>', 'Show invisible characters like tabs and white-spaces.')
 
--- Change case
+-- Text
 inoremap('<C-U>', '<Esc>g~awgi', 'Change case of the current word.')
 
 -- Diagnostics
@@ -54,3 +54,4 @@ nnoremap('<Leader>l', '<Cmd>call setqflist([])<CR>', 'Clear quick-fixes list.')
 noremap({'n', 'v'}, '<Leader>c', '<Cmd>let @/ = ""<CR>', 'Clear last search.', {
   buffer = true,
 })
+noremap({'n', 'v'}, '<Leader>y', '"+y', 'Copy to system clipboard.')

@@ -11,9 +11,10 @@ vim.o.ruler = true
 vim.o.showmode = false
 vim.o.signcolumn='auto:2'
 if (vim.fn.exists('+colorcolumn')) then
-  vim.o.colorcolumn = '80'
+  vim.o.colorcolumn = '' .. LAST_COLUMN
   vim.cmd.highlight({'ColorColumn', 'ctermbg=9'})
 end
+vim.o.textwidth = LAST_COLUMN
 vim.o.cmdheight = 1
 vim.o.conceallevel = 1
 vim.o.laststatus = 3 -- Status line for focused window only
@@ -38,7 +39,7 @@ vim.o.spell = true
 vim.o.spelllang = 'en,fr'
 
 -- Swap files
-vim.o.directory = Nvim_tmp_directory
+vim.o.directory = NVIM_TMP_DIRECTORY
 
 vim.diagnostic.config {
   virtual_text = true,
