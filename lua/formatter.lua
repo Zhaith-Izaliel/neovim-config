@@ -3,7 +3,7 @@
 -- ---------------
 
 require('strict').setup {
-  excluded_filetypes = { 'text', 'markdown', 'html', 'vue', 'norg', 'scss',
+  excluded_filetypes = { 'text', 'html', 'vue', 'scss',
     'less', 'make' },
   deep_nesting = {
     ignored_trailing_characters = ',',

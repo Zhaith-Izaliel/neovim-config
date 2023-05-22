@@ -21,11 +21,11 @@ require('telekasten').setup {
   dailies = daily_dir,
   weeklies = weekly_dir,
   media_previewer = 'viu-previewer',
-  extension = ".norg",
+  extension = ".md",
   vaults = {
     work = {
       home = NOTES_DIRECTORY .. '/Work',
-      extension = ".norg",
+      extension = ".md",
       image_subdir = image_subdir,
       dailies = daily_dir,
       weeklies = weekly_dir,
@@ -35,7 +35,7 @@ require('telekasten').setup {
     },
     curriculum = {
       home = NOTES_DIRECTORY .. '/Curriculum',
-      extension = ".norg",
+      extension = '.md',
       image_subdir = image_subdir,
       templates = templates,
       dailies_create_nonexisting = false,
@@ -43,7 +43,7 @@ require('telekasten').setup {
     },
     cheatsheets = {
       home = NOTES_DIRECTORY .. '/Cheatsheets',
-      extension = ".norg",
+      extension = '.md',
       image_subdir = image_subdir,
       dailies_create_nonexisting = false,
       weeklies_create_nonexisting = false,
@@ -64,41 +64,33 @@ nnoremap('<leader>tf', '<cmd>Telekasten find_notes<CR>',
 nnoremap('<leader>tg', '<cmd>Telekasten search_notes<CR>',
   'Telekasten: Search notes.')
 nnoremap('<leader>td', '<cmd>Telekasten goto_today<CR>',
-  'Telekasten: Go to today')
-nnoremap('<leader>tz', '<cmd>Telekasten follow_link<CR>',
-  'Telekasten: Follow link')
+  'Telekasten: Go to today.')
 nnoremap('<leader>tn', '<cmd>Telekasten new_note<CR>',
-  'Telekasten: New Note')
+  'Telekasten: New note.')
 nnoremap('<leader>tt', '<cmd>Telekasten new_templated_note<CR>',
-  'Telekasten: New templated note')
+  'Telekasten: New templated note.')
 nnoremap('<leader>tc', '<cmd>Telekasten show_calendar<CR>',
-  'Telekasten: Show calendar')
-nnoremap('<leader>tb', '<cmd>Telekasten show_backlinks<CR>',
-  'Telekasten: Show backlinks')
-nnoremap('<leader>tI', '<cmd>Telekasten insert_img_link<CR>',
-  'Telekasten: insert image link')
+  'Telekasten: Show calendar.')
 
-
-
-require('neorg').setup {
-  load = {
-    ['core.defaults'] = {}, -- Loads default behaviour
-    ['core.integrations.treesitter'] = {
-      config = {
-        install_parsers = false,
-      },
-    },
-    ['core.concealer'] = {}, -- Adds pretty icons to your documents
-    ['core.export'] = {},
-    ['core.export.markdown'] = {},
-    ['core.presenter'] = {
-      config = {
-        zen_mode = 'zen-mode',
-      },
-    },
-    -- TEMP: waiting to install Neovim 0.9.0 to make it compatible
-    -- ['core.ui.calendar'] = {},
-    -- ['core.integrations.telescope'] = {},
-  },
-}
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  group = vim.api.nvim_create_augroup('UserMarkdownMapping', {}),
+  callback = function(ev)
+    local opts = { buffer = ev.buf }
+    nnoremap('<leader>tb', '<cmd>Telekasten show_backlinks<CR>',
+      'Telekasten: Show backlinks.', opts)
+    nnoremap('<localleader>tz', '<cmd>Telekasten follow_link<CR>',
+      'Telekasten: Follow link.', opts)
+    nnoremap('<localleader>tI', '<cmd>Telekasten insert_img_link<CR>',
+      'Telekasten: Insert image link.', opts)
+    nnoremap('<localleader>to', '<cmd>Telekasten toggle_todo<CR>',
+      'Telekasten: Toggle todo.', opts)
+    nnoremap('<localleader>gtm', '<cmd>GenTocMarked<CR>',
+      'TOC: Generate Marked TOC.', opts)
+    nnoremap('<localleader>gtg', '<cmd>GenTocGitLab<CR>',
+      'TOC: Generate GitLab TOC.', opts)
+    nnoremap('<localleader>gtG', '<cmd>GenTocGFM<CR>',
+      'TOC: Generate GitHub TOC.', opts)
+  end
+})
 

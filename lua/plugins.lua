@@ -30,7 +30,7 @@ nnoremap('S', function() require('pounce').pounce { input = { reg = "/" } } end
 
 -- Neogen
 require('neogen').setup({ snippet_engine = 'luasnip' })
-nnoremap('<Leader>nf', require('neogen').generate,
+nnoremap('<Leader>ng', require('neogen').generate,
   'Neogen: Generate annotation for the block under the cursor.')
 
 -- Vim Kitty Navigator
@@ -172,3 +172,8 @@ exprmap({ 'i', 's' }, '<C-E>',
 
 -- Surround
 require('nvim-surround').setup()
+
+-- Nabla
+nnoremap('<Leader>np', function() require('nabla').popup() end,
+  'Nabla: show popup')
+
