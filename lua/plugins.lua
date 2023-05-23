@@ -8,12 +8,12 @@ local Utils = require('utils')
 local noremap = Utils.noremap
 local exprmap = Utils.exprmap
 local nnoremap = Utils.nnoremap
-local vnoremap = Utils.vnoremap
+-- local vnoremap = Utils.vnoremap
 -- local xnoremap = Utils.xnoremap
-local inoremap = Utils.inoremap
+-- local inoremap = Utils.inoremap
 -- local tnoremap = Utils.tnoremap
-local nmap = Utils.nmap
-local imap = Utils.imap
+-- local nmap = Utils.nmap
+-- local imap = Utils.imap
 -- local xmap = Utils.xmap
 
 -- Pounce
