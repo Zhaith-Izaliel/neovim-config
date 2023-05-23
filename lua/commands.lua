@@ -1,13 +1,17 @@
 -- ---------------------
 -- ---Custom Commands---
 -- ---------------------
+local Utils = require('utils')
+local command = Utils.command
 
 -- Swap folder
-vim.cmd("command! ListSwap split | enew | r !ls -l " .. Nvim_tmp_directory)
-vim.cmd("command! CleanSwap !rm -rf " .. Nvim_tmp_directory .. "/*.swp")
+command('ListSwap', 'split | enew | r !ls -l ' .. NVIM_TMP_DIRECTORY, {})
+command('CleanSwap', '!rm -rf ' .. NVIM_TMP_DIRECTORY .. '/*.swp', {})
 
 -- Open help tags
-vim.cmd("command! HelpTags Telescope help_tags")
+command('HelpTags', 'Telescope help_tags', {})
 
 -- Create ctags
-vim.cmd('command! MakeCTags !ctags -R --exclude=@.ctagsignore .')
+command('MakeCTags',
+  '!ctags -R --exclude=@.ctagsignore --exclude=@.gitignore .', {})
+

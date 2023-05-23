@@ -1,6 +1,7 @@
-local colors = require("galaxyline.themes.colors").catppuccin
-local Utils = require("utils")
-local lspclient = require("galaxyline.providers.lsp")
+local colors = require('galaxyline.themes.colors').catppuccin
+local Utils = require('utils')
+local lspclient = require('galaxyline.providers.lsp')
+local vcs = require('galaxyline.providers.vcs')
 
 local M = {}
 
@@ -75,8 +76,10 @@ function M.FileReadOnly(readonly_icon)
   return ''
 end
 
---- Return a separator for the branch section if there are at least one
---- modification in the git repo.
+--- Return a separator if the condition is true, a space otherwise
+---@param condition boolean - the condition to check for
+---@param separator string - the separator to return if condition is true
+---@return string - the passed separator if condition = true, a space otherwise
 function M.ConditionalSeparator(condition, separator)
   return condition and separator or ' '
 end
@@ -98,5 +101,17 @@ function M.GetLspClient()
 
   return stringClients
 end
+
+--- Get git branch and truncate with ellipsis if the string is too large
+---@param len integer - the max length of the branch to show
+---@return string - the branch name, truncated if its length is superior to len
+function M.GetGitBranch(len)
+  local branchName = vcs.get_git_branch()
+  if string.len(branchName) > len then
+    return string.sub(branchName, 1, len) .. '...'
+  end
+  return branchName
+end
+
 
 return M

@@ -33,9 +33,20 @@ gls.left = {
     }
   },
   {
-    FileName = {
+    FileNameNoRepo = {
       provider = 'FileName',
-      condition = condition.buffer_not_empty,
+      condition = function()
+        return condition.buffer_not_empty() and not condition.check_git_workspace()
+      end,
+      highlight = { colors.blue, colors.bg }
+    }
+  },
+  {
+    FileNameGitRepo = {
+      provider = 'FileName',
+      condition = function()
+        return condition.buffer_not_empty() and condition.check_git_workspace()
+      end,
       separator =  ' ',
       separator_highlight = { colors.bg, colors.bg_alt },
       highlight = { colors.blue, colors.bg }
@@ -43,7 +54,9 @@ gls.left = {
   },
   {
     GitBranch = {
-      provider = 'GitBranch',
+      provider = function()
+        return custom_providers.GetGitBranch(12)
+      end,
       icon = ' ',
       condition = condition.check_git_workspace,
       separator = ' ',
