@@ -42,5 +42,6 @@ nnoremap('<leader>fb', builtin.buffers, 'Telescope: Switch buffers.')
 nnoremap('<leader>fh', builtin.help_tags, 'Telescope: Show help tags.')
 
 nnoremap('<leader>fcd', extensions.zoxide.list, 'Telescope: Show Zoxide.')
-nnoremap('<leader>fbt', '<CMD>Telescope bibtex<CR>', 'Telescope: Find Bibtex entries.')
+nnoremap('<leader>ft', '<CMD>Telescope bibtex<CR>', 'Telescope: Find Bibtex entries.')
 nnoremap('<leader>fs', '<CMD>Telescope symbols<CR>', 'Telescope: Pick symbols.')
+
