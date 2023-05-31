@@ -19,4 +19,5 @@ require('mini.move').setup {
 }
 
 require('mini.indentscope').setup {}
+require('mini.splitjoin').setup {}
 
