@@ -59,8 +59,7 @@ rt.setup({
 -- Go
 require('go').setup {}
 
--- DEPRECATED: will have to move to `lua_ls` when nixpkgs updates lsp-config.
-lspconfig.sumneko_lua.setup { -- Lua
+lspconfig.lua_ls.setup { -- Lua
   settings = {
     Lua = {
       runtime = {
@@ -144,3 +143,4 @@ lspconfig.gopls.setup {} -- Go
 lspconfig.omnisharp.setup {
   cmd = { "dotnet", omnisharp_path },
 }
+
