@@ -8,3 +8,4 @@ vim.g.coq_settings = {
 }
 
 require('coq')
+
