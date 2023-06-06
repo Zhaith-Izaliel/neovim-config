@@ -43,6 +43,33 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local lspconfig = require('lspconfig')
 
 -- Rust
+-- Helpers for rust-tools
+local function ensure_uri_scheme(uri)
+    if not vim.startswith(uri, "file://") then
+        return "file://" .. uri
+    end
+    return uri
+end
+
+local function is_in_workspace(uri)
+    uri = ensure_uri_scheme(uri)
+    local path = vim.uri_to_fname(uri)
+    local workspace_dir = vim.fn.getcwd()
+
+    return vim.startswith(path, workspace_dir)
+end
+
+local function filter_diagnostics(diagnostics)
+    local filtered_diagnostics = {}
+    for _, diagnostic in ipairs(diagnostics) do
+        if is_in_workspace(diagnostic.source) then
+            table.insert(filtered_diagnostics, diagnostic)
+        end
+    end
+    return filtered_diagnostics
+end
+
+
 -- TODO: add description for keymap
 local rt = require('rust-tools')
 rt.setup({
@@ -53,6 +80,33 @@ rt.setup({
       -- Code action groups
       nnoremap('<Leader>a', rt.code_action_group.code_action_group, '', { buffer = bufnr })
     end,
+    server = {
+      handlers = {
+        ["textDocument/publishDiagnostics"] =
+          function(err, method, result, client_id, bufnr, config)
+            if not result or not result.uri then
+              return
+            end
+
+            local uri = result.uri
+            local bufnr = vim.uri_to_bufnr(uri)
+
+            if not bufnr then
+              return
+            end
+
+            if is_in_workspace(uri) then
+              local diagnostics = vim.lsp.diagnostic.to_severity(result.diagnostics)
+              diagnostics = filter_diagnostics(diagnostics)
+              vim.lsp.diagnostic.save(diagnostics, bufnr, client_id)
+              if vim.api.nvim_buf_is_loaded(bufnr) then
+                vim.lsp.diagnostic.set_signs(diagnostics, bufnr, client_id)
+              end
+            end
+          end
+        ,
+      },
+    }
   },
 })
 
