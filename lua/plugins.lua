@@ -17,14 +17,14 @@ local nnoremap = Utils.nnoremap
 -- local xmap = Utils.xmap
 
 -- Pounce
-nnoremap('s', function() require('pounce').pounce {} end, 'Pounce: Search.')
-nnoremap('s', function() require('pounce').pounce { do_repeat = true } end,
+nnoremap('<leader>s', function() require('pounce').pounce {} end, 'Pounce: Search.')
+nnoremap('<leader>s', function() require('pounce').pounce { do_repeat = true } end,
   'Pounce: Search with repeat.')
-noremap('x', 's', function() require('pounce').pounce {} end,
+noremap('x', '<leader>s', function() require('pounce').pounce {} end,
   'Pounce: Search.')
-noremap('o', 'gs', function() require('pounce').pounce {} end,
+noremap('o', '<leader>gs', function() require('pounce').pounce {} end,
   'Pounce: Search.')
-nnoremap('S', function() require('pounce').pounce { input = { reg = "/" } } end
+nnoremap('<leader>S', function() require('pounce').pounce { input = { reg = "/" } } end
   , 'Pounce: Search with regex.')
 
 
