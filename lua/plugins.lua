@@ -177,3 +177,13 @@ require('nvim-surround').setup()
 nnoremap('<Leader>np', function() require('nabla').popup() end,
   'Nabla: show popup')
 
+-- Crates
+require('crates').setup {
+  src = {
+    coq = {
+      enabled = true,
+      name = "crates.nvim",
+    },
+  },
+}
+
