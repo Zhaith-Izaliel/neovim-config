@@ -206,3 +206,22 @@ lspconfig.ltex.setup {
   },
 }
 
+
+-------------
+---Trouble---
+-------------
+
+require("trouble").setup {}
+
+nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>", "Trouble: toggle.")
+nnoremap("<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  "Trouble: toggle workspace diagnostics" )
+nnoremap("<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+  "Trouble: toggle document diagnostics")
+nnoremap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  "Trouble: quickfix." )
+nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+  "Trouble: toggle loclist")
+nnoremap("gR", "<cmd>TroubleToggle lsp_references<cr>",
+  "Trouble: get references of symbol under cursor." )
+
