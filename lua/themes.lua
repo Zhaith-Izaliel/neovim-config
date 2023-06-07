@@ -34,6 +34,7 @@ require('catppuccin').setup({
       enabled = true,
       enable_ui = true, -- enable nvim-dap-ui
     },
+    lsp_trouble = true,
   },
   custom_highlights = {
     StatusLine = { fg = macchiato.text, bg = macchiato.crust },
@@ -54,3 +55,4 @@ sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl =
 
 -- Apply Theme
 vim.cmd.colorscheme('catppuccin')
+
