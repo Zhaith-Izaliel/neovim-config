@@ -195,6 +195,14 @@ lspconfig.cmake.setup {} -- CMake
 lspconfig.gopls.setup {} -- Go
 
 lspconfig.omnisharp.setup {
-  cmd = { "dotnet", omnisharp_path },
+  cmd = { 'dotnet', omnisharp_path },
+}
+
+lspconfig.ltex.setup {
+  settings = {
+    ltex = {
+      language = "en-US",
+    },
+  },
 }
 
