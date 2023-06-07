@@ -177,7 +177,7 @@ lspconfig.stylelint_lsp.setup { -- CSS/SCSS/Less
   }
 }
 
-lspconfig.tailwindcss.setup {} -- TailwindCSS
+-- lspconfig.tailwindcss.setup {} -- TailwindCSS
 
 lspconfig.hls.setup { -- Haskell
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
