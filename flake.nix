@@ -43,7 +43,7 @@
       options = {
         cfg = {
           enable = mkOption {
-            default = true;
+            default = false;
             example = true;
             type = types.bool;
             description = ''
