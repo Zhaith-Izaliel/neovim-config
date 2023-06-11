@@ -41,7 +41,7 @@
     in
     {
       options = {
-        cfg = {
+        programs.neovim.zhaith-config = {
           enable = mkOption {
             default = false;
             example = true;
