@@ -19,7 +19,7 @@
   in
   with nixpkgs.lib;
   {
-    nixosModules.default = { config, ... }:
+    nixosModules.default = { config, lib, ... }:
     let
       cfg = config.programs.neovim.zhaith-config;
       configPackage = pkgs.stdenv.mkDerivation {
