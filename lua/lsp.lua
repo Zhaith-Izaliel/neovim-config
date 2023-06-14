@@ -240,7 +240,7 @@ function Load_project_diagnostics()
   local params = {
     textDocument = vim.lsp.util.make_text_document_params(current_bufnr)
   }
-  vim.lsp.buf_request(current_bufnr, 'textDocument/publishDiagnostics', params, function(_, _, result)
+  vim.lsp.buf_request(0, 'textDocument/publishDiagnostics', params, function(_, _, result)
     if not result then
       return
     end
