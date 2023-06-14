@@ -125,7 +125,7 @@
             telescope-symbols-nvim
             telescope-zoxide
             popup-nvim
-            haskell-tools-nvim.haskell-tools-nvim
+            haskell-tools-nvim."x86_64-linux".packages.default
           ] ++ customPlugins;
 
           extraPackages = with pkgs; [
@@ -140,9 +140,6 @@
           ] ++ lsp-servers;
         };
       }]);
-    };
-    overlays = {
-      haskell-tools-overlay = haskell-tools-nvim.overlays.default;
     };
   };
 }
