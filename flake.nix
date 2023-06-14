@@ -59,8 +59,6 @@
       config = mkIf cfg.enable (mkMerge [{
         home.file.".config/nvim/lua".source = lua; # Import config
 
-        nixpkgs.overlays = [ haskell-tools-nvim.overlays.default ];
-
         # Doc Here:
         # https://github.com/NixOS/nixpkgs/blob/nixos-22.11/doc/languages-frameworks/vim.section.md
         programs.neovim = {
@@ -139,6 +137,7 @@
         };
       }]);
     };
+    overlays.default = [ haskell-tools-nvim.overlays.default ];
   };
 }
 
