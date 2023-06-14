@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, haskell-tools-nvim, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -73,7 +73,7 @@
           omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"
           '' + init;
 
-          nixpkgs.overlays = [ self.haskell-tools-nvim.overlays.default ];
+          nixpkgs.overlays = [ haskell-tools-nvim.overlays.default ];
 
           plugins = with pkgs.vimPlugins; [
             nvim-treesitter.withAllGrammars
