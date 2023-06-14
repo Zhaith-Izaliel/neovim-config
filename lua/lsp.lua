@@ -179,12 +179,7 @@ lspconfig.stylelint_lsp.setup { -- CSS/SCSS/Less
 
 -- lspconfig.tailwindcss.setup {} -- TailwindCSS
 
-lspconfig.hls.setup { -- Haskell
-  filetypes = { 'haskell', 'lhaskell', 'cabal' },
-}
-
 lspconfig.jsonls.setup {}
-
 
 lspconfig.vuels.setup {} -- Vue
 
@@ -206,7 +201,6 @@ lspconfig.ltex.setup {
   },
 }
 
-
 -------------
 ---Trouble---
 -------------
@@ -224,4 +218,41 @@ nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>",
   "Trouble: toggle loclist")
 nnoremap("gR", "<cmd>TroubleToggle lsp_references<cr>",
   "Trouble: get references of symbol under cursor." )
+
+
+------------------------------------
+---Load Diagnostics for Workspace---
+------------------------------------
+
+-- Set up diagnostics handling
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    virtual_text = false,
+    signs = true,
+    update_in_insert = false,
+  }
+)
+
+-- Load LSP diagnostics for the project directory
+function Load_project_diagnostics()
+  local current_bufnr = vim.api.nvim_get_current_buf()
+  local bufname = vim.api.nvim_buf_get_name(current_bufnr)
+  local params = {
+    textDocument = vim.lsp.util.make_text_document_params(bufname)
+  }
+  vim.lsp.buf_request(current_bufnr, 'textDocument/publishDiagnostics', params, function(_, _, result)
+    if not result then
+      return
+    end
+
+    -- Process the diagnostics as needed
+    -- Example: Print the diagnostic message
+    for _, diagnostic in ipairs(result.diagnostics) do
+      print(diagnostic.message)
+    end
+  end)
+end
+
+Utils.command('LoadProjectDiagnostic', Load_project_diagnostics(), {})
 

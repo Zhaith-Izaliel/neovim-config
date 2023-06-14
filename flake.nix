@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    haskell-tools-nvim = {
+      url = "github:MrcJkb/haskell-tools.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }:
@@ -69,6 +73,8 @@
           omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"
           '' + init;
 
+          nixpkgs.overlays = [ inputs.haskell-tools-nvim.overlays.default ];
+
           plugins = with pkgs.vimPlugins; [
             nvim-treesitter.withAllGrammars
             nvim-treesitter-context
@@ -116,6 +122,7 @@
             telescope-symbols-nvim
             telescope-zoxide
             popup-nvim
+            haskell-tools-nvim
           ] ++ customPlugins;
 
           extraPackages = with pkgs; [

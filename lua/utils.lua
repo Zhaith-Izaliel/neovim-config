@@ -6,25 +6,29 @@ local M = {}
 
 function M.map(mode, lhs, rhs, desc, opts)
     opts = not opts and {} or opts
-    vim.keymap.set(mode, lhs, rhs, {silent =  true, desc = desc, remap = true,
-        unpack(opts)})
+    local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc,
+        remap = true, })
+    vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.noremap(mode, lhs, rhs, desc, opts)
     opts = not opts and {} or opts
-    vim.keymap.set(mode, lhs, rhs, {silent = true, desc = desc, unpack(opts)})
+    local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc, })
+    vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.exprnoremap(mode, lhs, rhs, desc, opts)
     opts = not opts and {} or opts
-    vim.keymap.set(mode, lhs, rhs, {silent = true, expr = true, desc = desc,
-        unpack(opts)})
+    local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
+        desc = desc, })
+    vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.exprmap(mode, lhs, rhs, desc, opts)
     opts = not opts and {} or opts
-    vim.keymap.set(mode, lhs, rhs, {silent = true, expr = true, desc = desc,
-        remap = true, unpack(opts)})
+    local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
+        desc = desc, remap = true, })
+    vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 
