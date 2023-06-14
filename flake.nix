@@ -120,12 +120,13 @@
             mini-nvim
             crates-nvim
             trouble-nvim
+            haskell-tools-nvim
+            lsp_extensions-nvim
             # Telescope
             telescope-nvim
             telescope-symbols-nvim
             telescope-zoxide
             popup-nvim
-            haskell-tools-nvim
           ] ++ customPlugins;
 
           extraPackages = with pkgs; [

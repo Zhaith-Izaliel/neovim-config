@@ -236,21 +236,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 -- Load LSP diagnostics for the project directory
 function Load_project_diagnostics()
-  local current_bufnr = vim.api.nvim_get_current_buf()
-  local params = {
-    textDocument = vim.lsp.util.make_text_document_params(current_bufnr)
-  }
-  vim.lsp.buf_request_all(0, 'textDocument/publishDiagnostics', params, function(_, _, result)
-    if not result then
-      return
-    end
-
-    -- Process the diagnostics as needed
-    -- Example: Print the diagnostic message
-    for _, diagnostic in ipairs(result.diagnostics) do
-      print(diagnostic.message)
-    end
-  end)
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    require('lsp_extensions.workspace.diagnostic').handler, {
+      signs = {
+        severity_limit = "Error",
+      }
+    }
+  )
 end
 
 Utils.command('LoadProjectDiagnostic', Load_project_diagnostics, {})
