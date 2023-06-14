@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, haskell-tools-nvim, ... }:
+  outputs = inputs @ { self, nixpkgs, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -60,7 +60,7 @@
         home.file.".config/nvim/lua".source = lua; # Import config
 
         nixpkgs.overlays = [
-          haskell-tools-nvim.overlays.default
+          inputs.haskell-tools-nvim.overlays.default
         ];
 
         # Doc Here:
@@ -125,7 +125,7 @@
             telescope-symbols-nvim
             telescope-zoxide
             popup-nvim
-            pkgs.haskell-tools-nvim
+            haskell-tools-nvim
           ] ++ customPlugins;
 
           extraPackages = with pkgs; [
