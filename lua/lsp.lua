@@ -237,11 +237,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Load LSP diagnostics for the project directory
 function Load_project_diagnostics()
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    require('lsp_extensions.workspace.diagnostic').handler, {
-      signs = {
-        severity_limit = "Error",
-      }
-    }
+    require('lsp_extensions.workspace.diagnostic').handler, {}
   )
 end
 
