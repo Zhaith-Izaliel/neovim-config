@@ -125,7 +125,7 @@
             telescope-symbols-nvim
             telescope-zoxide
             popup-nvim
-            haskell-tools-nvim."x86_64-linux".packages.default
+            pkgs.haskell-tools-nvim
           ] ++ customPlugins;
 
           extraPackages = with pkgs; [
