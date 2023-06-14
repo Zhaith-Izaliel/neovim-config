@@ -8,7 +8,10 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    haskell-tools-nvim.url = "github:MrcJkb/haskell-tools.nvim";
+    haskell-tools-nvim = {
+      url = "github:MrcJkb/haskell-tools.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, haskell-tools-nvim, ... }:
