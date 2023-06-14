@@ -137,7 +137,9 @@
         };
       }]);
     };
-    overlays.default = [ haskell-tools-nvim.overlays.default ];
+    overlays = {
+      haskell-tools-overlay = haskell-tools-nvim.overlays.default;
+    };
   };
 }
 
