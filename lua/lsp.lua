@@ -253,5 +253,5 @@ function Load_project_diagnostics()
   end)
 end
 
-Utils.command('LoadProjectDiagnostic', Load_project_diagnostics(), {})
+Utils.command('LoadProjectDiagnostic', Load_project_diagnostics, {})
 
