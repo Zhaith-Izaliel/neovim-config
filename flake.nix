@@ -59,6 +59,8 @@
       config = mkIf cfg.enable (mkMerge [{
         home.file.".config/nvim/lua".source = lua; # Import config
 
+        nixpkgs.overlays = [ haskell-tools-nvim.overlays.default ];
+
         # Doc Here:
         # https://github.com/NixOS/nixpkgs/blob/nixos-22.11/doc/languages-frameworks/vim.section.md
         programs.neovim = {
@@ -73,7 +75,6 @@
           omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"
           '' + init;
 
-          nixpkgs.overlays = [ haskell-tools-nvim.overlays.default ];
 
           plugins = with pkgs.vimPlugins; [
             nvim-treesitter.withAllGrammars
