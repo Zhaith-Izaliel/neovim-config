@@ -205,7 +205,10 @@ lspconfig.ltex.setup {
 ---Trouble---
 -------------
 
-require("trouble").setup {}
+require("trouble").setup {
+  use_diagnostic_signs = true,
+  mode = "workspace_diagnostics",
+}
 
 nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>", "Trouble: toggle.")
 nnoremap("<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
@@ -218,28 +221,4 @@ nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>",
   "Trouble: toggle loclist")
 nnoremap("gR", "<cmd>TroubleToggle lsp_references<cr>",
   "Trouble: get references of symbol under cursor." )
-
-
-------------------------------------
----Load Diagnostics for Workspace---
-------------------------------------
-
--- Set up diagnostics handling
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    virtual_text = false,
-    signs = true,
-    update_in_insert = false,
-  }
-)
-
--- Load LSP diagnostics for the project directory
-function Load_project_diagnostics()
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    require('lsp_extensions.workspace.diagnostic').handler, {}
-  )
-end
-
-Utils.command('LoadProjectDiagnostic', Load_project_diagnostics, {})
 
