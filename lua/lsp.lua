@@ -4,6 +4,7 @@
 
 -- Utils contains nvim-api keymap functions
 local Utils = require('utils')
+local nvim_lsp = require('nvim_lsp')
 
 -- local exprnnoremap = Utils.exprnnoremap
 local nnoremap = Utils.nnoremap
@@ -174,7 +175,8 @@ lspconfig.stylelint_lsp.setup { -- CSS/SCSS/Less
         ['no-descending-specificity'] = 'null',
       }
     }
-  }
+  },
+  root_dir = nvim_lsp.util.root_pattern('.git'),
 }
 
 -- lspconfig.tailwindcss.setup {} -- TailwindCSS
