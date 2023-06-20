@@ -83,8 +83,6 @@ function M.split (inputstr, sep)
     return t
 end
 
-function
-
 function M.command (name, command, opts)
     vim.api.nvim_create_user_command(name, command, opts)
 end
