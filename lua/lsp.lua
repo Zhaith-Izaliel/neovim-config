@@ -210,7 +210,7 @@ lspconfig.ltex.setup {
 -------------
 
 require("trouble").setup {
-  use_diagnostic_signs = true,
+  use_diagnostic_signs = false,
   mode = "workspace_diagnostics",
   signs = {
       -- icons / text used for a diagnostic
