@@ -131,7 +131,7 @@
       repo = "typescript-tools.nvim";
       owner = "pmizio";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-9h8JA8kfCk1IVEnjPbT5Un6WBWOFESObcSy054N/Kes=";
     };
   };
 }
