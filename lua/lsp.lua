@@ -113,6 +113,9 @@ rt.setup({
 -- Go
 require('go').setup {}
 
+-- Typescript
+require("typescript-tools").setup {}
+
 lspconfig.lua_ls.setup { -- Lua
   settings = {
     Lua = {
@@ -209,6 +212,14 @@ lspconfig.ltex.setup {
 require("trouble").setup {
   use_diagnostic_signs = true,
   mode = "workspace_diagnostics",
+  signs = {
+      -- icons / text used for a diagnostic
+      error = "",
+      warning = "",
+      hint = "",
+      information = "",
+      other = "",
+    },
 }
 
 nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>", "Trouble: toggle.")

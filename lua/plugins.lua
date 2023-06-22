@@ -174,8 +174,12 @@ exprmap({ 'i', 's' }, '<C-E>',
 require('nvim-surround').setup()
 
 -- Nabla
-nnoremap('<Leader>np', function() require('nabla').popup() end,
+nnoremap('<Leader>el', function() require('nabla').popup() end,
   'Nabla: show popup')
+
+-- Regexplainer
+nnoremap('<Leader>er', function() require('regexplainer').show() end,
+  'Regexplainer: show popup')
 
 -- Crates
 require('crates').setup {

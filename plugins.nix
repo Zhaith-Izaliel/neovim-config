@@ -113,5 +113,26 @@
     };
   };
 
+  nvim-regexplainer = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "nvim-regexplainer";
+    version = "ae651b1";
+    src = pkgs.fetchFromGitHub {
+      repo = pname;
+      owner = "bennypowers";
+      rev = version;
+      sha256 = "";
+    };
+  };
+
+  typescript-tools-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "typescript-tools-nvim";
+    version = "1a1fc8f";
+    src = pkgs.fetchFromGitHub {
+      repo = "typescript-tools.nvim";
+      owner = "pmizio";
+      rev = version;
+      sha256 = "";
+    };
+  };
 }
 
