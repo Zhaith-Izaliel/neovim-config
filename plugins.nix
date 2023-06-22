@@ -120,7 +120,7 @@
       repo = pname;
       owner = "bennypowers";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-mixYVzYJ8yyutu5XkhFvqwDG5mLQ5wE1ySMfyPIZnhE=";
     };
   };
 
