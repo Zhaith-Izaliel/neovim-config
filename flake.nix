@@ -36,12 +36,10 @@
       };
       init = builtins.readFile "${configPackage}/init.lua";
       lua = lib.sources.cleanSource "${configPackage}/lua";
-      customPlugins = lib.attrsets.mapAttrsToList
-      (key: value: value)
-      (import ./plugins.nix { inherit pkgs lib; });
-      lsp-servers = lib.attrsets.mapAttrsToList
-      (key: value: value)
-      (import ./lsp-servers.nix { inherit pkgs stdenv; nodejs = pkgs.nodejs; });
+      lsp-servers = (import ./packages/lspservers { inherit pkgs stdenv; });
+      dependencies = (import ./packages/dependencies { inherit pkgs; });
+      extraPackages = lsp-servers ++ dependencies;
+      plugins = (import ./packages/plugins { inherit pkgs lib; });
     in
     {
       options = {
@@ -66,6 +64,7 @@
         # Doc Here:
         # https://github.com/NixOS/nixpkgs/blob/nixos-22.11/doc/languages-frameworks/vim.section.md
         programs.neovim = {
+          inherit plugins extraPackages;
           enable = true;
           withNodeJs = true;
           withPython3 = true;
@@ -76,68 +75,6 @@
 
           omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"
           '' + init;
-
-
-          plugins = with pkgs.vimPlugins; [
-            nvim-treesitter.withAllGrammars
-            nvim-treesitter-context
-            vim-sleuth
-            {
-              plugin = sqlite-lua;
-              config = ''
-              let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.so'
-              '';
-            }
-            nvim-neoclip-lua
-            nvim-lspconfig
-            go-nvim
-            nvim-surround
-            vim-illuminate
-            nvim-dap
-            nvim-dap-ui
-            nui-nvim
-            vim-kitty-navigator
-            gitsigns-nvim
-            nvim-colorizer-lua
-            vim-nix
-            go-nvim
-            todo-comments-nvim
-            comment-nvim
-            luasnip
-            nvim-web-devicons
-            plenary-nvim
-            rest-nvim
-            catppuccin-nvim
-            galaxyline-nvim
-            alpha-nvim
-            mkdir-nvim
-            yankring
-            coq-artifacts
-            undotree
-            which-key-nvim
-            markdown-preview-nvim
-            vim-markdown-toc
-            mini-nvim
-            crates-nvim
-            haskell-tools-nvim
-            lsp_extensions-nvim
-            # Telescope
-            telescope-nvim
-            telescope-symbols-nvim
-            telescope-zoxide
-            popup-nvim
-          ] ++ customPlugins;
-
-          extraPackages = with pkgs; [
-            graphviz
-            universal-ctags
-            watchman
-            python310Packages.virtualenv
-            ripgrep
-            dotnet-sdk
-            viu
-            xclip
-          ] ++ lsp-servers;
         };
       }]);
     };
