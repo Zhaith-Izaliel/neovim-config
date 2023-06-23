@@ -142,7 +142,7 @@
       repo = "trouble.nvim";
       owner = "folke";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-peIrqhR7khH7P7oivJRnZcC1PZACVSHFk9FPrQX7nBU=";
     };
   };
 }
