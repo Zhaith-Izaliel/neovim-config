@@ -142,7 +142,7 @@
       repo = "cspell.nvim";
       owner = "davidmh";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-wPzivrgKK22baYEqCOTpPbeXNtwGWsN4z08OoKYcxPM=";
     };
   };
 
