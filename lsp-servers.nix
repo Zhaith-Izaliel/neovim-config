@@ -1,5 +1,8 @@
 { lib, pkgs, stdenv, nodejs }:
 
+let
+  other-servers = (import ./packages/lspservers { inherit pkgs stdenv nodejs lib; });
+in
 {
   nil = pkgs.nil;
 
@@ -25,6 +28,6 @@
 
   ltex = pkgs.ltex-ls;
 
-  other-servers = (import ./packages/lspservers { inherit pkgs stdenv nodejs lib; });
+  stylelint-lsp = other-servers.stylelint-lsp;
 }
 
