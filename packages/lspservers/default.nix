@@ -20,10 +20,10 @@ with pkgs; [
   cmake-language-server
   omnisharp-roslyn
   ltex-ls
-  commitlint
   nodePackages.cspell
   nodejs-servers.stylelint-lsp
   nodejs-servers."@commitlint/config-conventional"
+  nodejs-servers."@commitlint/cli"
   nodejs-servers.commitlint-format-json
 ]
 
