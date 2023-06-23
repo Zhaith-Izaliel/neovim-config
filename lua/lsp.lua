@@ -9,6 +9,38 @@ local Utils = require('utils')
 local nnoremap = Utils.nnoremap
 local noremap = Utils.noremap
 
+-------------
+---Trouble---
+-------------
+
+require('trouble').setup {
+  use_diagnostic_signs = false,
+  mode = 'workspace_diagnostics',
+  fold_open = '', -- icon used for open folds
+  fold_closed = '', -- icon used for closed folds
+  signs = {
+      -- icons / text used for a diagnostic
+      error = '',
+      warning = '',
+      hint = '',
+      information = '',
+      other = '',
+    },
+}
+
+nnoremap('<leader>xx', '<cmd>TroubleToggle<cr>', 'Trouble: toggle.')
+nnoremap('<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>',
+  'Trouble: toggle workspace diagnostics' )
+nnoremap('<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>',
+  'Trouble: toggle document diagnostics')
+nnoremap('<leader>xq', '<cmd>TroubleToggle quickfix<cr>',
+  'Trouble: quickfix.' )
+nnoremap('<leader>xl', '<cmd>TroubleToggle loclist<cr>',
+  'Trouble: toggle loclist')
+nnoremap('gR', '<cmd>TroubleToggle lsp_references<cr>',
+  'Trouble: get references of symbol under cursor.' )
+
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -204,35 +236,4 @@ lspconfig.ltex.setup {
     },
   },
 }
-
--------------
----Trouble---
--------------
-
-require('trouble').setup {
-  use_diagnostic_signs = false,
-  mode = 'workspace_diagnostics',
-  fold_open = '', -- icon used for open folds
-  fold_closed = '', -- icon used for closed folds
-  signs = {
-      -- icons / text used for a diagnostic
-      error = '',
-      warning = '',
-      hint = '',
-      information = '',
-      other = '',
-    },
-}
-
-nnoremap('<leader>xx', '<cmd>TroubleToggle<cr>', 'Trouble: toggle.')
-nnoremap('<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>',
-  'Trouble: toggle workspace diagnostics' )
-nnoremap('<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>',
-  'Trouble: toggle document diagnostics')
-nnoremap('<leader>xq', '<cmd>TroubleToggle quickfix<cr>',
-  'Trouble: quickfix.' )
-nnoremap('<leader>xl', '<cmd>TroubleToggle loclist<cr>',
-  'Trouble: toggle loclist')
-nnoremap('gR', '<cmd>TroubleToggle lsp_references<cr>',
-  'Trouble: get references of symbol under cursor.' )
 
