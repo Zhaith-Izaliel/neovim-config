@@ -41,7 +41,7 @@
       (import ./plugins.nix { inherit pkgs lib; });
       lsp-servers = lib.attrsets.mapAttrsToList
       (key: value: value)
-      (import ./lsp-servers.nix { inherit pkgs lib stdenv; nodejs = pkgs.nodejs; });
+      (import ./lsp-servers.nix { inherit pkgs stdenv; nodejs = pkgs.nodejs; });
     in
     {
       options = {

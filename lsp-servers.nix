@@ -1,7 +1,7 @@
-{ lib, pkgs, stdenv, nodejs }:
+{ pkgs, stdenv, nodejs }:
 
 let
-  other-servers = (import ./packages/lspservers { inherit pkgs stdenv nodejs lib; });
+  other-servers = (import ./packages/lspservers { inherit pkgs stdenv nodejs; });
 in
 {
   nil = pkgs.nil;

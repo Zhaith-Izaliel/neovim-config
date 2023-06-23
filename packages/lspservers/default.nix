@@ -1,4 +1,4 @@
-{ pkgs, nodejs, stdenv, lib }:
+{ pkgs, nodejs, stdenv }:
 
 let
   nodePackages = final: import ./composition.nix {
@@ -6,5 +6,5 @@ let
     inherit (stdenv.hostPlatform) system;
   };
 in
-  nodePackages
+  pkgs.callPackage nodePackages
 
