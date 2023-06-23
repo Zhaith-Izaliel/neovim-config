@@ -134,5 +134,16 @@
       sha256 = "sha256-9h8JA8kfCk1IVEnjPbT5Un6WBWOFESObcSy054N/Kes=";
     };
   };
+
+  trouble-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "trouble-nvim";
+    version = "a3372bd";
+    src = pkgs.fetchFromGitHub {
+      repo = "trouble.nvim";
+      owner = "folke";
+      rev = version;
+      sha256 = "";
+    };
+  };
 }
 

@@ -119,7 +119,6 @@
             vim-markdown-toc
             mini-nvim
             crates-nvim
-            trouble-nvim
             haskell-tools-nvim
             lsp_extensions-nvim
             # Telescope
