@@ -25,6 +25,6 @@
 
   ltex = pkgs.ltex-ls;
 
-  other-servers = (import ./packages/lspservers { inherit pkgs lib stdenv nodejs; });
+  other-servers = (import ./packages/lspservers { inherit pkgs stdenv nodejs; });
 }
 
