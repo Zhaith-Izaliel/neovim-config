@@ -14,6 +14,8 @@ in
 
   vscode-langsevers = pkgs.nodePackages.vscode-langservers-extracted; # CSS, HTML, JSON, ESLint
 
+  typescript-lsp = pkgs.nodePackages.typescript-language-server;
+
   haskell-language-server = pkgs.haskell-language-server;
 
   vls = pkgs.nodePackages.vls;
