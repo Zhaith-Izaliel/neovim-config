@@ -24,5 +24,7 @@
   omnisharp = pkgs.omnisharp-roslyn;
 
   ltex = pkgs.ltex-ls;
+
+  other-servers = (import ./packages/lspservers { inherit pkgs; });
 }
 

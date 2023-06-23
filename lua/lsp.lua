@@ -45,8 +45,8 @@ local lspconfig = require('lspconfig')
 -- Rust
 -- Helpers for rust-tools
 local function ensure_uri_scheme(uri)
-    if not vim.startswith(uri, "file://") then
-        return "file://" .. uri
+    if not vim.startswith(uri, 'file://') then
+        return 'file://' .. uri
     end
     return uri
 end
@@ -82,7 +82,7 @@ rt.setup({
     end,
     server = {
       handlers = {
-        ["textDocument/publishDiagnostics"] =
+        ['textDocument/publishDiagnostics'] =
           function(err, method, result, client_id, bufnr, config)
             if not result or not result.uri then
               return
@@ -114,7 +114,7 @@ rt.setup({
 require('go').setup {}
 
 -- Typescript
-require("typescript-tools").setup {}
+require('typescript-tools').setup {}
 
 lspconfig.lua_ls.setup { -- Lua
   settings = {
@@ -129,7 +129,7 @@ lspconfig.lua_ls.setup { -- Lua
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = vim.api.nvim_get_runtime_file('', true),
         checkThirdParty = false
       },
       -- Do not send telemetry data containing a randomized but unique identifier
@@ -146,9 +146,9 @@ lspconfig.nil_ls.setup {} -- Nix
 
 lspconfig.eslint.setup { -- JS/TS
   on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
-      command = "EslintFixAll",
+      command = 'EslintFixAll',
     })
   end,
 }
@@ -200,7 +200,7 @@ lspconfig.omnisharp.setup {
 lspconfig.ltex.setup {
   settings = {
     ltex = {
-      language = "en-US",
+      language = 'en-US',
     },
   },
 }
@@ -209,28 +209,30 @@ lspconfig.ltex.setup {
 ---Trouble---
 -------------
 
-require("trouble").setup {
+require('trouble').setup {
   use_diagnostic_signs = false,
-  mode = "workspace_diagnostics",
+  mode = 'workspace_diagnostics',
+  fold_open = '', -- icon used for open folds
+  fold_closed = '', -- icon used for closed folds
   signs = {
       -- icons / text used for a diagnostic
-      error = "",
-      warning = "",
-      hint = "",
-      information = "",
-      other = "",
+      error = '',
+      warning = '',
+      hint = '',
+      information = '',
+      other = '',
     },
 }
 
-nnoremap("<leader>xx", "<cmd>TroubleToggle<cr>", "Trouble: toggle.")
-nnoremap("<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
-  "Trouble: toggle workspace diagnostics" )
-nnoremap("<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
-  "Trouble: toggle document diagnostics")
-nnoremap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
-  "Trouble: quickfix." )
-nnoremap("<leader>xl", "<cmd>TroubleToggle loclist<cr>",
-  "Trouble: toggle loclist")
-nnoremap("gR", "<cmd>TroubleToggle lsp_references<cr>",
-  "Trouble: get references of symbol under cursor." )
+nnoremap('<leader>xx', '<cmd>TroubleToggle<cr>', 'Trouble: toggle.')
+nnoremap('<leader>xw', '<cmd>TroubleToggle workspace_diagnostics<cr>',
+  'Trouble: toggle workspace diagnostics' )
+nnoremap('<leader>xd', '<cmd>TroubleToggle document_diagnostics<cr>',
+  'Trouble: toggle document diagnostics')
+nnoremap('<leader>xq', '<cmd>TroubleToggle quickfix<cr>',
+  'Trouble: quickfix.' )
+nnoremap('<leader>xl', '<cmd>TroubleToggle loclist<cr>',
+  'Trouble: toggle loclist')
+nnoremap('gR', '<cmd>TroubleToggle lsp_references<cr>',
+  'Trouble: get references of symbol under cursor.' )
 
