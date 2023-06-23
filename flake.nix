@@ -23,7 +23,7 @@
   in
   with nixpkgs.lib;
   {
-    nixosModules.default = { config, lib, ... }:
+    nixosModules.default = { config, lib, stdenv, ... }:
     let
       cfg = config.programs.neovim.zhaith-config;
       configPackage = pkgs.stdenv.mkDerivation {
@@ -41,7 +41,7 @@
       (import ./plugins.nix { inherit pkgs lib; });
       lsp-servers = lib.attrsets.mapAttrsToList
       (key: value: value)
-      (import ./lsp-servers.nix { inherit pkgs lib; });
+      (import ./lsp-servers.nix { inherit pkgs lib stdenv; nodejs = pkgs.nodejs; });
     in
     {
       options = {

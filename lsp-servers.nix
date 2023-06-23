@@ -1,4 +1,4 @@
-{ lib, pkgs }:
+{ lib, pkgs, stdenv, nodejs }:
 
 {
   nil = pkgs.nil;
@@ -25,6 +25,6 @@
 
   ltex = pkgs.ltex-ls;
 
-  other-servers = (import ./packages/lspservers { inherit pkgs; });
+  other-servers = (import ./packages/lspservers { inherit pkgs lib stdenv nodejs; });
 }
 
