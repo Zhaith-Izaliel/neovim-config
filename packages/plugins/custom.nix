@@ -134,5 +134,17 @@
       sha256 = "sha256-9h8JA8kfCk1IVEnjPbT5Un6WBWOFESObcSy054N/Kes=";
     };
   };
+
+  cpsell-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "cspell-nvim";
+    version = "0e9c586";
+    src = pkgs.fetchFromGitHub {
+      repo = "cspell.nvim";
+      owner = "davidmh";
+      rev = version;
+      sha256 = "";
+    };
+  };
+
 }
 

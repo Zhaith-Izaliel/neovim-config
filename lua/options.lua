@@ -21,9 +21,9 @@ vim.o.laststatus = 3 -- Status line for focused window only
 
 -- Indentation
 vim.o.ai = true
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = TABSIZE
+vim.o.softtabstop = TABSIZE
+vim.o.shiftwidth = TABSIZE
 vim.o.shiftround = true
 vim.o.expandtab = true
 vim.o.autoindent = true
@@ -46,3 +46,4 @@ vim.diagnostic.config {
   underline = true,
   signs = true,          -- Keep gutter signs
 }
+
