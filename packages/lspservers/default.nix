@@ -5,13 +5,11 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  nodeDependencies = (pkgs.callPackage ./nodejs/composition.nix {}).commitlint-format-json.nodeDependencies;
-  overriden-commitlint = nodejs-servers."@commitlint/cli".overrideAttrs(final: prev: {
-    buildPhase = ''
-      ln -s ${nodeDependencies}/lib/node_modules ./node_modules
-      export PATH="${nodeDependencies}/bin:$PATH"
-
-    '' + prev.buildPhase;
+  overriden-commitlint = nodejs-servers."@commitlint/cli".override({
+    buildInputs = [
+      nodejs-servers.commitlint-format-json
+      nodejs-servers."@commitlint/config-conventional"
+    ];
   });
 in
 with pkgs; [
@@ -31,8 +29,6 @@ with pkgs; [
   nodePackages.cspell
   nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
-  nodejs-servers."@commitlint/config-conventional"
-  nodejs-servers.commitlint-format-json
   overriden-commitlint
 ]
 
