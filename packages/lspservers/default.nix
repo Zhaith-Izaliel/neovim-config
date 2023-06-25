@@ -6,6 +6,13 @@ let
     nodejs = pkgs.nodejs;
   });
   nodeDependencies = (pkgs.callPackage ./nodejs/composition.nix {}).nodeDependencies;
+  overriden-commitlint = nodejs-servers."@commitlint/cli".overrideAttrs(final: prev: {
+    buildPhase = ''
+      ln -s ${nodeDependencies}/lib/node_modules ./node_modules
+      export PATH="${nodeDependencies}/bin:$PATH"
+
+    '' + prev.buildPhase;
+  });
 in
 with pkgs; [
   nil
@@ -25,12 +32,7 @@ with pkgs; [
   nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
   nodejs-servers."@commitlint/config-conventional"
-  nodejs-servers."@commitlint/cli".overrideAttrs(final: prev: {
-    buildPhase = ''
-      ln -s ${nodeDependencies}/lib/node_modules ./node_modules
-      export PATH="${nodeDependencies}/bin:$PATH"
-    '' + prev.buildPhase;
-  })
   nodejs-servers.commitlint-format-json
+  overriden-commitlint
 ]
 
