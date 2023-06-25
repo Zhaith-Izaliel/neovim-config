@@ -274,13 +274,13 @@ let
         sha512 = "Ldzf5N2Sr9RQqvlYwaQn4vz1WOZ7byYinspC/WCrbfcETGy28j7QE4OueZU6nNB9TjwwEorKm13uy7tDWPR7dg==";
       };
     };
-    "@commitlint/is-ignored-17.6.5" = {
+    "@commitlint/is-ignored-17.6.6" = {
       name = "_at_commitlint_slash_is-ignored";
       packageName = "@commitlint/is-ignored";
-      version = "17.6.5";
+      version = "17.6.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@commitlint/is-ignored/-/is-ignored-17.6.5.tgz";
-        sha512 = "CQvAPt9gX7cuUbMrIaIMKczfWJqqr6m8IlJs0F2zYwyyMTQ87QMHIj5jJ5HhOaOkaj6dvTMVGx8Dd1I4xgUuoQ==";
+        url = "https://registry.npmjs.org/@commitlint/is-ignored/-/is-ignored-17.6.6.tgz";
+        sha512 = "4Fw875faAKO+2nILC04yW/2Vy/wlV3BOYCSQ4CEFzriPEprc1Td2LILmqmft6PDEK5Sr14dT9tEzeaZj0V56Gg==";
       };
     };
     "@commitlint/is-ignored-7.6.0" = {
@@ -292,13 +292,13 @@ let
         sha512 = "By/mLNhz+6Rtix9+Kyof1gdKiELchAnQHpdeKIHIOe9sjbvd3HqDoFHh/mGMMRnGIPMZOX5TO8Fqy3A/2HqlTw==";
       };
     };
-    "@commitlint/lint-17.6.5" = {
+    "@commitlint/lint-17.6.6" = {
       name = "_at_commitlint_slash_lint";
       packageName = "@commitlint/lint";
-      version = "17.6.5";
+      version = "17.6.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@commitlint/lint/-/lint-17.6.5.tgz";
-        sha512 = "BSJMwkE4LWXrOsiP9KoHG+/heSDfvOL/Nd16+ojTS/DX8HZr8dNl8l3TfVr/d/9maWD8fSegRGtBtsyGuugFrw==";
+        url = "https://registry.npmjs.org/@commitlint/lint/-/lint-17.6.6.tgz";
+        sha512 = "5bN+dnHcRLkTvwCHYMS7Xpbr+9uNi0Kq5NR3v4+oPNx6pYXt8ACuw9luhM/yMgHYwW0ajIR20wkPAFkZLEMGmg==";
       };
     };
     "@commitlint/lint-7.6.0" = {
@@ -1507,13 +1507,13 @@ let
         sha512 = "QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==";
       };
     };
-    "electron-to-chromium-1.4.439" = {
+    "electron-to-chromium-1.4.440" = {
       name = "electron-to-chromium";
       packageName = "electron-to-chromium";
-      version = "1.4.439";
+      version = "1.4.440";
       src = fetchurl {
-        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.439.tgz";
-        sha512 = "BHpErPSNhb9FB25+OwQP6mCAf3ZXfGbmuvc4LzBNVJwpCcXQJm++LerimocYRG9FRxUVRKZqaB7d0+pImSTPSg==";
+        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.440.tgz";
+        sha512 = "r6dCgNpRhPwiWlxbHzZQ/d9swfPaEJGi8ekqRBwQYaR3WmA5VkqQfBWSDDjuJU1ntO+W9tHx8OHV/96Q8e0dVw==";
       };
     };
     "emoji-regex-8.0.0" = {
@@ -3559,13 +3559,13 @@ let
         sha512 = "b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==";
       };
     };
-    "semver-7.5.0" = {
+    "semver-7.5.2" = {
       name = "semver";
       packageName = "semver";
-      version = "7.5.0";
+      version = "7.5.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/semver/-/semver-7.5.0.tgz";
-        sha512 = "+XC0AD/R7Q2mPSRuy2Id0+CGTZ98+8f+KvwirxOKIEyid+XSx6HbC63p+O4IndTHuX5Z+JxQ0TghCkO5Cg/2HA==";
+        url = "https://registry.npmjs.org/semver/-/semver-7.5.2.tgz";
+        sha512 = "SoftuTROv/cRjCze/scjGyiDtcUyxw1rgYQSZY7XTmtR5hX+dm76iDbTH8TkLPHCQmlbQVSSbNZCPM2hb0knnQ==";
       };
     };
     "semver-7.5.3" = {
@@ -4446,7 +4446,7 @@ in
       sources."domelementtype-1.3.1"
       sources."domhandler-2.4.2"
       sources."domutils-1.7.0"
-      sources."electron-to-chromium-1.4.439"
+      sources."electron-to-chromium-1.4.440"
       sources."emoji-regex-8.0.0"
       sources."entities-1.1.2"
       sources."error-ex-1.3.2"
@@ -4686,10 +4686,10 @@ in
   "@commitlint/config-conventional" = nodeEnv.buildNodePackage {
     name = "_at_commitlint_slash_config-conventional";
     packageName = "@commitlint/config-conventional";
-    version = "17.6.5";
+    version = "17.6.6";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@commitlint/config-conventional/-/config-conventional-17.6.5.tgz";
-      sha512 = "Xl9H9KLl86NZm5CYNTNF9dcz1xelE/EbvhWIWcYxG/rn3UWYWdWmmnX2q6ZduNdLFSGbOxzUpIx61j5zxbeXxg==";
+      url = "https://registry.npmjs.org/@commitlint/config-conventional/-/config-conventional-17.6.6.tgz";
+      sha512 = "phqPz3BDhfj49FUYuuZIuDiw+7T6gNAEy7Yew1IBHqSohVUCWOK2FXMSAExzS2/9X+ET93g0Uz83KjiHDOOFag==";
     };
     dependencies = [
       sources."array-ify-1.0.0"
@@ -4904,10 +4904,10 @@ in
   "@commitlint/cli" = nodeEnv.buildNodePackage {
     name = "_at_commitlint_slash_cli";
     packageName = "@commitlint/cli";
-    version = "17.6.5";
+    version = "17.6.6";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@commitlint/cli/-/cli-17.6.5.tgz";
-      sha512 = "3PQrWr/uo6lzF5k7n5QuosCYnzaxP9qGBp3jhWP0Vmsa7XA6wrl9ccPqfQyXpSbQE3zBROVO3TDqgPKe4tfmLQ==";
+      url = "https://registry.npmjs.org/@commitlint/cli/-/cli-17.6.6.tgz";
+      sha512 = "sTKpr2i/Fjs9OmhU+beBxjPavpnLSqZaO6CzwKVq2Tc4UYVTMFgpKOslDhUBVlfAUBfjVO8ParxC/MXkIOevEA==";
     };
     dependencies = [
       sources."@babel/code-frame-7.22.5"
@@ -4926,8 +4926,8 @@ in
       sources."@commitlint/ensure-17.4.4"
       sources."@commitlint/execute-rule-17.4.0"
       sources."@commitlint/format-17.4.4"
-      sources."@commitlint/is-ignored-17.6.5"
-      sources."@commitlint/lint-17.6.5"
+      sources."@commitlint/is-ignored-17.6.6"
+      sources."@commitlint/lint-17.6.6"
       sources."@commitlint/load-17.5.0"
       sources."@commitlint/message-17.4.2"
       sources."@commitlint/parse-17.6.5"
@@ -5101,7 +5101,7 @@ in
       sources."resolve-from-5.0.0"
       sources."resolve-global-1.0.0"
       sources."safe-buffer-5.2.1"
-      sources."semver-7.5.0"
+      sources."semver-7.5.2"
       sources."shebang-command-2.0.0"
       sources."shebang-regex-3.0.0"
       sources."signal-exit-3.0.7"
