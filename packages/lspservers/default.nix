@@ -5,6 +5,7 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
+  nodeDependencies = (pkgs.callPackage ./nodejs/composition.nix {}).nodeDependencies;
 in
 with pkgs; [
   nil
@@ -21,9 +22,15 @@ with pkgs; [
   omnisharp-roslyn
   ltex-ls
   nodePackages.cspell
+  nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
   nodejs-servers."@commitlint/config-conventional"
-  nodejs-servers."@commitlint/cli"
+  nodejs-servers."@commitlint/cli".overrideAttrs(final: prev: {
+    buildPhase = ''
+      ln -s ${nodeDependencies}/lib/node_modules ./node_modules
+      export PATH="${nodeDependencies}/bin:$PATH"
+    '' + prev.buildPhase;
+  })
   nodejs-servers.commitlint-format-json
 ]
 
