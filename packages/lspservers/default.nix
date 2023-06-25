@@ -5,7 +5,7 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  nodeDependencies = (pkgs.callPackage import ./nodejs {
+  nodeDependencies = (pkgs.callPackage ./nodejs {
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   }).nodeDependencies;
