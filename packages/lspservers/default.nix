@@ -5,11 +5,10 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  nodeDependencies = (pkgs.callPackage ./nodejs/composition.nix {}).nodeDependencies;
   overriden-commitlint = nodejs-servers."@commitlint/cli".overrideAttrs(final: prev: {
     buildPhase = ''
-      ln -s ${nodeDependencies}/lib/node_modules ./node_modules
-      export PATH="${nodeDependencies}/bin:$PATH"
+      ln -s ${nodejs-servers.nodeDependencies}/lib/node_modules ./node_modules
+      export PATH="${nodejs-servers.nodeDependencies}/bin:$PATH"
 
     '' + prev.buildPhase;
   });
