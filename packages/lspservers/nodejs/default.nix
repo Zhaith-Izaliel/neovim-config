@@ -8,13 +8,10 @@ let
   commitlint-format-json = nodePackages.commitlint-format-json;
 in
 nodePackages // {
-  commitlint = nodePackages."@commitlint/cli".overrideAttrs (finalAttrs:
-  prevAttrs: {
+  commitlint = nodePackages."@commitlint/cli".override {
     buildPhase = ''
     ln -s ${commitlint-format-json}/lib/node_modules ./node_modules
-    export PATH="${commitlint-format-json}/bin:$PATH"
-
-    '' + prevAttrs.buildPhase;
-  });
+    '';
+  };
 }
 
