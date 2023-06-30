@@ -5,6 +5,7 @@
 -- Gui
 vim.o.termguicolors = true
 vim.o.number = true
+vim.o.relativenumber = true
 vim.o.numberwidth = 3
 vim.o.history = 100
 vim.o.ruler = true
