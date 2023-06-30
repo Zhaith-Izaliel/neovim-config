@@ -11,7 +11,9 @@ nodePackages // {
   commitlint = nodePackages."@commitlint/cli".overrideAttrs (finalAttrs:
   prevAttrs: {
     buildPhase = ''
-      ln -s ${commitlint-format-json}/lib/node_modules $out/node_modules
+    ln -s ${commitlint-format-json}/lib/node_modules ./node_modules
+    export PATH="${commitlint-format-json}/bin:$PATH"
+
     '' + prevAttrs.buildPhase;
   });
 }
