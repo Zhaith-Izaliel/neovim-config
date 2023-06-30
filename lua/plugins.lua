@@ -24,7 +24,7 @@ noremap('x', '<leader>s', function() require('pounce').pounce {} end,
   'Pounce: Search.')
 noremap('o', '<leader>gs', function() require('pounce').pounce {} end,
   'Pounce: Search.')
-nnoremap('<leader>S', function() require('pounce').pounce { input = { reg = "/" } } end
+nnoremap('<leader>S', function() require('pounce').pounce { input = { reg = '/' } } end
   , 'Pounce: Search with regex.')
 
 
@@ -186,8 +186,26 @@ require('crates').setup {
   src = {
     coq = {
       enabled = true,
-      name = "crates.nvim",
+      name = 'crates.nvim',
     },
+  },
+}
+
+-- Hardtime
+require('hardtime').setup {
+  restricted_keys = {
+    ['<UP>'] = { 'n', 'v' },
+    ['<DOWN>'] = { 'n', 'v' },
+    ['<LEFT>'] = { 'n', 'v' },
+    ['<RIGHT>'] = { 'n', 'v' },
+    ['-'] = { 'n', 'v' },
+    ['+'] = { 'n', 'v' },
+    ['gj'] = { 'n', 'v' },
+    ['gk'] = { 'n', 'v' },
+    ['<CR>'] = { 'n', 'v' },
+    ['<C-M>'] = { 'n', 'v' },
+    ['<C-N>'] = { 'n', 'v' },
+    ['<C-P>'] = { 'n', 'v' },
   },
 }
 

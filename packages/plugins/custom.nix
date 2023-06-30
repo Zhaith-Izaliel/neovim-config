@@ -134,5 +134,17 @@
       sha256 = "sha256-9h8JA8kfCk1IVEnjPbT5Un6WBWOFESObcSy054N/Kes=";
     };
   };
+
+  hardtime-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "hardtime-nvim";
+    version = "6346329";
+    src = pkgs.fetchFromGitHub {
+      repo = "hardtime.nvim";
+      owner = "m4xshen";
+      rev = version;
+      sha256 = "";
+    };
+  };
+
 }
 
