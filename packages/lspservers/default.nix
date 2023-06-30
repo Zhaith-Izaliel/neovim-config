@@ -11,7 +11,7 @@ let
     buildPhase = ''
     ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules ./node_modules
 
-    '' ++ prev.buildPhase;
+    '' + prev.buildPhase;
   });
 in
 with pkgs; [
