@@ -5,9 +5,7 @@ let
     inherit pkgs nodejs;
     inherit (stdenv.hostPlatform) system;
   };
-  commitlint-format-json = nodePackages.commitlint-format-json.override {
-    dontNpmInstall = true;
-  };
+  commitlint-format-json = nodePackages.commitlint-format-json;
 in
 nodePackages // {
   commitlint = nodePackages."@commitlint/cli".overrideAttrs (finalAttrs:
