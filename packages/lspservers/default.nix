@@ -5,6 +5,11 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
+  commitlint-override = nodejs-servers."@commitlint/cli".override {
+    buildPhase = ''
+    ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules ./node_modules
+    '';
+  };
 in
 with pkgs; [
   nil
@@ -23,6 +28,6 @@ with pkgs; [
   nodePackages.cspell
   nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
-  nodejs-servers.commitlint
+  commitlint-override
 ]
 
