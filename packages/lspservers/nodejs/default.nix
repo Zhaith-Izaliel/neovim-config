@@ -6,5 +6,9 @@ let
     inherit (stdenv.hostPlatform) system;
   };
 in
-  nodePackages
+  nodePackages // {
+    commitlint = nodePackages."@commitlint/cli".override {
+      buildInputs = [ nodePackages.commitlint-format-json ];
+    };
+  }
 
