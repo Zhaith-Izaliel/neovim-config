@@ -10,8 +10,11 @@ let
   };
 in
 nodePackages // {
-  commitlint = nodePackages."@commitlint/cli".override {
-    buildInputs = [ commitlint-format-json ];
-  };
+  commitlint = nodePackages."@commitlint/cli".overrideAttrs (finalAttrs:
+  prevAttrs: {
+    buildPhase = ''
+      ln -s ${commitlint-format-json}/lib/node_modules ./node_modules
+    '' + prevAttrs.buildPhase;
+  });
 }
 
