@@ -5,11 +5,14 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  commitlint-override = nodejs-servers."@commitlint/cli".override {
+  commitlint-override = nodejs-servers."@commitlint/cli".overrideAttrs (final:
+  prev: {
+    buildInputs = [ nodejs-servers.commitlint-format-json ] ++ prev.buildInputs;
     buildPhase = ''
     ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules ./node_modules
-    '';
-  };
+
+    '' ++ prev.buildPhase;
+  });
 in
 with pkgs; [
   nil
