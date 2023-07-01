@@ -5,19 +5,6 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  commitlint-override = pkgs.commitlint.overrideAttrs (final:
-  prev: {
-    nativeBuildInputs = [
-      nodejs-servers."@commitlint/config-conventional"
-      nodejs-servers.commitlint-format-json
-    ];
-    installPhase = prev.installPhase + ''
-    mkdir -p $out/node_modules
-
-    ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules/* $out/node_modules
-    ln -s ${nodejs-servers."@commitlint/config-conventional"}/lib/node_modules/* $out/node_modules
-    '';
-  });
 in
 with pkgs; [
   nil
@@ -25,7 +12,8 @@ with pkgs; [
   sumneko-lua-language-server
   rust-analyzer
   nodePackages.vscode-langservers-extracted # CSS, HTML, JSON, ESLint
-  nodePackages.typescript-language-server
+  nodePackages.typescript
+  nodePackages.eslint
   haskell-language-server
   nodePackages.vls
   ccls
@@ -33,9 +21,8 @@ with pkgs; [
   cmake-language-server
   omnisharp-roslyn
   ltex-ls
-  nodePackages.cspell
   nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
-  commitlint-override
+  commitlint
 ]
 
