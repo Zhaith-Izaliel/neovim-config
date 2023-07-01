@@ -12,9 +12,9 @@ let
       nodejs-servers.commitlint-format-json
     ];
     installPhase = prev.installPhase + ''
-
-    ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules $out/node_modules
-    ln -s ${nodejs-servers."@commitlint/config-conventional"}/lib/node_modules $out/node_modules
+    mkdir -p $out/node_modules
+    ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules/* $out/node_modules
+    ln -s ${nodejs-servers."@commitlint/config-conventional"}/lib/node_modules/* $out/node_modules
     '';
   });
 in
