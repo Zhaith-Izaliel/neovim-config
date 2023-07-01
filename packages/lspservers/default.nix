@@ -7,7 +7,7 @@ let
   });
   commitlint-override = nodejs-servers."@commitlint/cli".overrideAttrs (final:
   prev: {
-    buildInputs = [ nodejs-servers.commitlint-format-json ] + prev.buildInputs;
+    buildInputs = [ nodejs-servers.commitlint-format-json ] ++ prev.buildInputs;
     installPhase = prev.installPhase + ''
 
       mkdir -p $out/node_modules
