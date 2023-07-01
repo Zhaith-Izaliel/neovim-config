@@ -57,7 +57,7 @@
       config = mkIf cfg.enable (mkMerge [{
         home.file = {
           ".config/nvim/lua".source = lua; # Import config
-          ".commitlintrc.js".source = lsp-servers.files.commitlintrc;
+          ".commitlintrc.js".text = lsp-servers.files.commitlintrc;
         };
 
         nixpkgs.overlays = [
