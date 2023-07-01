@@ -8,6 +8,8 @@ end
 
 NOTES_DIRECTORY = os.getenv('HOME') .. '/Notes'
 
+HOME_DIRECTORY = os.getenv('HOME')
+
 LAST_COLUMN = 80
 
 TABSIZE = 2

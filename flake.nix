@@ -38,7 +38,7 @@
       lua = lib.sources.cleanSource "${configPackage}/lua";
       lsp-servers = (import ./packages/lspservers { inherit pkgs stdenv; });
       dependencies = (import ./packages/dependencies { inherit pkgs; });
-      extraPackages = lsp-servers ++ dependencies;
+      extraPackages = lsp-servers.packages ++ dependencies;
       plugins = (import ./packages/plugins { inherit pkgs lib; });
     in
     {
@@ -55,7 +55,10 @@
         };
       };
       config = mkIf cfg.enable (mkMerge [{
-        home.file.".config/nvim/lua".source = lua; # Import config
+        home.file = {
+          ".config/nvim/lua".source = lua; # Import config
+          ".commitlintrc.js".source = lsp-servers.files.commitlintrc;
+        };
 
         nixpkgs.overlays = [
           inputs.haskell-tools-nvim.overlays.default
