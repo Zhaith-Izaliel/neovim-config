@@ -8,10 +8,10 @@ let
   commitlint-override = nodejs-servers."@commitlint/cli".overrideAttrs (final:
   prev: {
     nativeBuildInputs = [ nodejs-servers.commitlint-format-json ];
-    buildPhase = ''
-    ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules ./node_modules
+    installPhase = prev.installPhase + ''
 
-    '' + prev.buildPhase;
+    ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules ./node_modules
+    '';
   });
 in
 with pkgs; [
