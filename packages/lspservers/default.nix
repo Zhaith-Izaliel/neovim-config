@@ -5,7 +5,7 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  commitlint-override = nodejs-servers."@commitlint/cli".overrideAttrs (final:
+  commitlint-override = pkgs.commitlint.overrideAttrs (final:
   prev: {
     nativeBuildInputs = [
       nodejs-servers."@commitlint/config-conventional"
@@ -37,6 +37,5 @@ with pkgs; [
   nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
   commitlint-override
-  nodejs-servers."@commitlint/config-conventional"
 ]
 
