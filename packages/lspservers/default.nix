@@ -37,5 +37,6 @@ with pkgs; [
   nodePackages.markdownlint-cli
   nodejs-servers.stylelint-lsp
   commitlint-override
+  nodejs-servers."@commitlint/config-conventional"
 ]
 
