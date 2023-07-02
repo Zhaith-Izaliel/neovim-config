@@ -1,15 +1,19 @@
 { final, prev }:
 let
-  nodejs-servers = ( {});
+  nodejs-packages = (import ./packages/nodejs-servers {
+    pkgs = prev;
+    nodejs = prev.nodejs-servers;
+    stdenv = prev.stdenv;
+  });
 in
 {
-  final.commitlint = nodejs-servers."@commitlint/cli".overrideAttrs (final:
+  commitlint = nodejs-packages."@commitlint/cli".overrideAttrs (final:
     prev: {
-      buildInputs = [ nodejs-servers.commitlint-format-json ] ++ prev.buildInputs;
+      buildInputs = [ nodejs-packages.commitlint-format-json ] ++ prev.buildInputs;
       installPhase = prev.installPhase + ''
 
       mkdir -p $out/node_modules
-      ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules/* $out/node_modules
+      ln -s ${nodejs-packages.commitlint-format-json}/lib/node_modules/* $out/node_modules
       '';
     }
   );
