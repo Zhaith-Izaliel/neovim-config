@@ -2,7 +2,7 @@
 let
   nodejs-packages = (import ../packages/nodejs {
     pkgs = prev;
-    nodejs = prev.nodejs-servers;
+    nodejs = prev.nodejs;
     stdenv = prev.stdenv;
   });
 in
