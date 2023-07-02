@@ -598,103 +598,103 @@ let
         sha512 = "2kGbqUVJUGE8dM+bMzXG/PYUWKkjLIkRLWNh39OaADkiabDRdw8ATFCgbMz5xdIcvwspPAluSL7uY+ZiTWdWmQ==";
       };
     };
-    "@swc/core-1.3.66" = {
+    "@swc/core-1.3.67" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.3.66.tgz";
-        sha512 = "Hpf91kH5ly7fHkWnApwryTQryT+TO4kMMPH3WyciUSQOWLE3UuQz1PtETHQQk7PZ/b1QF0qQurJrgfBr5bSKUA==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.3.67.tgz";
+        sha512 = "9DROjzfAEt0xt0CDkOYsWpkUPyne8fl5ggWGon049678BOM7p0R0dmaalZGAsKatG5vYP1IWSKWsKhJIubDCsQ==";
       };
     };
-    "@swc/core-darwin-arm64-1.3.66" = {
+    "@swc/core-darwin-arm64-1.3.67" = {
       name = "_at_swc_slash_core-darwin-arm64";
       packageName = "@swc/core-darwin-arm64";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.66.tgz";
-        sha512 = "UijJsvuLy73vxeVYEy7urIHksXS+3BdvJ9s9AY+bRMSQW483NO7RLp8g4FdTyJbRaN0BH15SQnY0dcjQBkVuHw==";
+        url = "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.3.67.tgz";
+        sha512 = "zCT2mCkOBVNf5uJDcQ3A9KDoO1OEaGdfjsRTZTo7sejDd9AXLfJg+xgyCBBrK2jNS/uWcT21IvSv3LqKp4K8pA==";
       };
     };
-    "@swc/core-darwin-x64-1.3.66" = {
+    "@swc/core-darwin-x64-1.3.67" = {
       name = "_at_swc_slash_core-darwin-x64";
       packageName = "@swc/core-darwin-x64";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.3.66.tgz";
-        sha512 = "xGsHKvViQnwTNLF30Y/5OqWdnN6RsiyUI8awZXfz1sHcXCEaLe+v+WLQ+/E8sgw0YUkYVHzzfV/sAN2CezJK5Q==";
+        url = "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.3.67.tgz";
+        sha512 = "hXTVsfTatPEec5gFVyjGj3NccKZsYj/OXyHn6XA+l3Q76lZzGm2ISHdku//XNwXu8OmJ0HhS7LPsC4XXwxXQhg==";
       };
     };
-    "@swc/core-linux-arm-gnueabihf-1.3.66" = {
+    "@swc/core-linux-arm-gnueabihf-1.3.67" = {
       name = "_at_swc_slash_core-linux-arm-gnueabihf";
       packageName = "@swc/core-linux-arm-gnueabihf";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.3.66.tgz";
-        sha512 = "gNbLcSIV2pq90BkMSpzvK4xPXOl8GEF3YR4NaqF0CYSzQsVXXTTqMuX/r26xNYudBKzH0345S1MpoRk2qricnA==";
+        url = "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.3.67.tgz";
+        sha512 = "l8AKL0RkDL5FRTeWMmjoz9zvAc37amxC+0rheaNwE+gZya7ObyNjnIYz5FwN+3y+z6JFU7LS2x/5f6iwruv6pg==";
       };
     };
-    "@swc/core-linux-arm64-gnu-1.3.66" = {
+    "@swc/core-linux-arm64-gnu-1.3.67" = {
       name = "_at_swc_slash_core-linux-arm64-gnu";
       packageName = "@swc/core-linux-arm64-gnu";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.3.66.tgz";
-        sha512 = "cJSQ0oplyWbJqy4rzVcnBYLAi6z1QT3QCcR7iAey0aAmCvfRBZJfXlyjggMjn4iosuadkauwCZR1xYNhBDRn7w==";
+        url = "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.3.67.tgz";
+        sha512 = "S8zOB1AXEpb7kmtgMaFNeLAj01VOky4B0RNZ+uJWigdrDiFT67FeZzNHUNmNSOU0QM79G+Lie/xD/beqEw0vDg==";
       };
     };
-    "@swc/core-linux-arm64-musl-1.3.66" = {
+    "@swc/core-linux-arm64-musl-1.3.67" = {
       name = "_at_swc_slash_core-linux-arm64-musl";
       packageName = "@swc/core-linux-arm64-musl";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.3.66.tgz";
-        sha512 = "GDQZpcB9aGxG9PTA2shdIkoMZlGK5omJ8NR49uoBTtLBVYiGeXAwV0U1Uaw8kXEZj9i7wZDkvjzjSaNH3evRsg==";
+        url = "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.3.67.tgz";
+        sha512 = "Fex8J8ASrt13pmOr2xWh41tEeKWwXYGk3sV8L/aGHiYtIJEUi2f+RtMx3jp7LIdOD8pQptor7i5WBlfR9jhp8A==";
       };
     };
-    "@swc/core-linux-x64-gnu-1.3.66" = {
+    "@swc/core-linux-x64-gnu-1.3.67" = {
       name = "_at_swc_slash_core-linux-x64-gnu";
       packageName = "@swc/core-linux-x64-gnu";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.3.66.tgz";
-        sha512 = "lg8E4O/Pd9KfK0lajdinVMuGME8dSv7V9arhEpmlfGE2eXSDCWqDn5Htk5QVBstt9lt1lsRhWHJ/YYc2eQY30Q==";
+        url = "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.3.67.tgz";
+        sha512 = "9bz9/bMphrv5vDg0os/d8ve0QgFpDzJgZgHUaHiGwcmfnlgdOSAaYJLIvWdcGTjZuQeV4L0m+iru357D9TXEzA==";
       };
     };
-    "@swc/core-linux-x64-musl-1.3.66" = {
+    "@swc/core-linux-x64-musl-1.3.67" = {
       name = "_at_swc_slash_core-linux-x64-musl";
       packageName = "@swc/core-linux-x64-musl";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.3.66.tgz";
-        sha512 = "lo8ZcAO/zL2pZWH+LZIyge8u2MklaeuT6+FpVVpBFktMVdYXbaVtzpvWbgRFBZHvL3SRDF+u8jxjtkXhvGUpTw==";
+        url = "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.3.67.tgz";
+        sha512 = "ED0H6oLvQmhgo9zs8usmEA/lcZPGTu7K9og9K871b7HhHX0h/R+Xg2pb5KD7S/GyUHpfuopxjVROm+h6X1jMUA==";
       };
     };
-    "@swc/core-win32-arm64-msvc-1.3.66" = {
+    "@swc/core-win32-arm64-msvc-1.3.67" = {
       name = "_at_swc_slash_core-win32-arm64-msvc";
       packageName = "@swc/core-win32-arm64-msvc";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.3.66.tgz";
-        sha512 = "cQoVwBuJY5WkHbfpCOlndNwYr1ZThatRjQQvKy540NUIeAEk9Fa6ozlDBtU75UdaWKtUG6YQ/bWz+KTemheVxw==";
+        url = "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.3.67.tgz";
+        sha512 = "J1yFDLgPFeRtA8t5E159OXX+ww1gbkFg70yr4OP7EsOkOD1uMkuTf9yK/woHfsaVJlUYjJHzw7MkUIEgQBucqQ==";
       };
     };
-    "@swc/core-win32-ia32-msvc-1.3.66" = {
+    "@swc/core-win32-ia32-msvc-1.3.67" = {
       name = "_at_swc_slash_core-win32-ia32-msvc";
       packageName = "@swc/core-win32-ia32-msvc";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.3.66.tgz";
-        sha512 = "y/FrAIINK4UBeUQQknGlWXEyjo+MBvjF7WkUf2KP7sNr9EHHy8+dXohAGd5Anz0eJrqOM1ZXR/GEjxRp7bGQ1Q==";
+        url = "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.3.67.tgz";
+        sha512 = "bK11/KtasewqHxzkjKUBXRE9MSAidbZCxrgJUd49bItG2N/DHxkwMYu8Xkh5VDHdTYWv/2idYtf/VM9Yi+53qw==";
       };
     };
-    "@swc/core-win32-x64-msvc-1.3.66" = {
+    "@swc/core-win32-x64-msvc-1.3.67" = {
       name = "_at_swc_slash_core-win32-x64-msvc";
       packageName = "@swc/core-win32-x64-msvc";
-      version = "1.3.66";
+      version = "1.3.67";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.66.tgz";
-        sha512 = "yI64ACzS14qFLrfyO12qW+f/UROTotzDeEbuyJAaPD2IZexoT1cICznI3sBmIfrSt33mVuW8eF5m3AG/NUImzw==";
+        url = "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.3.67.tgz";
+        sha512 = "GxzUU3+NA3cPcYxCxtfSQIS2ySD7Z8IZmKTVaWA9GOUQbKLyCE8H5js31u39+0op/1gNgxOgYFDoj2lUyvLCqw==";
       };
     };
     "@swc/helpers-0.5.1" = {
@@ -769,13 +769,13 @@ let
         sha512 = "jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==";
       };
     };
-    "@types/node-20.3.1" = {
+    "@types/node-20.3.3" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "20.3.1";
+      version = "20.3.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-20.3.1.tgz";
-        sha512 = "EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==";
+        url = "https://registry.npmjs.org/@types/node/-/node-20.3.3.tgz";
+        sha512 = "wheIYdr4NYML61AjC8MKj/2jrR/kDQri/CIpVoZwldwhnIrD/j9jIU5bJ8yBKuB2VhpFV7Ab6G2XkBjv9r9Zzw==";
       };
     };
     "@types/normalize-package-data-2.4.1" = {
@@ -1084,13 +1084,13 @@ let
         sha512 = "YrwaA0vEKazPBkn0ipTiMpSajYDSe+KjQfrjhcBMxJt/znbvlHd8Pw/Vamaz5EB4Wfhs3SUR3Z9mwRu/P3s3Yg==";
       };
     };
-    "caniuse-lite-1.0.30001507" = {
+    "caniuse-lite-1.0.30001510" = {
       name = "caniuse-lite";
       packageName = "caniuse-lite";
-      version = "1.0.30001507";
+      version = "1.0.30001510";
       src = fetchurl {
-        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001507.tgz";
-        sha512 = "SFpUDoSLCaE5XYL2jfqe9ova/pbQHEmbheDf5r4diNwbAgR3qxM9NQtfsiSscjqoya5K7kFcHPUQ+VsUkIJR4A==";
+        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001510.tgz";
+        sha512 = "z35lD6xjHklPNgjW4P68R30Er5OCIZE0C1bUf8IMXSh34WJYXfIy+GxIEraQXYJ2dvTU8TumjYAeLrPhpMlsuw==";
       };
     };
     "chalk-2.3.1" = {
@@ -1507,13 +1507,13 @@ let
         sha512 = "QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==";
       };
     };
-    "electron-to-chromium-1.4.440" = {
+    "electron-to-chromium-1.4.447" = {
       name = "electron-to-chromium";
       packageName = "electron-to-chromium";
-      version = "1.4.440";
+      version = "1.4.447";
       src = fetchurl {
-        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.440.tgz";
-        sha512 = "r6dCgNpRhPwiWlxbHzZQ/d9swfPaEJGi8ekqRBwQYaR3WmA5VkqQfBWSDDjuJU1ntO+W9tHx8OHV/96Q8e0dVw==";
+        url = "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.447.tgz";
+        sha512 = "sxX0LXh+uL41hSJsujAN86PjhrV/6c79XmpY0TvjZStV6VxIgarf8SRkUoUTuYmFcZQTemsoqo8qXOGw5npWfw==";
       };
     };
     "emoji-regex-8.0.0" = {
@@ -1624,13 +1624,13 @@ let
         sha512 = "xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==";
       };
     };
-    "fast-glob-3.2.12" = {
+    "fast-glob-3.3.0" = {
       name = "fast-glob";
       packageName = "fast-glob";
-      version = "3.2.12";
+      version = "3.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/fast-glob/-/fast-glob-3.2.12.tgz";
-        sha512 = "DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==";
+        url = "https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.0.tgz";
+        sha512 = "ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==";
       };
     };
     "fastest-levenshtein-1.0.16" = {
@@ -3955,13 +3955,13 @@ let
         sha512 = "gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==";
       };
     };
-    "tslib-2.5.3" = {
+    "tslib-2.6.0" = {
       name = "tslib";
       packageName = "tslib";
-      version = "2.5.3";
+      version = "2.6.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tslib/-/tslib-2.5.3.tgz";
-        sha512 = "mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w==";
+        url = "https://registry.npmjs.org/tslib/-/tslib-2.6.0.tgz";
+        sha512 = "7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==";
       };
     };
     "type-fest-0.18.1" = {
@@ -4000,13 +4000,13 @@ let
         sha512 = "zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==";
       };
     };
-    "typescript-5.1.3" = {
+    "typescript-5.1.6" = {
       name = "typescript";
       packageName = "typescript";
-      version = "5.1.3";
+      version = "5.1.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/typescript/-/typescript-5.1.3.tgz";
-        sha512 = "XH627E9vkeqhlZFQuL+UsyAXEnibT0kWR2FWONlr4sTjvxyJYnyefgrkyECLzM5NenmKzRAy2rR/OlYLA1HkZw==";
+        url = "https://registry.npmjs.org/typescript/-/typescript-5.1.6.tgz";
+        sha512 = "zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==";
       };
     };
     "unified-9.2.2" = {
@@ -4409,7 +4409,7 @@ in
       sources."callsites-3.1.0"
       sources."camelcase-5.3.1"
       sources."camelcase-keys-6.2.2"
-      sources."caniuse-lite-1.0.30001507"
+      sources."caniuse-lite-1.0.30001510"
       (sources."chalk-4.1.2" // {
         dependencies = [
           sources."ansi-styles-4.3.0"
@@ -4446,7 +4446,7 @@ in
       sources."domelementtype-1.3.1"
       sources."domhandler-2.4.2"
       sources."domutils-1.7.0"
-      sources."electron-to-chromium-1.4.440"
+      sources."electron-to-chromium-1.4.447"
       sources."emoji-regex-8.0.0"
       sources."entities-1.1.2"
       sources."error-ex-1.3.2"
@@ -4456,7 +4456,7 @@ in
       sources."extend-3.0.2"
       sources."fast-deep-equal-3.1.3"
       sources."fast-diff-1.2.0"
-      sources."fast-glob-3.2.12"
+      sources."fast-glob-3.3.0"
       sources."fastest-levenshtein-1.0.16"
       sources."fastq-1.15.0"
       sources."file-entry-cache-6.0.1"
@@ -4948,17 +4948,17 @@ in
       sources."@jridgewell/resolve-uri-3.1.1"
       sources."@jridgewell/sourcemap-codec-1.4.15"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@swc/core-1.3.66"
-      sources."@swc/core-darwin-arm64-1.3.66"
-      sources."@swc/core-darwin-x64-1.3.66"
-      sources."@swc/core-linux-arm-gnueabihf-1.3.66"
-      sources."@swc/core-linux-arm64-gnu-1.3.66"
-      sources."@swc/core-linux-arm64-musl-1.3.66"
-      sources."@swc/core-linux-x64-gnu-1.3.66"
-      sources."@swc/core-linux-x64-musl-1.3.66"
-      sources."@swc/core-win32-arm64-msvc-1.3.66"
-      sources."@swc/core-win32-ia32-msvc-1.3.66"
-      sources."@swc/core-win32-x64-msvc-1.3.66"
+      sources."@swc/core-1.3.67"
+      sources."@swc/core-darwin-arm64-1.3.67"
+      sources."@swc/core-darwin-x64-1.3.67"
+      sources."@swc/core-linux-arm-gnueabihf-1.3.67"
+      sources."@swc/core-linux-arm64-gnu-1.3.67"
+      sources."@swc/core-linux-arm64-musl-1.3.67"
+      sources."@swc/core-linux-x64-gnu-1.3.67"
+      sources."@swc/core-linux-x64-musl-1.3.67"
+      sources."@swc/core-win32-arm64-msvc-1.3.67"
+      sources."@swc/core-win32-ia32-msvc-1.3.67"
+      sources."@swc/core-win32-x64-msvc-1.3.67"
       sources."@swc/helpers-0.5.1"
       sources."@swc/wasm-1.3.66"
       sources."@tsconfig/node10-1.0.9"
@@ -4966,7 +4966,7 @@ in
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
       sources."@types/minimist-1.2.2"
-      sources."@types/node-20.3.1"
+      sources."@types/node-20.3.3"
       sources."@types/normalize-package-data-2.4.1"
       sources."JSONStream-1.3.5"
       sources."acorn-8.9.0"
@@ -5122,9 +5122,9 @@ in
       sources."through2-4.0.2"
       sources."trim-newlines-3.0.1"
       sources."ts-node-10.9.1"
-      sources."tslib-2.5.3"
+      sources."tslib-2.6.0"
       sources."type-fest-0.18.1"
-      sources."typescript-5.1.3"
+      sources."typescript-5.1.6"
       sources."universalify-2.0.0"
       sources."uri-js-4.4.1"
       sources."util-deprecate-1.0.2"
