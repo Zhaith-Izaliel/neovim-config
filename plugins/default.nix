@@ -46,7 +46,7 @@ with pkgs.vimPlugins; [
   vim-markdown-toc
   mini-nvim
   crates-nvim
-  haskell-tools-nvim
+  haskell-tools-nvim-dev
   trouble-nvim
   null-ls-nvim
   # Telescope
