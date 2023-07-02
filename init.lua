@@ -11,8 +11,5 @@ require('null')
 require('completion')
 require('formatter')
 require('dap-config')
-require('telescope-config')
-require('mini-config')
-require('notes')
 require('plugins')
 
