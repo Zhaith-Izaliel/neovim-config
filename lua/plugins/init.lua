@@ -2,14 +2,14 @@
 -- ---Plugins---
 -- -------------
 
-require('colorizer')
-require('comments')
-require('gitsign')
-require('kitty')
-require('neogen')
-require('pounce')
-require('todo')
-require('which-key')
+require('plugins.colorizer')
+require('plugins.comments')
+require('plugins.gitsign')
+require('plugins.kitty')
+require('plugins.neogen')
+require('plugins.pounce')
+require('plugins.todo')
+require('plugins.which-key')
 
 -- Utils contains nvim-api keymap functions
 local Utils = require('utils')
