@@ -16,7 +16,7 @@ in
     nodePackages.vscode-langservers-extracted # CSS, HTML, JSON, ESLint
     nodePackages.typescript-language-server
     nodePackages.eslint
-    nodePackages.markdownlint-cli2
+    nodePackages.markdownlint-cli
     haskell-language-server
     nodePackages.vls
     ccls
