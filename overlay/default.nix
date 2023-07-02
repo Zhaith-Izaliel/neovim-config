@@ -3,7 +3,7 @@ let
   nodejs-servers = ( {});
 in
 {
-  commitlint = nodejs-servers."@commitlint/cli".overrideAttrs (final:
+  final.commitlint = nodejs-servers."@commitlint/cli".overrideAttrs (final:
     prev: {
       buildInputs = [ nodejs-servers.commitlint-format-json ] ++ prev.buildInputs;
       installPhase = prev.installPhase + ''
