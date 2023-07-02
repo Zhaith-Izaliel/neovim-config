@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     haskell-tools-nvim = {
-      url = "github:MrcJkb/haskell-tools.nvim";
+      url = "github:mrcjkb/haskell-tools.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
