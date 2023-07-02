@@ -19,5 +19,6 @@ require('plugins.telekasten')
 require('plugins.telescope')
 require('plugins.todo')
 require('plugins.treesitter')
+require('plugins.trouble')
 require('plugins.which-key')
 
