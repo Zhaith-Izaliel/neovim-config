@@ -15,8 +15,8 @@ in
     rust-analyzer
     nodePackages.vscode-langservers-extracted # CSS, HTML, JSON, ESLint
     nodePackages.typescript-language-server
-    nodePackages.typescript
     nodePackages.eslint
+    nodePackages.markdownlint-cli2
     haskell-language-server
     nodePackages.vls
     ccls
@@ -24,8 +24,8 @@ in
     cmake-language-server
     omnisharp-roslyn
     ltex-ls
-    nodePackages.markdownlint-cli
     nodejs-servers.stylelint-lsp
+    nodejs-servers."@tailwindcss/language-server"
 
     # Dependencies
     graphviz
