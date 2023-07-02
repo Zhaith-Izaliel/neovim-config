@@ -1,6 +1,6 @@
 { final, prev }:
 let
-  nodejs-packages = (import ./packages/nodejs-servers {
+  nodejs-packages = (import ../packages/nodejs-servers {
     pkgs = prev;
     nodejs = prev.nodejs-servers;
     stdenv = prev.stdenv;
