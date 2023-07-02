@@ -66,7 +66,7 @@
         # Doc Here:
         # https://github.com/NixOS/nixpkgs/blob/nixos-22.11/doc/languages-frameworks/vim.section.md
         programs.neovim = {
-          plugins = plugins ++ [ haskell-tools-nvim.packages.default ];
+          plugins = plugins ++ [ inputs.haskell-tools-nvim.packages.default ];
           enable = true;
           withNodeJs = true;
           withPython3 = true;
