@@ -21,3 +21,9 @@ require('lsp.tailwindcss')
 require('lsp.typescript')
 require('lsp.vue')
 
+-- ----------------
+-- ---Completion---
+-- ----------------
+
+require('lsp.completion')
+
