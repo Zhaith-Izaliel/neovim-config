@@ -36,10 +36,8 @@
       };
       init = builtins.readFile "${configPackage}/init.lua";
       lua = lib.sources.cleanSource "${configPackage}/lua";
-      lsp-servers = (import ./packages/lspservers { inherit pkgs stdenv; });
-      dependencies = (import ./packages/dependencies { inherit pkgs; });
-      extraPackages = lsp-servers.packages ++ dependencies;
-      plugins = (import ./packages/plugins { inherit pkgs lib; });
+      dependencies = (import ./dependencies { inherit pkgs stdenv; });
+      plugins = (import ./plugins { inherit pkgs lib; });
     in
     {
       options = {
@@ -57,23 +55,25 @@
       config = mkIf cfg.enable (mkMerge [{
         home.file = {
           ".config/nvim/lua".source = lua; # Import config
-          ".commitlintrc.js".text = lsp-servers.files.commitlintrc;
+          ".commitlintrc.js".text = dependencies.files.commitlintrc;
         };
 
         nixpkgs.overlays = [
           inputs.haskell-tools-nvim.overlays.default
+          (final: prev: import ./overlay { inherit final prev; })
         ];
 
         # Doc Here:
         # https://github.com/NixOS/nixpkgs/blob/nixos-22.11/doc/languages-frameworks/vim.section.md
         programs.neovim = {
-          inherit plugins extraPackages;
+          inherit plugins;
           enable = true;
           withNodeJs = true;
           withPython3 = true;
           vimAlias = true;
           viAlias = true;
           vimdiffAlias = true;
+          extraPackages = dependencies.packages;
           extraLuaConfig = ''
 
           omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"

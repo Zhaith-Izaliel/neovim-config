@@ -5,18 +5,10 @@ let
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
-  commitlint-override = nodejs-servers."@commitlint/cli".overrideAttrs (final:
-  prev: {
-    buildInputs = [ nodejs-servers.commitlint-format-json ] ++ prev.buildInputs;
-    installPhase = prev.installPhase + ''
-
-      mkdir -p $out/node_modules
-      ln -s ${nodejs-servers.commitlint-format-json}/lib/node_modules/* $out/node_modules
-    '';
-  });
 in
 {
   packages = with pkgs; [
+    # LSP Servers
     nil
     nodePackages.pyright
     sumneko-lua-language-server
@@ -34,7 +26,16 @@ in
     ltex-ls
     nodePackages.markdownlint-cli
     nodejs-servers.stylelint-lsp
-    commitlint-override
+
+    # Dependencies
+    graphviz
+    universal-ctags
+    watchman
+    python310Packages.virtualenv
+    ripgrep
+    dotnet-sdk
+    viu
+    xclip
   ];
 
   files = {
