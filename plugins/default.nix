@@ -48,6 +48,7 @@ with pkgs.vimPlugins; [
   crates-nvim
   trouble-nvim
   null-ls-nvim
+  haskell-tools-nvim
   # Telescope
   telescope-nvim
   telescope-symbols-nvim
