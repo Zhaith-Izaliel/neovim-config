@@ -5,12 +5,6 @@ local nnoremap = Utils.nnoremap
 local ht = require('haskell-tools')
 
 ht.setup {
-  log = {
-    level = vim.log.levels.OFF,
-  },
-}
-
-ht.start_or_attach {
   hls = {
     on_attach = function(client, bufnr)
       local opts = { buffer = bufnr, }
