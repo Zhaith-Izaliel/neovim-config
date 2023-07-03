@@ -12,6 +12,7 @@
       url = "github:mrcjkb/haskell-tools.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nil.url = "github:oxalica/nil";
   };
 
   outputs = inputs @ { self, nixpkgs, ... }:
@@ -60,6 +61,7 @@
 
         nixpkgs.overlays = [
           inputs.haskell-tools-nvim.overlays.default
+          inputs.nil.overlays.default
           (final: prev: import ./overlay { inherit final prev; })
         ];
 
