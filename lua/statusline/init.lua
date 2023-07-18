@@ -45,7 +45,9 @@ gls.left = {
     FileNameGitRepo = {
       provider = 'FileName',
       condition = function()
-        return condition.buffer_not_empty() and condition.check_git_workspace()
+        return condition.buffer_not_empty()
+          and condition.check_git_workspace()
+          and condition.hide_in_width()
       end,
       separator =  ' ',
       separator_highlight = { colors.bg, colors.bg_alt },
@@ -56,6 +58,7 @@ gls.left = {
     GitBranch = {
       provider = function()
         return custom_providers.GetGitBranch(12)
+          and condition.hide_in_width()
       end,
       icon = ' ',
       condition = condition.check_git_workspace,
@@ -73,7 +76,10 @@ gls.left = {
           or vcs.diff_modified()
         return custom_providers.ConditionalSeparator(boolean, ' ')
       end,
-      condition = condition.check_git_workspace,
+      condition = function()
+        return condition.check_git_workspace()
+          and condition.hide_in_width()
+      end,
       highlight = { colors.fg, colors.bg_alt, }
     }
   },
@@ -81,7 +87,10 @@ gls.left = {
     DiffAdd = {
       provider = 'DiffAdd',
       icon = ' ',
-      condition = condition.check_git_workspace,
+      condition = function()
+        return condition.check_git_workspace()
+          and condition.hide_in_width()
+      end,
       highlight = { colors.green, colors.bg_alt, 'BOLD' },
     }
   },
@@ -89,7 +98,10 @@ gls.left = {
     DiffRemove = {
       provider = 'DiffRemove',
       icon = ' ',
-      condition = condition.check_git_workspace,
+      condition = function()
+        return condition.check_git_workspace()
+          and condition.hide_in_width()
+      end,
       highlight = { colors.red, colors.bg_alt, 'BOLD' },
     }
   },
@@ -99,7 +111,10 @@ gls.left = {
       icon = ' ',
       separator =  ' ',
       separator_highlight = { colors.bg_alt, colors.bg },
-      condition = condition.check_git_workspace,
+      condition = function()
+        return condition.check_git_workspace()
+          and condition.hide_in_width()
+      end,
       highlight = { colors.blue, colors.bg_alt, 'BOLD' },
     }
   },
@@ -228,3 +243,4 @@ gls.right = {
     }
   },
 }
+
