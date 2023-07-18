@@ -58,10 +58,12 @@ gls.left = {
     GitBranch = {
       provider = function()
         return custom_providers.GetGitBranch(12)
-          and condition.hide_in_width()
       end,
       icon = ' ',
-      condition = condition.check_git_workspace,
+      condition = function() 
+        return condition.check_git_workspace()
+          and condition.hide_in_width()
+      end,
       separator = ' ',
       separator_highlight = { colors.fg_alt, colors.bg_alt },
       highlight = { colors.magenta, colors.bg_alt, 'BOLD' }
