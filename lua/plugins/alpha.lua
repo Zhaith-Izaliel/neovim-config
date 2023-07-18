@@ -80,7 +80,7 @@ vim.api.nvim_create_autocmd('User', {
 	group = group,
 	pattern = 'AlphaReady',
 	callback = function()
-		vim.b.miniindentscope_config.config = {
+		vim.b.miniindentscope_config = {
 			symbol = '',
 		}
 		vim.opt.showtabline = 0
