@@ -33,10 +33,13 @@ gls.left = {
     }
   },
   {
-    FileNameNoRepo = {
+    FileNameNoRepoOrSmallWidth = {
       provider = 'FileName',
       condition = function()
-        return condition.buffer_not_empty() and not condition.check_git_workspace()
+        return condition.buffer_not_empty()
+          and (not condition.check_git_workspace()
+            or not condition.hide_in_width()
+          )
       end,
       highlight = { colors.blue, colors.bg }
     }
@@ -60,7 +63,7 @@ gls.left = {
         return custom_providers.GetGitBranch(12)
       end,
       icon = ' ',
-      condition = function() 
+      condition = function()
         return condition.check_git_workspace()
           and condition.hide_in_width()
       end,
