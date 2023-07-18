@@ -62,6 +62,7 @@ dashboard.section.buttons.val = {
 	dashboard.button('f', ' ' .. ' Find file', ':Telescope find_files <CR>'),
 	dashboard.button('e', ' ' .. ' New file', ':ene <BAR> startinsert <CR>'),
 	dashboard.button('p', ' ' .. ' Find project', ":lua require('telescope').extensions.project.project {}<CR>"),
+	dashboard.button('z', ' ' .. ' Zoxide', ":lua require('telescope').extensions.zoxide.list {}<CR>"),
 	dashboard.button('r', '󰔚 ' .. ' Recent files', ':Telescope oldfiles <CR>'),
 	dashboard.button('t', ' ' .. ' Find text', ':Telescope live_grep <CR>'),
 	dashboard.button('c', ' ' .. ' Config', ':e ~/Development/Personal/neovim-config/init.lua <CR>'),
