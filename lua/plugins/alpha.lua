@@ -80,6 +80,9 @@ vim.api.nvim_create_autocmd('User', {
 	group = group,
 	pattern = 'AlphaReady',
 	callback = function()
+		vim.b.miniindentscope_config.config = {
+			symbol = '',
+		}
 		vim.opt.showtabline = 0
 		vim.opt.showmode = false
 		vim.opt.laststatus = 0
@@ -92,9 +95,6 @@ vim.api.nvim_create_autocmd('BufUnload', {
 	group = group,
 	pattern = '<buffer>',
 	callback = function()
-		vim.b.miniindentscope_config.config = {
-			symbol = '',
-		}
 		vim.opt.showtabline = 2
 		vim.opt.showmode = true
 		vim.opt.laststatus = 3
