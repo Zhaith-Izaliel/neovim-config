@@ -2,6 +2,7 @@
 -- ---Plugins---
 -- -------------
 
+require('plugins.alpha')
 require('plugins.colorizer')
 require('plugins.comments')
 require('plugins.crates')

@@ -31,6 +31,7 @@ Telescope.setup {
 
 Telescope.load_extension('bibtex')
 Telescope.load_extension('zoxide')
+Telescope.load_extension('project')
 
 -- ---Mappings---
 local builtin = require('telescope.builtin')

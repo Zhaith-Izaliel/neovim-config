@@ -45,6 +45,7 @@ with pkgs.vimPlugins; [
   markdown-preview-nvim
   vim-markdown-toc
   mini-nvim
+  alpha-nvim
   crates-nvim
   trouble-nvim
   null-ls-nvim
@@ -52,6 +53,7 @@ with pkgs.vimPlugins; [
   # Telescope
   telescope-nvim
   telescope-symbols-nvim
+  telescope-project-nvim
   telescope-zoxide
   popup-nvim
 ] ++ customPlugins
