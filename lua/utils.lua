@@ -5,30 +5,30 @@
 local M = {}
 
 function M.map(mode, lhs, rhs, desc, opts)
-    opts = not opts and {} or opts
-    local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc,
-        remap = true, })
-    vim.keymap.set(mode, lhs, rhs, tbl)
+  opts = not opts and {} or opts
+  local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc,
+    remap = true, })
+  vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.noremap(mode, lhs, rhs, desc, opts)
-    opts = not opts and {} or opts
-    local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc, })
-    vim.keymap.set(mode, lhs, rhs, tbl)
+  opts = not opts and {} or opts
+  local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc, })
+  vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.exprnoremap(mode, lhs, rhs, desc, opts)
-    opts = not opts and {} or opts
-    local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
-        desc = desc, })
-    vim.keymap.set(mode, lhs, rhs, tbl)
+  opts = not opts and {} or opts
+  local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
+    desc = desc, })
+  vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.exprmap(mode, lhs, rhs, desc, opts)
-    opts = not opts and {} or opts
-    local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
-        desc = desc, remap = true, })
-    vim.keymap.set(mode, lhs, rhs, tbl)
+  opts = not opts and {} or opts
+  local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
+    desc = desc, remap = true, })
+  vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 
@@ -61,10 +61,10 @@ function M.tnoremap(lhs, rhs, desc, opts) M.noremap('t', lhs, rhs, desc, opts)
 end
 
 function M.exprnnoremap(lhs, rhs, desc, opts) M.exprnoremap('n', lhs, rhs, desc,
-    opts) end
+  opts) end
 
 function M.exprinoremap(lhs, rhs, desc, opts) M.exprnoremap('i', lhs, rhs, desc,
-    opts) end
+  opts) end
 
 function M.count(table)
   local count = 0
@@ -73,18 +73,18 @@ function M.count(table)
 end
 
 function M.split (inputstr, sep)
-    if sep == nil then
-        sep = "%s"
-    end
-    local t={}
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-        table.insert(t, str)
-    end
-    return t
+  if sep == nil then
+    sep = "%s"
+  end
+  local t={}
+  for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+    table.insert(t, str)
+  end
+  return t
 end
 
 function M.command (name, command, opts)
-    vim.api.nvim_create_user_command(name, command, opts)
+  vim.api.nvim_create_user_command(name, command, opts)
 end
 
 return M
