@@ -15,13 +15,13 @@ smart_splits.setup {
 }
 
 -- Move between splits
-nnoremap('<Space><Left>', smart_splits.move_cursor_left,
+nnoremap('<C-Space><Left>', smart_splits.move_cursor_left,
   'Smart Splits: Navigate left between splits.')
-nnoremap('<Space><Down>', smart_splits.move_cursor_down,
+nnoremap('<C-Space><Down>', smart_splits.move_cursor_down,
   'Smart Splits: Navigate down between splits.')
-nnoremap('<Space><Up>', smart_splits.move_cursor_up,
+nnoremap('<C-Space><Up>', smart_splits.move_cursor_up,
   'Smart Splits: Navigate up between splits.')
-nnoremap('<Space><Right>', smart_splits.move_cursor_right,
+nnoremap('<C-Space><Right>', smart_splits.move_cursor_right,
   'Smart Splits: Navigate right between splits.')
 
 -- Resize splits
