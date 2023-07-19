@@ -12,7 +12,7 @@ in
     nil
     nodePackages.pyright
     sumneko-lua-language-server
-    rust-analyzer
+    # rust-analyzer
     nodePackages.vscode-langservers-extracted # CSS, HTML, JSON, ESLint
     nodePackages.typescript-language-server
     nodePackages.eslint
