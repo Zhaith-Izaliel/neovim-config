@@ -13,6 +13,11 @@ require('hardtime').setup {
     ['<C-N>'] = { 'n', 'v' },
     ['<C-P>'] = { 'n', 'v' },
   },
-  disabled_keys = {}
+  disabled_keys = {
+    ['<UP>'] = {},
+    ['<DOWN>'] = {},
+    ['<LEFT>'] = {},
+    ['<RIGHT>'] = {},
+  },
 }
 
