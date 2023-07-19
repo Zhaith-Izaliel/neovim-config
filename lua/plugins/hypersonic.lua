@@ -3,7 +3,12 @@ local Utils = require('utils')
 
 local nnoremap = Utils.nnoremap
 
+require('hypersonic').setup {}
+
 -- Regexplainer
-nnoremap('<Leader>er', function() require('regexplainer').show() end,
-  'Regexplainer: show popup')
+nnoremap(
+  '<Leader>er',
+  ':Hypersonic<CR>',
+  'Hypersonic: explain regex under cursor'
+)
 

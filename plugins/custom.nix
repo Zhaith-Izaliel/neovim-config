@@ -145,5 +145,17 @@
       sha256 = "sha256-AVHXVXUGTpxieqeURnTv8mN+SQAhjyro9WwwnhF5dI4=";
     };
   };
+
+  hypersonic = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "hypersonic-nvim";
+    version = "a98dbd6";
+    src = pkgs.fetchFromGitHub {
+      repo = "hypersonic.nvim";
+      owner = "tomiis4";
+      rev = version;
+      sha256 = "";
+    };
+  };
+
 }
 
