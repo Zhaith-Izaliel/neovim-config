@@ -23,7 +23,7 @@ with pkgs.vimPlugins; [
   nvim-dap
   nvim-dap-ui
   nui-nvim
-  vim-kitty-navigator
+  smart-splits-nvim
   gitsigns-nvim
   nvim-colorizer-lua
   vim-nix
