@@ -5,7 +5,6 @@ require('hardtime').setup {
     ['<DOWN>'] = { 'n', 'v' },
     ['<LEFT>'] = { 'n', 'v' },
     ['<RIGHT>'] = { 'n', 'v' },
-    ['-'] = { 'n', 'v' },
     ['+'] = { 'n', 'v' },
     ['g<UP>'] = { 'n', 'v' },
     ['g<DOWN>'] = { 'n', 'v' },

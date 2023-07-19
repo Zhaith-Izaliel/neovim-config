@@ -17,9 +17,9 @@ local inoremap = Utils.inoremap
 -- local xmap = Utils.xmap
 
 -- Leader
-nnoremap('<Space>', '<Nop>', 'Remove default operation on - to use it as leader.')
-vim.g.mapleader = '<Space>'
-vim.g.maplocalleader = '<Space><Space>'
+nnoremap('-', '<Nop>', 'Remove default operation on - to use it as leader.')
+vim.g.mapleader = '-'
+vim.g.maplocalleader = '--'
 
 -- Tab
 nnoremap('<C-left>', ':tabprevious<CR>', 'Move to previous tab.')
@@ -45,7 +45,7 @@ inoremap('<C-U>', '<Esc>g~awgi', 'Change case of the current word.')
 nnoremap('<leader>ef', vim.diagnostic.open_float, 'Show diagnostics in a floating window.')
 nnoremap('[d', vim.diagnostic.goto_prev, 'Move to previous diagnostic.')
 nnoremap(']d', vim.diagnostic.goto_next, 'Move to next diagnostic')
-nnoremap('<space>q', vim.diagnostic.setloclist, 'Show diagnostics in the location list.')
+nnoremap('<leader>q', vim.diagnostic.setloclist, 'Show diagnostics in the location list.')
 
 -- Misc
 nnoremap('<Leader>l', '<Cmd>call setqflist([])<CR>', 'Clear quick-fixes list.')
