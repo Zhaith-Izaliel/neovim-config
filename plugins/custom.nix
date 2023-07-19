@@ -153,7 +153,7 @@
       repo = "hypersonic.nvim";
       owner = "tomiis4";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-nfk+Wgoiwpvgkt6lNfThuuKlj1pGzR9z4LMvas4rJwQ=";
     };
   };
 }
