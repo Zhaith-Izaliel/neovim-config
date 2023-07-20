@@ -1,5 +1,6 @@
 -- Hardtime
 require('hardtime').setup {
+  allow_different_key = true,
   restricted_keys = {
     ['<UP>'] = { 'n', 'v' },
     ['<DOWN>'] = { 'n', 'v' },
@@ -13,7 +14,6 @@ require('hardtime').setup {
     ['<C-N>'] = { 'n', 'v' },
     ['<C-P>'] = { 'n', 'v' },
   },
-
   disabled_keys = {
     ["<UP>"] = {},
     ["<DOWN>"] = {},
