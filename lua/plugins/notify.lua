@@ -5,13 +5,23 @@ local noremap = Utils.noremap;
 
 vim.notify = notify
 
+local last_print = ''
+
 print = function(...)
   local print_safe_args = {}
   local _ = { ... }
+
   for i = 1, #_ do
     table.insert(print_safe_args, tostring(_[i]))
   end
-  notify(table.concat(print_safe_args, ' '), "info")
+  local current_print = table.concat(print_safe_args, ' ');
+
+  if last_print == current_print then
+    return
+  end
+
+  notify(current_print, "info")
+  last_print = current_print
 end
 
 notify.setup {
