@@ -164,9 +164,8 @@
       repo = pname;
       owner = "rcarriga";
       rev = "v${version}";
-      sha256 = "";
+      sha256 = "sha256-Rr2tzuEr06M9ZbvQbC07qcxkyjFJFYdABwRpYelKBFI=";
     };
   };
-
 }
 
