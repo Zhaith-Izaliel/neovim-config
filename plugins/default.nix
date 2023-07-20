@@ -45,6 +45,7 @@ with pkgs.vimPlugins; [
   markdown-preview-nvim
   vim-markdown-toc
   mini-nvim
+  nvim-notify
   alpha-nvim
   crates-nvim
   trouble-nvim
