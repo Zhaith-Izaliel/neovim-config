@@ -21,6 +21,7 @@ require('catppuccin').setup({
     treesitter_context = true,
     neotest = true,
     gitsigns = true,
+    mini = true,
     which_key = true,
     pounce = true,
     overseer = true,
