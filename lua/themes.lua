@@ -19,12 +19,12 @@ require('catppuccin').setup({
   integrations = {
     treesitter = true,
     treesitter_context = true,
-    neotree = true,
     neotest = true,
     gitsigns = true,
     which_key = true,
     pounce = true,
     overseer = true,
+    notify = true,
     illuminate = true,
     telekasten = true,
     native_lsp = {
