@@ -156,5 +156,17 @@
       sha256 = "sha256-nfk+Wgoiwpvgkt6lNfThuuKlj1pGzR9z4LMvas4rJwQ=";
     };
   };
+
+  notify = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "nvim-notify";
+    version = "3.12.0";
+    src = pkgs.fetchFromGitHub {
+      repo = pname;
+      owner = "rcarriga";
+      rev = "v${version}";
+      sha256 = "";
+    };
+  };
+
 }
 
