@@ -18,6 +18,7 @@ require('catppuccin').setup({
   no_italic = true,
   integrations = {
     treesitter = true,
+    alpha = true,
     treesitter_context = true,
     neotest = true,
     gitsigns = true,
@@ -28,6 +29,9 @@ require('catppuccin').setup({
     notify = true,
     illuminate = true,
     telekasten = true,
+    telescope = {
+      enabled = true,
+    },
     native_lsp = {
       enabled = true,
     },
