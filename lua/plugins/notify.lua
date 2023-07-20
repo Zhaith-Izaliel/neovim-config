@@ -21,7 +21,7 @@ notify.setup {
 noremap(
   '',
   '<Esc>',
-  "<ESC>:noh<CR>:require('notify').dismiss()<CR>",
+  "<ESC>:noh<CR>:lua require('notify').dismiss()<CR>",
   "Clear notifications."
 )
 
