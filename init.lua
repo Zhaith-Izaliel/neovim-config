@@ -1,3 +1,4 @@
+require('plugins.hardtime')
 require('globals')
 require('options')
 require('keymaps')
