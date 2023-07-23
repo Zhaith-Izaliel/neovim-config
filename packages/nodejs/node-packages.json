@@ -3,6 +3,7 @@
   "@commitlint/config-conventional",
   "commitlint-format-json",
   "@commitlint/cli",
-  "@tailwindcss/language-server"
+  "@tailwindcss/language-server",
+  "@volar/vue-language-server"
 ]
 
