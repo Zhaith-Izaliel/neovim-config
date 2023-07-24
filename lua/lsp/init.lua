@@ -18,7 +18,7 @@ require('lsp.omnisharp')
 require('lsp.python')
 require('lsp.rust')
 require('lsp.stylelint')
-require('lsp.tailwindcss')
+-- require('lsp.tailwindcss')
 require('lsp.typescript')
 require('lsp.vue')
 
