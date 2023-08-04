@@ -40,6 +40,7 @@ require('catppuccin').setup({
       enable_ui = true, -- enable nvim-dap-ui
     },
     lsp_trouble = true,
+    noice = true,
   },
   custom_highlights = {
     StatusLine = { fg = macchiato.text, bg = macchiato.crust },
