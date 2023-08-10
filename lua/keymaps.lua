@@ -32,8 +32,10 @@ vim.cmd.highlight({'SpecialKey', 'term=standout', 'ctermfg=darkgrey', 'guifg=dar
 nnoremap('<F3>', '<cmd>set list! list?<CR>', 'Show invisible characters like tabs and white-spaces.')
 
 -- Move Block of text
-vnoremap('<A-j>', ":m '>+1<CR>gv=gv", 'Move a block of text down.')
-vnoremap('<A-k>', ":m '<-2<CR>gv=gv", 'Move a block of text up.')
+vnoremap('<A-DOWN>', ":m '>+1<CR>gv=gv", 'Move a block of text down.')
+vnoremap('<A-UP>', ":m '<-2<CR>gv=gv", 'Move a block of text up.')
+inoremap('<A-DOWN>', '<Esc>:m .+1<CR>==gi', 'Move a line down.');
+inoremap('<A-UP>', '<Esc>:m .-2<CR>==gi', 'Move a line up.');
 
 -- Text
 inoremap('<C-u>', '<Esc>g~iw`^i', 'Change CASE of the current word.')
