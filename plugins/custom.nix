@@ -142,7 +142,7 @@
       repo = "hardtime.nvim";
       owner = "m4xshen";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-apJ3tV6kWUVfG9gTSMeInNJ8rBrhJ5hJZY9RPqVmxdY=";
     };
   };
 
