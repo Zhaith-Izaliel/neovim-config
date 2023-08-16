@@ -137,12 +137,12 @@
 
   hardtime-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
     pname = "hardtime-nvim";
-    version = "d09ebb4";
+    version = "1deb3f2";
     src = pkgs.fetchFromGitHub {
       repo = "hardtime.nvim";
       owner = "m4xshen";
       rev = version;
-      sha256 = "sha256-apJ3tV6kWUVfG9gTSMeInNJ8rBrhJ5hJZY9RPqVmxdY=";
+      sha256 = "";
     };
   };
 
