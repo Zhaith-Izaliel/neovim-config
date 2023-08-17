@@ -175,9 +175,8 @@
       repo = "tw-values.nvim";
       owner = "MaximilianLloyd";
       rev = version;
-      sha256 = "";
+      sha256 = "sha256-bHp5CStObf4+FA2cO8q4/qvG6gfnYCtfmsy1B/buSzk=";
     };
   };
-
 }
 
