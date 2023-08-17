@@ -167,5 +167,17 @@
       sha256 = "sha256-Rr2tzuEr06M9ZbvQbC07qcxkyjFJFYdABwRpYelKBFI=";
     };
   };
+
+  tw-values-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "tw-values-nvim";
+    version = "73c2773";
+    src = pkgs.fetchFromGitHub {
+      repo = "tw-values.nvim";
+      owner = "MaximilianLloyd";
+      rev = version;
+      sha256 = "";
+    };
+  };
+
 }
 
