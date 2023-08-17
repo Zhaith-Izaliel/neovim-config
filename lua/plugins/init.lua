@@ -23,5 +23,6 @@ require('plugins.telescope')
 require('plugins.todo')
 require('plugins.treesitter')
 require('plugins.trouble')
+require('plugins.tw-values')
 require('plugins.which-key')
 

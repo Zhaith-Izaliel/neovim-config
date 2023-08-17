@@ -1,3 +1,6 @@
+local Utils = require('utils')
+local nnoremap = Utils.nnoremap
+
 -- tw-values.nvim
 require('tw-values.nvim').setup {
   border = 'rounded', -- Valid window border style,
@@ -8,4 +11,6 @@ require('tw-values.nvim').setup {
     copy = '<C-y>'  -- Normal mode keymap to copy the CSS values between {}
   },
 }
+
+nnoremap('<LEADER>sv', '<CMD>TWValues<CR>', 'TWValues: Show TailwindCSS values')
 
