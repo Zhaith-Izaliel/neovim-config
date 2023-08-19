@@ -3,14 +3,14 @@ require('hardtime').setup {
   allow_different_key = true,
   enabled = true;
   restricted_keys = {
-    ['<UP>'] = { 'n', 'x' },
-    ['<DOWN>'] = { 'n', 'x' },
-    ['<LEFT>'] = { 'n', 'x' },
-    ['<RIGHT>'] = {'n', 'x' },
+    ['<Up>'] = { 'n', 'x', 'i', 'v' },
+    ['<Down>'] = { 'n', 'x', 'i', 'v' },
+    ['<Left>'] = { 'n', 'x', 'i', 'v' },
+    ['<Right>'] = {'n', 'x', 'i', 'v' },
     ['+'] = {},
     ['-'] = {},
-    ['g<UP>'] = { 'n', 'x' },
-    ['g<DOWN>'] = { 'n', 'x' },
+    ['g<Up>'] = { 'n', 'x' },
+    ['g<Down>'] = { 'n', 'x' },
   },
   disabled_keys = {
     ['<Up>'] = {},
