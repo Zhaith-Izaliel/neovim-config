@@ -135,16 +135,16 @@
     };
   };
 
-  hardtime-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
-    pname = "hardtime-nvim";
-    version = "863fcc7";
-    src = pkgs.fetchFromGitHub {
-      repo = "hardtime.nvim";
-      owner = "m4xshen";
-      rev = version;
-      sha256 = "sha256-rJYGxFcVfKBKWvMTowrsbs44EmWPw8i9DOOv27dfFcg=";
-    };
-  };
+  # hardtime-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+  #   pname = "hardtime-nvim";
+  #   version = "863fcc7";
+  #   src = pkgs.fetchFromGitHub {
+  #     repo = "hardtime.nvim";
+  #     owner = "m4xshen";
+  #     rev = version;
+  #     sha256 = "sha256-rJYGxFcVfKBKWvMTowrsbs44EmWPw8i9DOOv27dfFcg=";
+  #   };
+  # };
 
   hypersonic = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
     pname = "hypersonic-nvim";

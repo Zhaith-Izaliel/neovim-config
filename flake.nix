@@ -1,3 +1,6 @@
+let
+  plugins = import ./plugins/inputs.nix {};
+in
 {
   description = "Flake to manage Zhaith-Izaliel's Neovim config";
 
@@ -13,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nil.url = "github:oxalica/nil";
-  };
+  } // plugins;
 
   outputs = inputs @ { self, nixpkgs, ... }:
   let
@@ -21,6 +24,7 @@
     pkgs = import nixpkgs {
       inherit system;
     };
+    localLib = import ./lib { inherit pkgs; lib = nixpkgs.lib; };
   in
   with nixpkgs.lib;
   {
@@ -38,7 +42,7 @@
       init = builtins.readFile "${configPackage}/init.lua";
       lua = lib.sources.cleanSource "${configPackage}/lua";
       dependencies = (import ./dependencies { inherit pkgs stdenv; });
-      plugins = (import ./plugins { inherit pkgs lib; });
+      oldPlugins = (import ./plugins { inherit pkgs lib; });
     in
     {
       options = {
@@ -68,7 +72,7 @@
         # Doc Here:
         # https://github.com/NixOS/nixpkgs/blob/nixos-22.11/doc/languages-frameworks/vim.section.md
         programs.neovim = {
-          inherit plugins;
+          plugins = oldPlugins ++ localLib.pluginsToList plugins;
           enable = true;
           withNodeJs = true;
           withPython3 = true;
