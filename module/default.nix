@@ -32,10 +32,7 @@ in
       };
     };
     config = mkIf cfg.enable (mkMerge [{
-      home.file = {
-        ".config/nvim/lua".source = lua; # Import config
-        ".commitlintrc.js".text = dependencies.files.commitlintrc;
-      };
+      home.file.".config/nvim/lua".source = lua; # Import config
 
       nixpkgs.overlays = [
         inputs.haskell-tools-nvim.overlays.default

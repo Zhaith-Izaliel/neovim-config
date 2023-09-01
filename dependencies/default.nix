@@ -38,24 +38,5 @@ in
     viu
     xclip
   ];
-
-  files = {
-    commitlintrc = ''
-    module.exports = {
-      extends:
-      [
-        '${nodejs-servers."@commitlint/config-conventional"}/lib/node_modules/@commitlint/config-conventional'
-      ],
-      formatter: '@commitlint/format',
-      parserPreset: undefined,
-      ignores: undefined,
-      defaultIgnores: undefined,
-      plugins: [],
-      rules: {},
-      helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',
-      prompt: {}
-    }
-    '';
-  };
 }
 

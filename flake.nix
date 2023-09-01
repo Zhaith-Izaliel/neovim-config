@@ -1,6 +1,3 @@
-let
-  plugins = import ./plugins/inputs.nix {};
-in
 {
   description = "Flake to manage Zhaith-Izaliel's Neovim config";
 
@@ -16,9 +13,9 @@ in
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nil.url = "github:oxalica/nil";
-  } // plugins;
+  } // (import ./plugins/inputs.nix {}); # FIXME: Needs a patch
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, ... }:
   {
     nixosModules.default = import ./module { inherit self; };
   };
