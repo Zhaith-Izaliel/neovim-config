@@ -193,6 +193,10 @@
       url = "github:jose-elias-alvarez/null-ls.nvim";
       flake = false;
     };
+    nvim-cmp = {
+      url = "github:hrsh7th/nvim-cmp";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
