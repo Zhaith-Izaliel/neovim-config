@@ -135,7 +135,7 @@
       flake = false;
     };
     nvim-galaxyline = {
-      url = "github:nvimdev/galaxyline.nvim";
+      url = "github:NTBBloodbath/galaxyline.nvim";
       flake = false;
     };
     nvim-alpha = {
