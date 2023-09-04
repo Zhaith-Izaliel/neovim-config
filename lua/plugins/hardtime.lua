@@ -1,5 +1,6 @@
 -- Hardtime
 require('hardtime').setup {
+  disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "alpha" },
   allow_different_key = true,
   enabled = true;
   restricted_keys = {
