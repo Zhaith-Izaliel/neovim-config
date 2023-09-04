@@ -12,7 +12,6 @@
       url = "github:mrcjkb/haskell-tools.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nil.url = "github:oxalica/nil";
     # Vim plugins
     nvim-neogen = {
       url = "github:danymat/neogen";
