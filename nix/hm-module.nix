@@ -29,7 +29,10 @@ in
         viAlias = true;
         vimdiffAlias = true;
         extraPackages = dependencies;
-        plugins = lib.attrsets.mapAttrsToList (name: value: value) plugins;
+        plugins = with pkgs.vimPlugins; [
+          nvim-treesitter.withAllGrammars
+          nvim-treesitter-context
+        ] ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
         extraLuaConfig = ''
 
         omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"
