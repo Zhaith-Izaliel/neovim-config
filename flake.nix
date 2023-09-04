@@ -197,6 +197,22 @@
       url = "github:hrsh7th/nvim-cmp";
       flake = false;
     };
+    nvim-cmp-lsp = {
+      url = "github:hrsh7th/cmp-nvim-lsp";
+      flake = false;
+    };
+    nvim-cmp-buffer = {
+      url = "github:hrsh7th/cmp-buffer";
+      flake = false;
+    };
+    nvim-cmp-path = {
+      url = "github:hrsh7th/cmp-path";
+      flake = false;
+    };
+    nvim-cmp-cmdline = {
+      url = "github:hrsh7th/cmp-cmdline";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
