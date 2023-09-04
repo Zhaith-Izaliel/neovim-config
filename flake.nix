@@ -189,6 +189,10 @@
       url = "github:nvim-lua/popup.nvim";
       flake = false;
     };
+    nvim-null-ls = {
+      url = "github:jose-elias-alvarez/null-ls.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
