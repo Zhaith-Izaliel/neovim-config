@@ -5,7 +5,7 @@ let
   cfg = config.programs.neovim.zhaith-config;
   init = builtins.readFile "${package}/init.lua";
   lua = lib.cleanSource "${package}/lua";
-  dependencies = (import ../dependencies { inherit pkgs stdenv; }).packages;
+  dependencies = (import ./dependencies.nix { inherit pkgs stdenv; }).packages;
 in
   with lib;
   {
