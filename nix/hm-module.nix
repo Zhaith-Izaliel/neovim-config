@@ -1,11 +1,11 @@
-{ self, overlays, plugins, package }:
+{ overlays, plugins, package }:
 
 { config, lib, stdenv, pkgs, ... }:
 let
   cfg = config.programs.neovim.zhaith-config;
   init = builtins.readFile "${package}/init.lua";
   lua = lib.cleanSource "${package}/lua";
-  dependencies = (import ../dependencies { inherit pkgs stdenv; });
+  dependencies = (import ../dependencies { inherit pkgs stdenv; }).packages;
 in
   with lib;
   {
@@ -17,15 +17,19 @@ in
     config = mkIf cfg.enable {
       home.file.".config/nvim/lua".source = lua; # Import config
 
+      nixpkgs = {
+        inherit overlays;
+      };
+
       programs.neovim = {
-        plugins = localLib.pluginsToList plugins;
         enable = true;
         withNodeJs = true;
         withPython3 = true;
         vimAlias = true;
         viAlias = true;
         vimdiffAlias = true;
-        extraPackages = dependencies.packages;
+        extraPackages = dependencies;
+        plugins = lib.attrsets.mapAttrsToList (name: value: value) plugins;
         extraLuaConfig = ''
 
         omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"

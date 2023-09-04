@@ -193,20 +193,35 @@
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
+  with import nixpkgs { system = "x86_64-linux"; };
   let
-    lib = nixpkgs.lib;
-    plugins = lib.attrsets.filterAttrs
-    (name: value: (builtins.match "^nvim-.+$" name)) inputs;
+    plugins-inputs = lib.attrsets.filterAttrs
+      (name: value: builtins.match "^nvim-.+$" name)
+      inputs
+    ;
+
+    # Generate Neovim plugins from inputs
+    plugins = lib.attrsets.mapAttrs
+      (name: value: pkgs.vimUtils.buildVimPluginFrom2Nix {
+        pname = name;
+        version = "git-flake-input";
+        src = value;
+      })
+      plugins-inputs
+    ;
   in
   {
-    homeManagerModules.default = import ./nix/hm-module.nix { inherit self plugins; };
+    homeManagerModules.default = import ./nix/hm-module.nix {
+      inherit plugins;
+      overlays = self.overlays.default;
+      package = self.packages.x86_64-linux.default;
+    };
     overlays.default = [
       inputs.haskell-tools-nvim.overlays.default
       inputs.nil.overlays.default
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
     ];
     packages.x86_64-linux.default =
-      with import nixpkgs { system = "x86_64-linux"; };
       pkgs.callPackage ./nix {}
     ;
   };
