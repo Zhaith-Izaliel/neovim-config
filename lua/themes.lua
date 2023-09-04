@@ -44,7 +44,8 @@ require('catppuccin').setup({
   },
   custom_highlights = {
     StatusLine = { fg = macchiato.text, bg = macchiato.crust },
-    ['@text.todo'] = { bg = 'none' } -- remove TODO highlight
+    ['@text.todo'] = { bg = 'none' }, -- remove TODO highlight
+    Normal ={ guibg = 'none', ctermbg = 'none' },
   },
 })
 
