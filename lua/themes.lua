@@ -11,6 +11,7 @@ local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 
 require('catppuccin').setup({
   flavour = 'macchiato',
+  transparent_background = true,
   background = {
     light = 'latte',
     dark = 'macchiato',
