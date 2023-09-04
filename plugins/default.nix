@@ -27,13 +27,11 @@ with pkgs.vimPlugins; [
   gitsigns-nvim
   nvim-colorizer-lua
   vim-nix
-  go-nvim
   todo-comments-nvim
   comment-nvim
   luasnip
   nvim-web-devicons
   plenary-nvim
-  rest-nvim
   catppuccin-nvim
   galaxyline-nvim
   alpha-nvim
@@ -45,7 +43,6 @@ with pkgs.vimPlugins; [
   markdown-preview-nvim
   vim-markdown-toc
   mini-nvim
-  alpha-nvim
   crates-nvim
   trouble-nvim
   null-ls-nvim

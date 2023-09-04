@@ -1,7 +1,7 @@
 { pkgs, stdenv }:
 
 let
-  nodejs-servers = (import ../packages/nodejs {
+  nodejs-servers = (import ./nodejs {
     inherit pkgs stdenv;
     nodejs = pkgs.nodejs;
   });
