@@ -32,6 +32,8 @@ in
         plugins = with pkgs.vimPlugins; [
           nvim-treesitter.withAllGrammars
           nvim-treesitter-context
+          haskell-tools-nvim
+
         ] ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
         extraLuaConfig = ''
 
