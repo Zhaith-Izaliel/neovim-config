@@ -205,7 +205,10 @@
       inputs.nil.overlays.default
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
     ];
-    packages.default = import ./nix;
+    packages.x86_64-linux.default =
+      with import nixpkgs { system = "x86_64-linux"; };
+      pkgs.callPackage ./nix {}
+    ;
   };
 }
 

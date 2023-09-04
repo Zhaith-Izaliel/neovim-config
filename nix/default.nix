@@ -1,9 +1,15 @@
-{ self, stdenv }:
+{ stdenv,
+  lib,
+  version ? "git"
+}:
 
 stdenv.mkDerivation {
   pname = "zhaith-neovim-config";
-  version = self.commit;
-  src = self;
+
+  inherit version;
+
+  src = lib.cleanSource ../.;
+
   installPhase = ''
     mkdir $out
     cp -r -t $out lua init.lua
