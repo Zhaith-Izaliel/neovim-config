@@ -196,7 +196,7 @@
   with import nixpkgs { system = "x86_64-linux"; };
   let
     plugins-inputs = lib.attrsets.filterAttrs
-      (name: value: builtins.match "^nvim-.+$" name)
+      (name: value: (builtins.match "^nvim-.+$" name) != null)
       inputs
     ;
 
