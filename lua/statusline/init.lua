@@ -6,13 +6,13 @@ require('statusline.line-theme').setup()
 local gl = require('galaxyline')
 local gls = gl.section
 local colors = require('galaxyline.themes.colors').catppuccin
-local condition = require('galaxyline.condition')
+local conditions = require('galaxyline.condition')
 
 -- Custom Providers
 local customProviders = require('statusline.custom-providers')
-local showIfNotRecording = function()
-  return condition.buffer_not_empty() and
-    (not require("noice").api.statusline.mode.has())
+local showFileEncoding = function()
+  return not require("noice").api.statusline.mode.has()
+    and conditions.buffer_not_empty()
 end
 
 
@@ -33,7 +33,7 @@ gls.left = {
   {
     FileIcon = {
       provider = 'FileIcon',
-      condition = condition.buffer_not_empty,
+      condition = conditions.buffer_not_empty,
       highlight = { colors.fg_alt, colors.bg, 'BOLD' },
     }
   },
@@ -41,9 +41,9 @@ gls.left = {
     FileNameNoRepoOrSmallWidth = {
       provider = 'FileName',
       condition = function()
-        return condition.buffer_not_empty()
-          and (not condition.check_git_workspace()
-          or not condition.hide_in_width()
+        return conditions.buffer_not_empty()
+          and (not conditions.check_git_workspace()
+          or not conditions.hide_in_width()
         )
       end,
       highlight = { colors.blue, colors.bg }
@@ -53,9 +53,9 @@ gls.left = {
     FileNameGitRepo = {
       provider = 'FileName',
       condition = function()
-        return condition.buffer_not_empty()
-          and condition.check_git_workspace()
-          and condition.hide_in_width()
+        return conditions.buffer_not_empty()
+          and conditions.check_git_workspace()
+          and conditions.hide_in_width()
       end,
       separator =  ' ',
       separator_highlight = { colors.bg, colors.bg_alt },
@@ -69,8 +69,8 @@ gls.left = {
       end,
       icon = ' ',
       condition = function()
-        return condition.check_git_workspace()
-          and condition.hide_in_width()
+        return conditions.check_git_workspace()
+          and conditions.hide_in_width()
       end,
       separator = ' ',
       separator_highlight = { colors.fg_alt, colors.bg_alt },
@@ -87,8 +87,8 @@ gls.left = {
         return customProviders.ConditionalSeparator(boolean, ' ')
       end,
       condition = function()
-        return condition.check_git_workspace()
-          and condition.hide_in_width()
+        return conditions.check_git_workspace()
+          and conditions.hide_in_width()
       end,
       highlight = { colors.fg, colors.bg_alt, }
     }
@@ -98,8 +98,8 @@ gls.left = {
       provider = 'DiffAdd',
       icon = ' ',
       condition = function()
-        return condition.check_git_workspace()
-          and condition.hide_in_width()
+        return conditions.check_git_workspace()
+          and conditions.hide_in_width()
       end,
       highlight = { colors.green, colors.bg_alt, 'BOLD' },
     }
@@ -109,8 +109,8 @@ gls.left = {
       provider = 'DiffRemove',
       icon = ' ',
       condition = function()
-        return condition.check_git_workspace()
-          and condition.hide_in_width()
+        return conditions.check_git_workspace()
+          and conditions.hide_in_width()
       end,
       highlight = { colors.red, colors.bg_alt, 'BOLD' },
     }
@@ -122,8 +122,8 @@ gls.left = {
       separator =  ' ',
       separator_highlight = { colors.bg_alt, colors.bg },
       condition = function()
-        return condition.check_git_workspace()
-          and condition.hide_in_width()
+        return conditions.check_git_workspace()
+          and conditions.hide_in_width()
       end,
       highlight = { colors.blue, colors.bg_alt, 'BOLD' },
     }
@@ -211,14 +211,14 @@ gls.right = {
   {
     FileEncode = {
       provider = 'FileEncode',
-      condition = showIfNotRecording,
+      condition = showFileEncoding,
       highlight = { colors.green, colors.bg_alt }
     }
   },
   {
     FileFormat = {
       provider = 'FileFormat',
-      condition = showIfNotRecording,
+      condition = showFileEncoding,
       separator =  ' ',
       separator_highlight = { colors.fg, colors.bg_alt },
       highlight = { colors.green, colors.bg_alt }
@@ -227,7 +227,7 @@ gls.right = {
   {
     RecordMode = {
       provider = require("noice").api.statusline.mode.get,
-      condition = showIfNotRecording,
+      condition = require('noice').api.statusline.mode.has,
       separator =  ' ',
       separator_highlight = { colors.fg, colors.bg_alt },
       highlight = { colors.green, colors.bg_alt }
@@ -236,14 +236,14 @@ gls.right = {
   {
     Whitespace = {
       provider = function() return ' ' end,
-      condition = condition.buffer_not_empty,
+      condition = conditions.buffer_not_empty,
       highlight = { colors.fg, colors.bg_alt },
     }
   },
   {
     LineColumn = {
       provider = 'LineColumn',
-      condition = condition.buffer_not_empty,
+      condition = conditions.buffer_not_empty,
       separator =  ' ',
       separator_highlight = { colors.bg_alt, colors.bg },
       highlight = { colors.fg_alt, colors.bg }
@@ -252,7 +252,7 @@ gls.right = {
   {
     LinePercent = {
       provider = 'LinePercent',
-      condition = condition.buffer_not_empty,
+      condition = conditions.buffer_not_empty,
       separator =  '',
       separator_highlight = { colors.fg, colors.bg },
       highlight = { colors.fg_alt, colors.bg }
@@ -261,7 +261,7 @@ gls.right = {
   {
     ScrollBar = {
       provider = 'ScrollBar',
-      condition = condition.buffer_not_empty,
+      condition = conditions.buffer_not_empty,
       highlight = { colors.cyan, colors.bg_alt }
     }
   },
