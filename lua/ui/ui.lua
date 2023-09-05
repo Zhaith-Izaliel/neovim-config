@@ -4,6 +4,14 @@ require("noice").setup({
       cmdline = { pattern = "^:", icon = ":", lang = "vim" },
     },
   },
+  views = {
+    cmdline_popup = {
+      position = {
+        row = "50%",
+        col = "50%",
+      },
+    },
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
