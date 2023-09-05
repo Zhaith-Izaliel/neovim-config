@@ -45,9 +45,9 @@ vim.o.spelllang = 'en,fr'
 vim.o.directory = NVIM_TMP_DIRECTORY
 
 vim.diagnostic.config {
-  virtual_text = true,
+  virtual_text = false,
   underline = true,
   signs = true,          -- Keep gutter signs
-  update_in_insert = true,
+  update_in_insert = false,
 }
 
