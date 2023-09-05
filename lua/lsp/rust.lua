@@ -29,44 +29,43 @@ local function filter_diagnostics(diagnostics)
     return filtered_diagnostics
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- TODO: add description for keymap
 local rt = require('rust-tools')
 rt.setup({
   server = {
+    capabilities = capabilities,
     on_attach = function(_, bufnr)
       -- Hover actions
       nnoremap('<Leader>rt', rt.hover_actions.hover_actions, 'Rust-Tools: Hover Action', { buffer = bufnr })
       -- Code action groups
       nnoremap('<Leader>a', rt.code_action_group.code_action_group, 'Rust-Tools: Code Action Group', { buffer = bufnr })
     end,
-    server = {
-      handlers = {
-        ['textDocument/publishDiagnostics'] =
-          function(err, method, result, client_id, bufnr, config)
-            if not result or not result.uri then
-              return
-            end
+    handlers = {
+      ['textDocument/publishDiagnostics'] =
+        function(err, method, result, client_id, bufnr, config)
+          if not result or not result.uri then
+            return
+          end
 
-            local uri = result.uri
-            local bufnr = vim.uri_to_bufnr(uri)
+          local uri = result.uri
+          local bufnr = vim.uri_to_bufnr(uri)
 
-            if not bufnr then
-              return
-            end
+          if not bufnr then
+            return
+          end
 
-            if is_in_workspace(uri) then
-              local diagnostics = vim.lsp.diagnostic.to_severity(result.diagnostics)
-              diagnostics = filter_diagnostics(diagnostics)
-              vim.lsp.diagnostic.save(diagnostics, bufnr, client_id)
-              if vim.api.nvim_buf_is_loaded(bufnr) then
-                vim.lsp.diagnostic.set_signs(diagnostics, bufnr, client_id)
-              end
+          if is_in_workspace(uri) then
+            local diagnostics = vim.lsp.diagnostic.to_severity(result.diagnostics)
+            diagnostics = filter_diagnostics(diagnostics)
+            vim.lsp.diagnostic.save(diagnostics, bufnr, client_id)
+            if vim.api.nvim_buf_is_loaded(bufnr) then
+              vim.lsp.diagnostic.set_signs(diagnostics, bufnr, client_id)
             end
           end
-        ,
-      },
-    }
+        end
+      ,
+    },
   },
 })
 

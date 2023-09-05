@@ -1,6 +1,7 @@
 -- ---------
 -- ---CMP---
 -- ---------
+
 local has_words_before = function()
   local unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -10,9 +11,6 @@ end
 
 local luasnip = require('luasnip')
 local cmp = require('cmp')
-
-
-
 
 cmp.setup {
   snippet = {
