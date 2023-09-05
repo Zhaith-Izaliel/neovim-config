@@ -213,7 +213,7 @@
       url = "github:hrsh7th/cmp-cmdline";
       flake = false;
     };
-    nvimt-cmp-luasnip = {
+    nvim-cmp-luasnip = {
       url = "github:saadparwaiz1/cmp_luasnip";
       flake = false;
     };
