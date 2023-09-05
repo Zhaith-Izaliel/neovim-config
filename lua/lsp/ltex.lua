@@ -5,7 +5,7 @@ require('lspconfig').ltex.setup {
   settings = {
     ltex = {
       language = 'en-US',
-      checkFrequency = 'save',
+      -- checkFrequency = 'save',
     },
   },
 }
