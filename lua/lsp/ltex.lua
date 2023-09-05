@@ -6,7 +6,7 @@ require('lspconfig').ltex.setup {
     ltex = {
       language = 'en-US',
       ['ltex-ls'] = {
-        logLevel = "info",
+        logLevel = "warning",
       },
     },
   },
