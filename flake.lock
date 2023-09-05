@@ -214,11 +214,11 @@
         "toggleterm": "toggleterm"
       },
       "locked": {
-        "lastModified": 1693860591,
-        "narHash": "sha256-J1JAyzfHUu1dXRhWjYt+aGDV0LlUxEZEWT6FgBZWrLQ=",
+        "lastModified": 1693946729,
+        "narHash": "sha256-YZkzHtJ2qXcVfxXLugJtJv0MMjbUHouFI+Zv/n4SSh0=",
         "owner": "mrcjkb",
         "repo": "haskell-tools.nvim",
-        "rev": "ddeb56eabac60bf9d10bad6be5f7d599f83799b4",
+        "rev": "4259cb16e5612d9f5860655a2ab37c7439f70555",
         "type": "github"
       },
       "original": {
@@ -431,6 +431,22 @@
       "original": {
         "owner": "hrsh7th",
         "repo": "cmp-cmdline",
+        "type": "github"
+      }
+    },
+    "nvim-cmp-git": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1685409535,
+        "narHash": "sha256-McIYDGXu+tSaY/U6eu1XouSHto/mSpJ/i4Z4UKYa+mk=",
+        "owner": "petertriho",
+        "repo": "cmp-git",
+        "rev": "f900a4cf117300fdc3ba31d26f8b6223ccd9c574",
+        "type": "github"
+      },
+      "original": {
+        "owner": "petertriho",
+        "repo": "cmp-git",
         "type": "github"
       }
     },
@@ -850,6 +866,22 @@
         "type": "github"
       }
     },
+    "nvim-noice": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693380164,
+        "narHash": "sha256-TDAmbqlUjoa2uB9LZRXDhPOZPi62MXpOXKFnaHfPUoM=",
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "rev": "74c2902146b080035beb19944baf6f014a954720",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "type": "github"
+      }
+    },
     "nvim-notify": {
       "flake": false,
       "locked": {
@@ -1262,6 +1294,7 @@
         "nvim-cmp": "nvim-cmp",
         "nvim-cmp-buffer": "nvim-cmp-buffer",
         "nvim-cmp-cmdline": "nvim-cmp-cmdline",
+        "nvim-cmp-git": "nvim-cmp-git",
         "nvim-cmp-lsp": "nvim-cmp-lsp",
         "nvim-cmp-luasnip": "nvim-cmp-luasnip",
         "nvim-cmp-path": "nvim-cmp-path",
@@ -1287,6 +1320,7 @@
         "nvim-neoclip-lua": "nvim-neoclip-lua",
         "nvim-neogen": "nvim-neogen",
         "nvim-nix": "nvim-nix",
+        "nvim-noice": "nvim-noice",
         "nvim-notify": "nvim-notify",
         "nvim-nui": "nvim-nui",
         "nvim-null-ls": "nvim-null-ls",
