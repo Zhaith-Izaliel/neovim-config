@@ -12,7 +12,7 @@ local condition = require('galaxyline.condition')
 local customProviders = require('statusline.custom-providers')
 local showIfNotRecording = function()
   return condition.buffer_not_empty() and
-    not require("noice").api.statusline.mode.has()
+    (not require("noice").api.statusline.mode.has())
 end
 
 
