@@ -19,6 +19,7 @@ require('trouble').setup {
       information = '',
       other = '',
     },
+  auto_preview = false,
 }
 
 nnoremap('<leader>xx', '<cmd>TroubleToggle<cr>', 'Trouble: toggle.')
