@@ -1,4 +1,7 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require('lspconfig').stylelint_lsp.setup { -- CSS/SCSS/Less
+  capabilities = capabilities,
   settings = {
     stylelintplus = {
       -- Config to remove warnings for tailwindcss

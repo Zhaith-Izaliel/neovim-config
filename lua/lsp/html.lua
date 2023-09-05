@@ -1,2 +1,6 @@
-require('lspconfig').html.setup {} -- HTML
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require('lspconfig').html.setup {
+  capabilities = capabilities,
+} -- HTML
 

@@ -11,6 +11,7 @@ local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 
 require('catppuccin').setup({
   flavour = 'macchiato',
+  transparent_background = true,
   background = {
     light = 'latte',
     dark = 'macchiato',
@@ -44,7 +45,8 @@ require('catppuccin').setup({
   },
   custom_highlights = {
     StatusLine = { fg = macchiato.text, bg = macchiato.crust },
-    ['@text.todo'] = { bg = 'none' } -- remove TODO highlight
+    ['@text.todo'] = { bg = 'none' }, -- remove TODO highlight
+    -- Normal = { bg = 'none' },
   },
 })
 
