@@ -6,6 +6,12 @@ require('typescript-tools').setup {
   capabilities = capabilities,
   filetypes = is_npm_package_installed 'vue'
     and {
+      "javascriptreact",
+      "javascript.jsx",
+      "typescriptreact",
+      "typescript.tsx"
+    }
+    or {
       "javascript",
       "javascriptreact",
       "javascript.jsx",
@@ -13,12 +19,6 @@ require('typescript-tools').setup {
       "typescriptreact",
       "typescript.tsx"
     }
-    or {
-      "javascriptreact",
-      "javascript.jsx",
-      "typescriptreact",
-      "typescript.tsx"
-    },
-
+  ,
 }
 
