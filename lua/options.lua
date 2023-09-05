@@ -44,10 +44,3 @@ vim.o.spelllang = 'en,fr'
 -- Swap files
 vim.o.directory = NVIM_TMP_DIRECTORY
 
-vim.diagnostic.config {
-  virtual_text = false,
-  underline = true,
-  signs = true,          -- Keep gutter signs
-  update_in_insert = false,
-}
-

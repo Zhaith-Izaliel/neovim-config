@@ -40,3 +40,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+vim.diagnostic.config {
+  ['.*'] = {
+    virtual_text = false,
+    update_in_insert = false,
+    underline = true,
+    signs = true,          -- Keep gutter signs
+  },
+}
+
