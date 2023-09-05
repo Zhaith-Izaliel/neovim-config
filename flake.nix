@@ -212,6 +212,14 @@
       url = "github:saadparwaiz1/cmp_luasnip";
       flake = false;
     };
+    nvim-legendary = {
+      url = "github:mrjones2014/legendary.nvim";
+      flake = false;
+    };
+    nvim-noice = {
+      url = "github:folke/noice.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
