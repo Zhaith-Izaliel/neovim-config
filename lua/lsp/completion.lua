@@ -7,6 +7,7 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
+
 local luasnip = require('luasnip')
 local cmp = require('cmp')
 
@@ -21,6 +22,7 @@ cmp.setup {
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
   },
+
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -35,8 +37,8 @@ cmp.setup {
         luasnip.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
-      else
-        fallback()
+      -- else
+      --   fallback()
       end
     end, { 'i', 's' }),
 
