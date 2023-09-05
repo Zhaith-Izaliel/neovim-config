@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.diagnostic.config {
-  ['.*'] = {
+  ['^.*'] = {
     virtual_text = false,
     update_in_insert = false,
     underline = true,
