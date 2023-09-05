@@ -9,18 +9,23 @@ local colors = require('galaxyline.themes.colors').catppuccin
 local condition = require('galaxyline.condition')
 
 -- Custom Providers
-local custom_providers = require('statusline.custom-providers')
+local customProviders = require('statusline.custom-providers')
+local showIfNotRecording = function()
+  return condition.buffer_not_empty() and
+    not require("noice").api.statusline.mode.has()
+end
+
 
 -- Applying Sections
 gls.left = {
   {
     PaddingViMode = {
-      provider = custom_providers.PaddingViMode,
+      provider = customProviders.PaddingViMode,
     }
   },
   {
     ViMode = {
-      provider = custom_providers.ViMode,
+      provider = customProviders.ViMode,
       separator = ' ',
       separator_highlight = { colors.fg, colors.bg },
     }
@@ -38,8 +43,8 @@ gls.left = {
       condition = function()
         return condition.buffer_not_empty()
           and (not condition.check_git_workspace()
-            or not condition.hide_in_width()
-          )
+          or not condition.hide_in_width()
+        )
       end,
       highlight = { colors.blue, colors.bg }
     }
@@ -60,7 +65,7 @@ gls.left = {
   {
     GitBranch = {
       provider = function()
-        return custom_providers.GetGitBranch(12)
+        return customProviders.GetGitBranch(12)
       end,
       icon = ' ',
       condition = function()
@@ -77,9 +82,9 @@ gls.left = {
       provider = function()
         local vcs = require("galaxyline.providers.vcs")
         local boolean = vcs.diff_add()
-          or vcs.diff_remove()
-          or vcs.diff_modified()
-        return custom_providers.ConditionalSeparator(boolean, ' ')
+        or vcs.diff_remove()
+        or vcs.diff_modified()
+        return customProviders.ConditionalSeparator(boolean, ' ')
       end,
       condition = function()
         return condition.check_git_workspace()
@@ -140,7 +145,7 @@ gls.mid = {
   },
   {
     LspClient = {
-      provider = custom_providers.GetLspClient,
+      provider = customProviders.GetLspClient,
       highlight = { colors.orange, colors.bg_alt },
     }
   },
@@ -149,10 +154,10 @@ gls.mid = {
       provider = function()
         local diagnostic = require("galaxyline.providers.diagnostic")
         local boolean = diagnostic.get_diagnostic_error() ~= ""
-          or diagnostic.get_diagnostic_warn() ~= ""
-          or diagnostic.get_diagnostic_hint() ~= ""
-          or diagnostic.get_diagnostic_info() ~= ""
-        return custom_providers.ConditionalSeparator(boolean, '   ')
+        or diagnostic.get_diagnostic_warn() ~= ""
+        or diagnostic.get_diagnostic_hint() ~= ""
+        or diagnostic.get_diagnostic_info() ~= ""
+        return customProviders.ConditionalSeparator(boolean, '   ')
       end,
       highlight = { colors.fg, colors.bg_alt, }
     }
@@ -198,22 +203,35 @@ gls.mid = {
 
 gls.right = {
   {
+    FirstSeparator = {
+      provider = function() return ' ' end,
+      highlight = { colors.bg, colors.bg_alt }
+    }
+  },
+  {
     FileEncode = {
       provider = 'FileEncode',
-      condition = condition.buffer_not_empty,
-      separator =  '',
-      separator_highlight = { colors.bg, colors.bg_alt },
+      condition = showIfNotRecording,
       highlight = { colors.green, colors.bg_alt }
     }
   },
   {
     FileFormat = {
       provider = 'FileFormat',
-      condition = condition.buffer_not_empty,
+      condition = showIfNotRecording,
       separator =  ' ',
       separator_highlight = { colors.fg, colors.bg_alt },
       highlight = { colors.green, colors.bg_alt }
     }
+  },
+  {
+    RecordMode = {
+      provider = require("noice").api.statusline.mode.get,
+      condition = showIfNotRecording,
+      separator =  ' ',
+      separator_highlight = { colors.fg, colors.bg_alt },
+      highlight = { colors.green, colors.bg_alt }
+    },
   },
   {
     Whitespace = {

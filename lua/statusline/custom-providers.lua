@@ -113,5 +113,5 @@ function M.GetGitBranch(len)
   return branchName
 end
 
-
 return M
+
