@@ -103,7 +103,8 @@ function M.read_json_file(filename)
 end
 
 function M.read_package_json()
-  return M.read_json_file 'package.json'
+  local root = vim.fn.findfile('package.json', vim.fn.expand('%:p:h') .. ';')
+  return M.read_json_file(root)
 end
 
 ---Check if the given NPM package is installed in the current project.
