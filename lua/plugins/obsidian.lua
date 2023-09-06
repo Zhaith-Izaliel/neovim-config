@@ -1,6 +1,6 @@
 require('obsidian').setup {
   -- Required, the path to your vault directory.
-  dir = "~/Notes",
+  dir = "~/Obsidian",
 
   -- Optional, if you keep notes in a specific subdirectory of your vault.
   -- notes_subdir = "notes",
