@@ -658,6 +658,22 @@
         "type": "github"
       }
     },
+    "nvim-diffview": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692616643,
+        "narHash": "sha256-ifLLzNFSRvqXLNM513pna0Q54CIaIPbK/lzG1dDM9Es=",
+        "owner": "sindrets",
+        "repo": "diffview.nvim",
+        "rev": "7e5a85c186027cab1e825d018f07c350177077fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sindrets",
+        "repo": "diffview.nvim",
+        "type": "github"
+      }
+    },
     "nvim-fundo": {
       "flake": false,
       "locked": {
@@ -1355,6 +1371,7 @@
         "nvim-crates": "nvim-crates",
         "nvim-dap": "nvim-dap_2",
         "nvim-dap-ui": "nvim-dap-ui",
+        "nvim-diffview": "nvim-diffview",
         "nvim-fundo": "nvim-fundo",
         "nvim-galaxyline": "nvim-galaxyline",
         "nvim-gitsign": "nvim-gitsign",

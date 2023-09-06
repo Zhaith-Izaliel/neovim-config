@@ -237,7 +237,7 @@
       flake = false;
     };
     nvim-diffview = {
-      url = "sindrets/diffview.nvim";
+      url = "github:sindrets/diffview.nvim";
       flake = false;
     };
   };
