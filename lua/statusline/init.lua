@@ -232,7 +232,8 @@ gls.right = {
   {
     RecordMode = {
       provider = require("noice").api.statusline.mode.get,
-      condition = require('noice').api.statusline.mode.has,
+      -- condition = require('noice').api.statusline.mode.has,
+      condition = function() return true end,
       separator =  ' ',
       separator_highlight = { colors.fg, colors.bg_alt },
       highlight = { colors.green, colors.bg_alt }

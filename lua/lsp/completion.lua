@@ -32,8 +32,8 @@ cmp.setup {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-      -- they way you will only jump inside the snippet region
+        -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+        -- they way you will only jump inside the snippet region
       elseif luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       elseif has_words_before() then
@@ -53,10 +53,9 @@ cmp.setup {
       end
     end, { 'i', 's' }),
   }),
-  sources = {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
-    { name = 'buffer' },
     { name = 'async_path' },
     { name = 'ctags' },
     { name = 'dap' },
@@ -65,6 +64,11 @@ cmp.setup {
     { name = 'crates' },
     { name = 'npm' },
   },
+    {
+      { name = 'async_path' },
+      { name = 'buffer' },
+    }
+  )
 }
 
 -- Set configuration for specific filetype.
@@ -88,7 +92,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'async_path' }
   }, {
       { name = 'cmdline' }
     })
