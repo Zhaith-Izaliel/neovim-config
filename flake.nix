@@ -232,10 +232,6 @@
       url = "github:David-Kunz/cmp-npm";
       flake = false;
     };
-    nvim-legendary = {
-      url = "github:mrjones2014/legendary.nvim";
-      flake = false;
-    };
     nvim-noice = {
       url = "github:folke/noice.nvim";
       flake = false;
