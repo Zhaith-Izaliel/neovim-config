@@ -200,8 +200,8 @@
       url = "github:hrsh7th/cmp-buffer";
       flake = false;
     };
-    nvim-cmp-path = {
-      url = "github:hrsh7th/cmp-path";
+    nvim-cmp-async-path = {
+      url = "github:FelipeLema/cmp-async-path";
       flake = false;
     };
     nvim-cmp-cmdline = {
@@ -216,12 +216,32 @@
       url = "github:petertriho/cmp-git";
       flake = false;
     };
+    nvim-cmp-lsp-signature-help = {
+      url = "github:hrsh7th/cmp-nvim-lsp-signature-help";
+      flake = false;
+    };
+    nvim-cmp-ctags = {
+      url = "github:delphinus/cmp-ctags";
+      flake = false;
+    };
+    nvim-cmp-nvim-lua = {
+      url = "github:hrsh7th/cmp-nvim-lua";
+      flake = false;
+    };
+    nvim-cmp-dap = {
+      url = "github:rcarriga/cmp-dap";
+      flake = false;
+    };
     nvim-legendary = {
       url = "github:mrjones2014/legendary.nvim";
       flake = false;
     };
     nvim-noice = {
       url = "github:folke/noice.nvim";
+      flake = false;
+    };
+    nvim-relpointers = {
+      url = "github:scheisa/relpointers.nvim";
       flake = false;
     };
   };

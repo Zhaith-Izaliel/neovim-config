@@ -53,13 +53,22 @@ cmp.setup {
       end
     end, { 'i', 's' }),
   }),
-  sources = cmp.config.sources({
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
-  }, {
-      { name = 'buffer' },
-    })
+    { name = 'buffer' },
+    { name = 'async_path' },
+    { name = 'ctags' },
+    { name = 'dap' },
+    { name = 'nvim_lsp_signature_help' },
+  },
 }
+
+cmp.setup.filetype('lua', {
+  sources = {
+    { name = 'nvim_lua' },
+  },
+})
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
