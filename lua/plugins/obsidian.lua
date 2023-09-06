@@ -3,7 +3,7 @@ require('obsidian').setup {
   dir = "~/Obsidian",
 
   -- Optional, if you keep notes in a specific subdirectory of your vault.
-  -- notes_subdir = "notes",
+  notes_subdir = "Miscellaneous",
 
   -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
   -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
@@ -11,7 +11,7 @@ require('obsidian').setup {
 
   daily_notes = {
     -- Optional, if you keep daily notes in a separate directory.
-    folder = "notes/dailies",
+    folder = "Daily",
     -- Optional, if you want to change the date format for daily notes.
     date_format = "%Y-%m-%d"
   },
@@ -75,8 +75,8 @@ require('obsidian').setup {
 
   -- Optional, for templates (see below).
   templates = {
-    subdir = "templates",
-    date_format = "%Y-%m-%d-%a",
+    subdir = "Templates",
+    date_format = "%d-%m-%Y",
     time_format = "%H:%M",
   },
 
