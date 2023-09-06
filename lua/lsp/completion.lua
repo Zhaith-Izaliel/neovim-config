@@ -61,27 +61,11 @@ cmp.setup {
     { name = 'ctags' },
     { name = 'dap' },
     { name = 'nvim_lsp_signature_help' },
-  },
-}
-
-cmp.setup.filetype('lua', {
-  sources = {
     { name = 'nvim_lua' },
-  },
-})
-
-cmp.setup.filetype('toml', {
-  sources = {
     { name = 'crates' },
-  },
-})
-
-cmp.setup.filetype('json', {
-  sources = {
     { name = 'npm' },
   },
-})
-
+}
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {

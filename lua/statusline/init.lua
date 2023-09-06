@@ -15,6 +15,11 @@ local showFileEncoding = function()
     and conditions.buffer_not_empty()
 end
 
+local showRecordAndFileSeparator = function()
+  return conditions.buffer_not_empty()
+    or require('noice').api.statusline.mode.has()
+end
+
 
 -- Applying Sections
 gls.left = {
@@ -226,7 +231,7 @@ gls.right = {
   },
   {
     RecordMode = {
-      provider = function() return require("noice").api.statusline.mode.get() end,
+      provider = require("noice").api.statusline.mode.get,
       condition = require('noice').api.statusline.mode.has,
       separator =  ' ',
       separator_highlight = { colors.fg, colors.bg_alt },
@@ -236,7 +241,9 @@ gls.right = {
   {
     Whitespace = {
       provider = function() return ' ' end,
-      condition = conditions.buffer_not_empty,
+      condition = showRecordAndFileSeparator,
+      separator =  ' ',
+      separator_highlight = { colors.bg_alt, colors.bg },
       highlight = { colors.fg, colors.bg_alt },
     }
   },
@@ -244,8 +251,6 @@ gls.right = {
     LineColumn = {
       provider = 'LineColumn',
       condition = conditions.buffer_not_empty,
-      separator =  ' ',
-      separator_highlight = { colors.bg_alt, colors.bg },
       highlight = { colors.fg_alt, colors.bg }
     }
   },
