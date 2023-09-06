@@ -994,6 +994,22 @@
         "type": "github"
       }
     },
+    "nvim-obsidian": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1693859422,
+        "narHash": "sha256-JzvZHmW9smbGZK9r8/b2sdlVkgn1xaeYzoPqeMUEFD4=",
+        "owner": "epwalsh",
+        "repo": "obsidian.nvim",
+        "rev": "5bda19aab2f4a7d61afab5e3b214f8c828d3a708",
+        "type": "github"
+      },
+      "original": {
+        "owner": "epwalsh",
+        "repo": "obsidian.nvim",
+        "type": "github"
+      }
+    },
     "nvim-plenary": {
       "flake": false,
       "locked": {
@@ -1392,6 +1408,7 @@
         "nvim-notify": "nvim-notify",
         "nvim-nui": "nvim-nui",
         "nvim-null-ls": "nvim-null-ls",
+        "nvim-obsidian": "nvim-obsidian",
         "nvim-plenary": "nvim-plenary",
         "nvim-popup": "nvim-popup",
         "nvim-pounce": "nvim-pounce",
