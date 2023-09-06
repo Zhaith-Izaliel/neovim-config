@@ -236,6 +236,10 @@
       url = "github:folke/noice.nvim";
       flake = false;
     };
+    nvim-diffview = {
+      url = "sindrets/diffview.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
