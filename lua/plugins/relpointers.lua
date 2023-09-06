@@ -7,8 +7,7 @@ require("relpointers").setup({
     hl_properties = {
     	underline = false,
     	bold = true,
-    	guifg = macchiato.subtext1,
-		  ctermfg = macchiato.subtext1,
+    	fg = macchiato.subtext1,
     },
 
     pointer_style = "virtual",
