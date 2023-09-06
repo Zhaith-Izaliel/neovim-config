@@ -240,10 +240,6 @@
       url = "github:folke/noice.nvim";
       flake = false;
     };
-    nvim-relpointers = {
-      url = "github:scheisa/relpointers.nvim";
-      flake = false;
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:

@@ -1042,22 +1042,6 @@
         "type": "github"
       }
     },
-    "nvim-relpointers": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1692441169,
-        "narHash": "sha256-sUqtqpdPUG1VwoRWLhyzX8OsGCLIXwmNEbv3r+RVW/E=",
-        "owner": "scheisa",
-        "repo": "relpointers.nvim",
-        "rev": "0d82fc87facb61f286c3e053791150fe33413c53",
-        "type": "github"
-      },
-      "original": {
-        "owner": "scheisa",
-        "repo": "relpointers.nvim",
-        "type": "github"
-      }
-    },
     "nvim-rust-rools": {
       "flake": false,
       "locked": {
@@ -1411,7 +1395,6 @@
         "nvim-plenary": "nvim-plenary",
         "nvim-popup": "nvim-popup",
         "nvim-pounce": "nvim-pounce",
-        "nvim-relpointers": "nvim-relpointers",
         "nvim-rust-rools": "nvim-rust-rools",
         "nvim-smart-split": "nvim-smart-split",
         "nvim-sqlite-lua": "nvim-sqlite-lua",
