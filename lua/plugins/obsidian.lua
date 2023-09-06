@@ -3,7 +3,7 @@ require('obsidian').setup {
   dir = "~/Obsidian",
 
   -- Optional, if you keep notes in a specific subdirectory of your vault.
-  notes_subdir = "Miscellaneous",
+  notes_subdir = "Notes",
 
   -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
   -- levels defined by "vim.log.levels.*" or nil, which is equivalent to DEBUG (1).
