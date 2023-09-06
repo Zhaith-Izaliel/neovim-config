@@ -357,11 +357,11 @@
     "nvim-alpha": {
       "flake": false,
       "locked": {
-        "lastModified": 1693591107,
-        "narHash": "sha256-b+63e/RLareZeEnZl++kVxA+G2vKYiXgfgIorgz54Xo=",
+        "lastModified": 1693965100,
+        "narHash": "sha256-sxBITgBuBvzSBfVDKzaKOCd75wOJwbcdmj1sqosfTao=",
         "owner": "goolord",
         "repo": "alpha-nvim",
-        "rev": "5f211a1597b06be24b1600d72a62b94cab1e2df9",
+        "rev": "331d55eb18d6e42bda4a183863a681be3ee11370",
         "type": "github"
       },
       "original": {
@@ -559,22 +559,6 @@
       "original": {
         "owner": "David-Kunz",
         "repo": "cmp-npm",
-        "type": "github"
-      }
-    },
-    "nvim-cmp-nvim-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1681458603,
-        "narHash": "sha256-6eXOK1mVK06TN1akhN42Bo4wQpeen3rk3b/m7iVmGKM=",
-        "owner": "hrsh7th",
-        "repo": "cmp-nvim-lua",
-        "rev": "f12408bdb54c39c23e67cab726264c10db33ada8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hrsh7th",
-        "repo": "cmp-nvim-lua",
         "type": "github"
       }
     },
@@ -1398,7 +1382,6 @@
         "nvim-cmp-lsp-signature-help": "nvim-cmp-lsp-signature-help",
         "nvim-cmp-luasnip": "nvim-cmp-luasnip",
         "nvim-cmp-npm": "nvim-cmp-npm",
-        "nvim-cmp-nvim-lua": "nvim-cmp-nvim-lua",
         "nvim-colorizer": "nvim-colorizer",
         "nvim-comment": "nvim-comment",
         "nvim-crates": "nvim-crates",

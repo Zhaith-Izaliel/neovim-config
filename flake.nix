@@ -224,10 +224,6 @@
       url = "github:delphinus/cmp-ctags";
       flake = false;
     };
-    nvim-cmp-nvim-lua = {
-      url = "github:hrsh7th/cmp-nvim-lua";
-      flake = false;
-    };
     nvim-cmp-dap = {
       url = "github:rcarriga/cmp-dap";
       flake = false;

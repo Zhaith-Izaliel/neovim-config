@@ -59,7 +59,6 @@ cmp.setup {
     { name = 'ctags' },
     { name = 'dap' },
     { name = 'nvim_lsp_signature_help' },
-    -- { name = 'nvim_lua' },
     { name = 'crates' },
     { name = 'npm' },
   },
