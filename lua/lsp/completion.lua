@@ -70,6 +70,19 @@ cmp.setup.filetype('lua', {
   },
 })
 
+cmp.setup.filetype('toml', {
+  sources = {
+    { name = 'crates' },
+  },
+})
+
+cmp.setup.filetype('json', {
+  sources = {
+    { name = 'npm' },
+  },
+})
+
+
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({

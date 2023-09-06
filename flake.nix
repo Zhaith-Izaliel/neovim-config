@@ -232,6 +232,10 @@
       url = "github:rcarriga/cmp-dap";
       flake = false;
     };
+    nvim-cmp-npm = {
+      url = "github:David-Kunz/cmp-npm";
+      flake = false;
+    };
     nvim-legendary = {
       url = "github:mrjones2014/legendary.nvim";
       flake = false;
