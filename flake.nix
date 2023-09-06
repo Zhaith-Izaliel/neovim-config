@@ -240,6 +240,10 @@
       url = "github:sindrets/diffview.nvim";
       flake = false;
     };
+    nvim-obsidian = {
+      url = "github:epwalsh/obsidian.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
