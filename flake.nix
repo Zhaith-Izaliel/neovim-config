@@ -7,6 +7,7 @@
       url = "github:mrcjkb/haskell-tools.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixd.url = "github:nix-community/nixd";
     # Neovim plugins
     nvim-neogen = {
       url = "github:danymat/neogen";
@@ -244,6 +245,10 @@
       url = "github:epwalsh/obsidian.nvim";
       flake = false;
     };
+    nvim-friendly-snippets = {
+      url = "github:rafamadriz/friendly-snippets";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
@@ -273,6 +278,7 @@
     overlays.default = [
       inputs.haskell-tools-nvim.overlays.default
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
+      (final: prev: { nixd = inputs.nixd.packages.nixd; })
     ];
     packages.x86_64-linux.default =
       pkgs.callPackage ./nix {}

@@ -9,7 +9,7 @@ in
 {
   packages = with pkgs; [
     # LSP Servers
-    nil
+    nixd
     nodePackages.pyright
     sumneko-lua-language-server
     rust-analyzer

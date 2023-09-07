@@ -21,6 +21,7 @@ require('lsp.stylelint')
 require('lsp.tailwindcss')
 require('lsp.typescript')
 require('lsp.vue')
+require('lsp.snippets')
 
 -- ----------------
 -- ---Completion---
