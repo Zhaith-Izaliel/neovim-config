@@ -219,7 +219,7 @@ gls.right = {
     Whitespace = {
       provider = function() return ' ' end,
       condition = showFileEncodingOrRecord,
-      separator =  ' ',
+      separator =  '  ',
       separator_highlight = { colors.bg_alt, colors.bg },
       highlight = { colors.fg, colors.bg },
     }
