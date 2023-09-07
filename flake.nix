@@ -278,7 +278,7 @@
     overlays.default = [
       inputs.haskell-tools-nvim.overlays.default
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
-      (final: prev: { nixd = inputs.nixd.packages.nixd; })
+      (final: prev: { nixd = inputs.nixd.packages.x86_64-linux.nixd; })
     ];
     packages.x86_64-linux.default =
       pkgs.callPackage ./nix {}
