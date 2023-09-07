@@ -2,7 +2,7 @@
   description = "Flake to manage Zhaith-Izaliel's Neovim config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     haskell-tools-nvim = {
       url = "github:mrcjkb/haskell-tools.nvim";
       inputs.nixpkgs.follows = "nixpkgs";

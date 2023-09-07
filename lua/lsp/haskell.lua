@@ -4,7 +4,7 @@ local nnoremap = Utils.nnoremap
 
 local ht = require('haskell-tools')
 
-ht.setup {
+vim.g.haskell_tools {
   hls = {
     on_attach = function(client, bufnr)
       local opts = { buffer = bufnr, }
