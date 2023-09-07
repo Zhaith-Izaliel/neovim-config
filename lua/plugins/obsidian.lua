@@ -1,3 +1,8 @@
+local Utils = require('utils')
+local nnoremap = Utils.nnoremap;
+
+nnoremap('gf', require('obsidian.mapping').gf_passthrough(), 'Open file')
+
 require('obsidian').setup {
   -- Required, the path to your vault directory.
   dir = "~/Obsidian",
@@ -13,7 +18,7 @@ require('obsidian').setup {
     -- Optional, if you keep daily notes in a separate directory.
     folder = "Daily",
     -- Optional, if you want to change the date format for daily notes.
-    date_format = "%Y-%m-%d"
+    date_format = "%d-%m-%Y"
   },
 
   -- Optional, completion.
@@ -30,12 +35,6 @@ require('obsidian').setup {
     -- Whether to add the output of the node_id_func to new notes in autocompletion.
     -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
     prepend_note_id = true
-  },
-
-  -- Optional, key mappings.
-  mappings = {
-    -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-    ["gf"] = require("obsidian.mapping").gf_passthrough(),
   },
 
   -- Optional, for templates (see below).
@@ -64,16 +63,17 @@ require('obsidian').setup {
   -- Create an id if the title is not given, in this case:
   -- Either `title` or `12/09/2023-13:32-afgy` (for example)
   note_id_func = function(title)
+    local prefix = ""
     if title ~= nil then
       -- If title is given, transform it into valid file name.
-      return title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-    end
+      prefix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+    else
       -- If title is nil, just add 4 random uppercase letters to the suffix.
-    local suffix = ""
-    for _ = 1, 4 do
-      suffix = suffix .. string.char(math.random(65, 90))
+      for _ = 1, 4 do
+        prefix = prefix .. string.char(math.random(65, 90))
+      end
     end
-    return tostring(os.date("%d-%m-%Y-%H:%M")) .. "-" .. suffix
+    return prefix .. "-" .. tostring(os.date("%d-%m-%Y-%H:%M"))
   end,
 
   -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
