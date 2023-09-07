@@ -121,7 +121,7 @@ function M.GetFileInfoOrRecordOn()
     return recordMode.get()
   end
 
-  return fileinfo.fileinfo.get_file_encode() .. ' ' .. fileinfo.get_file_format()
+  return fileinfo.get_file_encode() .. ' ' .. fileinfo.get_file_format()
 end
 
 return M
