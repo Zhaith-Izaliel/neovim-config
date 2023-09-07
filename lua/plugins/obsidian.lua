@@ -1,7 +1,7 @@
 local Utils = require('utils')
 local nnoremap = Utils.nnoremap;
 
-nnoremap('gf', require('obsidian.mapping').gf_passthrough(), 'Open file')
+nnoremap('gf', require('obsidian.mapping').gf_passthrough, 'Open file')
 
 require('obsidian').setup {
   -- Required, the path to your vault directory.
