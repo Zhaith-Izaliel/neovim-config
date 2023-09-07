@@ -4,19 +4,6 @@ local nnoremap = Utils.nnoremap
 
 local ht = require('haskell-tools')
 
-vim.g.haskell_tools {
-  hls = {
-    on_attach = function(client, bufnr)
-      local opts = { buffer = bufnr, }
-      -- haskell-language-server relies heavily on codeLenses,
-      -- so auto-refresh (see advanced configuration) is enabled by default
-      nnoremap('<space>ca', vim.lsp.codelens.run, 'Haskell-Tools: codelens', opts)
-      nnoremap('<space>hs', ht.hoogle.hoogle_signature, 'Haskell-Tools: Get Hoogle signature', opts)
-      nnoremap('<space>ea', ht.lsp.buf_eval_all, 'Haskell-Tools: Eval entire buffer', opts)
-    end,
-  },
-}
-
 -- Suggested keymaps that do not depend on haskell-language-server:
 local bufnr = vim.api.nvim_get_current_buf()
 -- set buffer = bufnr in ftplugin/haskell.lua
@@ -29,4 +16,7 @@ nnoremap('<leader>rf', function()
   ht.repl.toggle(vim.api.nvim_buf_get_name(0))
 end, 'Haskell-Tools: Toggle GHCi repl for the current buffer')
 nnoremap('<leader>rq', ht.repl.quit, 'Haskell-Tools: Quit repl', opts)
+nnoremap('<space>ca', vim.lsp.codelens.run, 'Haskell-Tools: codelens', opts)
+nnoremap('<space>hs', ht.hoogle.hoogle_signature, 'Haskell-Tools: Get Hoogle signature', opts)
+nnoremap('<space>ea', ht.lsp.buf_eval_all, 'Haskell-Tools: Eval entire buffer', opts)
 
