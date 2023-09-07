@@ -11,8 +11,10 @@ local conditions = require('galaxyline.condition')
 -- Custom Providers
 local customProviders = require('statusline.custom-providers')
 local showFileEncoding = function()
-  return not require("noice").api.statusline.mode.has()
-    and conditions.buffer_not_empty()
+  if require('noice').api.statusline.mode.has() then
+    return false
+  end
+  return conditions.buffer_not_empty()
 end
 
 local showRecordAndFileSeparator = function()
@@ -232,8 +234,7 @@ gls.right = {
   {
     RecordMode = {
       provider = require("noice").api.statusline.mode.get,
-      -- condition = require('noice').api.statusline.mode.has,
-      condition = function() return true end,
+      condition = showRecordAndFileSeparator,
       separator =  ' ',
       separator_highlight = { colors.fg, colors.bg_alt },
       highlight = { colors.green, colors.bg_alt }
@@ -245,7 +246,7 @@ gls.right = {
       condition = showRecordAndFileSeparator,
       separator =  ' ',
       separator_highlight = { colors.bg_alt, colors.bg },
-      highlight = { colors.fg, colors.bg_alt },
+      highlight = { colors.fg, colors.bg },
     }
   },
   {
