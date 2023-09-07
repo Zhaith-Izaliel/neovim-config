@@ -11,11 +11,8 @@ local conditions = require('galaxyline.condition')
 -- Custom Providers
 local customProviders = require('statusline.custom-providers')
 local recordModOn = require('noice').api.statusline.mode.has;
-local showFileEncoding = function()
-  if recordModOn() then
-    return false
-  end
-  return conditions.buffer_not_empty()
+local showFileEncodingOrRecord = function()
+  return conditions.buffer_not_empty() or recordModOn()
 end
 
 -- Applying Sections
@@ -207,43 +204,21 @@ gls.right = {
   {
     FirstSeparator = {
       provider = function() return ' ' end,
-      condition = function()
-        return showFileEncoding() or recordModOn()
-      end,
+      condition = showFileEncodingOrRecord,
       highlight = { colors.bg, colors.bg_alt }
     }
   },
   {
-    FileEncode = {
-      provider = 'FileEncode',
-      condition = showFileEncoding,
+    FileEncodeFormatOrRecording = {
+      provider = customProviders.GetFileInfoOrRecordOn,
+      condition = showFileEncodingOrRecord,
       highlight = { colors.green, colors.bg_alt }
     }
-  },
-  {
-    FileFormat = {
-      provider = 'FileFormat',
-      condition = showFileEncoding,
-      separator =  ' ',
-      separator_highlight = { colors.fg, colors.bg_alt },
-      highlight = { colors.green, colors.bg_alt }
-    }
-  },
-  {
-    RecordMode = {
-      provider = require("noice").api.statusline.mode.get,
-      condition = recordModOn,
-      separator =  ' ',
-      separator_highlight = { colors.fg, colors.bg_alt },
-      highlight = { colors.green, colors.bg_alt }
-    },
   },
   {
     Whitespace = {
       provider = function() return ' ' end,
-      condition = function()
-        return showFileEncoding() or recordModOn()
-      end,
+      condition = showFileEncodingOrRecord,
       separator =  ' ',
       separator_highlight = { colors.bg_alt, colors.bg },
       highlight = { colors.fg, colors.bg },

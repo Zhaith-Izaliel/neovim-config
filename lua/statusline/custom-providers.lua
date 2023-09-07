@@ -1,6 +1,7 @@
 local colors = require('galaxyline.themes.colors').catppuccin
 local Utils = require('utils')
 local lspclient = require('galaxyline.providers.lsp')
+local fileinfo = require('galaxyline.providers.fileinfo')
 local vcs = require('galaxyline.providers.vcs')
 
 local M = {}
@@ -111,6 +112,16 @@ function M.GetGitBranch(len)
     return string.sub(branchName, 1, len) .. '...'
   end
   return branchName
+end
+
+function M.GetFileInfoOrRecordOn()
+  local recordMode = require('noice').api.statusline.mode
+
+  if recordMode.has() then
+    return recordMode.get()
+  end
+
+  return fileinfo.fileinfo.get_file_encode() .. ' ' .. fileinfo.get_file_format()
 end
 
 return M
