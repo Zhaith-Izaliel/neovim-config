@@ -1,7 +1,13 @@
 local Utils = require('utils')
-local nnoremap = Utils.nnoremap;
+local exprnnoremap = Utils.exprnnoremap;
 
-nnoremap('gf', require('obsidian.mapping').gf_passthrough().action, 'Open file')
+exprnnoremap('gf', function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, 'Open file')
 
 require('obsidian').setup {
   -- Required, the path to your vault directory.
