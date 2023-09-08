@@ -66,7 +66,7 @@ dashboard.section.buttons.val = {
 	dashboard.button('z', ' ' .. ' Zoxide', ":lua require('telescope').extensions.zoxide.list {}<CR>"),
 	dashboard.button('r', '󰔚 ' .. ' Recent files', ':Telescope oldfiles <CR>'),
 	dashboard.button('t', ' ' .. ' Find text', ':Telescope live_grep <CR>'),
-	dashboard.button('c', ' ' .. ' Config', ':e ~/Development/Personal/neovim-config/init.lua <CR>'),
+	dashboard.button('o', ' ' .. ' Search Obsidian', ':ObsidianSearch<CR>'),
 	dashboard.button('q', ' ' .. ' Quit', ':qa<CR>'),
 }
 
