@@ -3,6 +3,7 @@
 -- -----------------------
 
 require('lsp.base')
+require('lsp.bash')
 require('lsp.c')
 require('lsp.cmake')
 require('lsp.eslint')

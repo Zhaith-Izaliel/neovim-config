@@ -17,6 +17,7 @@ in
     nodePackages.typescript-language-server
     nodePackages.eslint
     nodePackages.markdownlint-cli
+    nodePackages.bash-language-server
     haskell-language-server
     nodePackages.vls
     ccls
