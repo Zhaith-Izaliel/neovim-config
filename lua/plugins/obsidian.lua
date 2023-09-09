@@ -83,7 +83,7 @@ require('obsidian').setup {
         prefix = prefix .. string.char(math.random(65, 90))
       end
     end
-    return prefix .. "-" .. tostring(os.date("%d-%m-%Y-%H:%M"))
+    return prefix .. "-" .. tostring(os.date("%d-%m-%Y-%H-%M"))
   end,
 
   -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
