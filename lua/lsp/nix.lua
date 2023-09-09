@@ -1,6 +1,6 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').nixd.setup {
+require('lspconfig').nil_ls.setup {
   capabilities = capabilities,
 }
 
