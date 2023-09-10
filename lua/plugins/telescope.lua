@@ -31,6 +31,8 @@ Telescope.setup {
 
 Telescope.load_extension('bibtex')
 Telescope.load_extension('zoxide')
+Telescope.load_extension('project')
+Telescope.load_extension('notify')
 
 -- ---Mappings---
 local builtin = require('telescope.builtin')
@@ -44,4 +46,6 @@ nnoremap('<leader>fh', builtin.help_tags, 'Telescope: Show help tags.')
 nnoremap('<leader>fcd', extensions.zoxide.list, 'Telescope: Show Zoxide.')
 nnoremap('<leader>ft', '<CMD>Telescope bibtex<CR>', 'Telescope: Find Bibtex entries.')
 nnoremap('<leader>fs', '<CMD>Telescope symbols<CR>', 'Telescope: Pick symbols.')
+nnoremap('<leader>fp', extensions.project.project, 'Telescope: Show Projects.')
+nnoremap('<leader>fn', extensions.notify.notify, 'Telescope: Show Notifications.')
 

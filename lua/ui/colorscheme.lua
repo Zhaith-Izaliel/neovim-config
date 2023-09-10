@@ -11,6 +11,7 @@ local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 
 require('catppuccin').setup({
   flavour = 'macchiato',
+  transparent_background = true,
   background = {
     light = 'latte',
     dark = 'macchiato',
@@ -18,15 +19,20 @@ require('catppuccin').setup({
   no_italic = true,
   integrations = {
     treesitter = true,
+    alpha = true,
     treesitter_context = true,
-    neotree = true,
     neotest = true,
     gitsigns = true,
+    mini = true,
     which_key = true,
     pounce = true,
     overseer = true,
+    notify = true,
     illuminate = true,
     telekasten = true,
+    telescope = {
+      enabled = true,
+    },
     native_lsp = {
       enabled = true,
     },
@@ -35,10 +41,12 @@ require('catppuccin').setup({
       enable_ui = true, -- enable nvim-dap-ui
     },
     lsp_trouble = true,
+    noice = true,
   },
   custom_highlights = {
     StatusLine = { fg = macchiato.text, bg = macchiato.crust },
-    ['@text.todo'] = { bg = 'none' } -- remove TODO highlight
+    ['@text.todo'] = { bg = 'none' }, -- remove TODO highlight
+    -- Normal = { bg = 'none' },
   },
 })
 
