@@ -249,6 +249,10 @@
       url = "github:rafamadriz/friendly-snippets";
       flake = false;
     };
+    nvim-gitignore = {
+      url = "github:wintermute-cell/gitignore.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
