@@ -1,4 +1,4 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('lsp.utils').capabilities
 local is_npm_package_installed = require('utils').is_npm_package_installed
 
 require('lspconfig').volar.setup {

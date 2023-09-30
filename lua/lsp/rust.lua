@@ -29,7 +29,7 @@ local function filter_diagnostics(diagnostics)
     return filtered_diagnostics
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('lsp.utils').capabilities
 
 local rt = require('rust-tools')
 rt.setup({
