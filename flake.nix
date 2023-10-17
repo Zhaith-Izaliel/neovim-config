@@ -253,6 +253,10 @@
       url = "github:wintermute-cell/gitignore.nvim";
       flake = false;
     };
+    nvim-yuck = {
+      url = "github:elkowar/yuck.vim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
