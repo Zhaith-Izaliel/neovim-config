@@ -269,7 +269,7 @@
 
     # Generate Neovim plugins from inputs
     plugins = lib.attrsets.mapAttrs
-      (name: value: pkgs.vimUtils.buildVimPluginFrom2Nix {
+      (name: value: pkgs.vimUtils.buildVimPlugin {
         pname = name;
         version = "git-flake-input";
         src = value;
