@@ -257,6 +257,10 @@
       url = "github:elkowar/yuck.vim";
       flake = false;
     };
+    nvim-caser = {
+      url = "github:arthurxavierx/vim-caser";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
