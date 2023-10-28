@@ -125,7 +125,7 @@ function M.GetFileInfoOrRecordOn()
 end
 
 function M.GetFileNameWithMaxLength(maxLength)
-  local filename = require('galaxyline.providers.fileinfo').get_current_file_name;
+  local filename = require('galaxyline.providers.fileinfo').get_current_file_name();
   if string.len(filename) > maxLength then
     return string.sub(filename, 1, maxLength) .. '...'
   end
