@@ -41,9 +41,8 @@ gls.left = {
       provider = 'FileName',
       condition = function()
         return conditions.buffer_not_empty()
-          and (not conditions.check_git_workspace()
-          or not conditions.hide_in_width()
-        )
+          and not conditions.check_git_workspace()
+          and not conditions.hide_in_width()
       end,
       highlight = { colors.blue, colors.bg }
     }
