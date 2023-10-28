@@ -38,18 +38,22 @@ gls.left = {
   },
   {
     FileNameNoRepo = {
-      provider = 'FileName',
+      provider = function()
+        return customProviders.GetFileNameWithMaxLength(12)
+      end,
       condition = function()
         return conditions.buffer_not_empty()
           and not conditions.check_git_workspace()
-          and conditions.hide_in_width()
+          and not conditions.hide_in_width()
       end,
       highlight = { colors.blue, colors.bg }
     }
   },
   {
     FileNameGitRepo = {
-      provider = 'FileName',
+      provider = function()
+        return customProviders.GetFileNameWithMaxLength(12)
+      end,
       condition = function()
         return conditions.buffer_not_empty()
           and conditions.check_git_workspace()

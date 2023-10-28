@@ -72,7 +72,7 @@ function M.FileReadOnly(readonly_icon)
   end
   local icon = readonly_icon or ''
   if vim.bo.readonly == true then
-    return " " .. icon .. " "
+    return ' ' .. icon .. ' '
   end
   return ''
 end
@@ -88,11 +88,11 @@ end
 function M.GetLspClient()
   local stringClients = lspclient.get_lsp_client()
 
-  if stringClients == "No Active Lsp" then
+  if stringClients == 'No Active Lsp' then
     return stringClients
   end
 
-  local clients = Utils.split(stringClients, ", ")
+  local clients = Utils.split(stringClients, ', ')
 
   local count = Utils.count(clients)
 
@@ -122,6 +122,14 @@ function M.GetFileInfoOrRecordOn()
   end
 
   return fileinfo.get_file_encode() .. ' ' .. fileinfo.get_file_format()
+end
+
+function M.GetFileNameWithMaxLength(maxLength)
+  local filename = require('galaxyline.providers.fileinfo').get_current_file_name;
+  if string.len(filename) > maxLength then
+    return string.sub(filename, 1, maxLength) .. '...'
+  end
+  return filename
 end
 
 return M
