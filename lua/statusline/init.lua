@@ -39,7 +39,7 @@ gls.left = {
   {
     FileNameNoRepo = {
       provider = function()
-        return customProviders.GetFileNameWithMaxLength(12)
+        return customProviders.GetFileNameWithMaxLength(20)
       end,
       condition = function()
         return conditions.buffer_not_empty()
@@ -52,7 +52,7 @@ gls.left = {
   {
     FileNameGitRepo = {
       provider = function()
-        return customProviders.GetFileNameWithMaxLength(12)
+        return customProviders.GetFileNameWithMaxLength(20)
       end,
       condition = function()
         return conditions.buffer_not_empty()
