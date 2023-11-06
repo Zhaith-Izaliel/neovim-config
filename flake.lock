@@ -1736,22 +1736,6 @@
         "type": "github"
       }
     },
-    "nvim-null-ls": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1691810493,
-        "narHash": "sha256-cWA0rzkOp/ekVKaFee7iea1lhnqKtWUIU+fW5M950wI=",
-        "owner": "jose-elias-alvarez",
-        "repo": "null-ls.nvim",
-        "rev": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jose-elias-alvarez",
-        "repo": "null-ls.nvim",
-        "type": "github"
-      }
-    },
     "nvim-obsidian": {
       "flake": false,
       "locked": {
@@ -2260,7 +2244,6 @@
         "nvim-noice": "nvim-noice",
         "nvim-notify": "nvim-notify",
         "nvim-nui": "nvim-nui",
-        "nvim-null-ls": "nvim-null-ls",
         "nvim-obsidian": "nvim-obsidian",
         "nvim-plenary": "nvim-plenary",
         "nvim-popup": "nvim-popup",
