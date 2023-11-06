@@ -29,11 +29,9 @@ in
       vimdiffAlias = true;
       extraPackages = dependencies;
       plugins = (with pkgs.vimPlugins; [
-        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+        nvim-treesitter.withAllGrammars
         nvim-treesitter-context
         haskell-tools-nvim
-        rustaceanvim
-        haskell-snippets-nvim
       ]) ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
       extraLuaConfig = ''
 

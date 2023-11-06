@@ -8,16 +8,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nil.url = "github:oxalica/nil";
-    haskell-snippets = {
-      url = "github:mrcjkb/haskell-snippets.nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    rustaceanvim = {
-      url = "github:mrcjkb/rustaceanvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # Neovim plugins
+    nvim-haskell-snippets = {
+      url = "github:mrcjkb/haskell-snippets.nvim";
+      flake = false;
+    };
+    nvim-rustaceanvim = {
+      url = "github:mrcjkb/rustaceanvim";
+      flake = false;
+    };
     nvim-neogen = {
       url = "github:danymat/neogen";
       flake = false;
@@ -294,8 +294,6 @@
     };
     overlays.default = [
       inputs.haskell-tools-nvim.overlays.default
-      inputs.haskell-snippets.overlays.default
-      inputs.rustaceanvim.overlays.default
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
       inputs.nil.overlays.default
     ];
