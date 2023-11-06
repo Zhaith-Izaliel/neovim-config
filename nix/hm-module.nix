@@ -29,13 +29,13 @@ in
         viAlias = true;
         vimdiffAlias = true;
         extraPackages = dependencies;
-        plugins = with pkgs.vimPlugins; [
+        plugins = (with pkgs.vimPlugins; [
           nvim-treesitter.withAllGrammars
           nvim-treesitter-context
           haskell-tools-nvim
           rustaceanvim
           haskell-snippets-nvim
-        ] ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
+        ]) ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
         extraLuaConfig = ''
 
         vim.g.sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3.so"
