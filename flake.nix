@@ -8,8 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nil.url = "github:oxalica/nil";
-    haskell-snippets.url = "github:mrcjkb/haskell-snippets.nvim";
-    rustaceanvim.url = "github:mrcjkb/rustaceanvim";
+    haskell-snippets = {
+      url = "github:mrcjkb/haskell-snippets.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    rustaceanvim = {
+      url = "github:mrcjkb/rustaceanvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Neovim plugins
     nvim-neogen = {
