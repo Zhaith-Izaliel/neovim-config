@@ -7,40 +7,39 @@ let
   lua = lib.cleanSource "${package}/lua";
   dependencies = (import ./dependencies.nix { inherit pkgs stdenv; }).packages;
 in
-  with lib;
-  {
-    options = {
-      programs.neovim.zhaith-config = {
-        enable = mkEnableOption "Zhaith Neovim configuration";
-      };
+{
+  options = {
+    programs.neovim.zhaith-config = {
+      enable = lib.mkEnableOption "Zhaith Neovim configuration";
     };
-    config = mkIf cfg.enable {
-      home.file.".config/nvim/lua".source = lua; # Import config
+  };
+  config = lib.mkIf cfg.enable {
+    home.file.".config/nvim/lua".source = lua; # Import config
 
-      nixpkgs = {
-        inherit overlays;
-      };
-
-      programs.neovim = {
-        enable = true;
-        withNodeJs = true;
-        withPython3 = true;
-        vimAlias = true;
-        viAlias = true;
-        vimdiffAlias = true;
-        extraPackages = dependencies;
-        plugins = (with pkgs.vimPlugins; [
-          nvim-treesitter.withAllGrammars
-          nvim-treesitter-context
-          haskell-tools-nvim
-          rustaceanvim
-          haskell-snippets-nvim
-        ]) ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
-        extraLuaConfig = ''
-
-        vim.g.sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3.so"
-        '' + init;
-      };
+    nixpkgs = {
+      inherit overlays;
     };
-  }
+
+    programs.neovim = {
+      enable = true;
+      withNodeJs = true;
+      withPython3 = true;
+      vimAlias = true;
+      viAlias = true;
+      vimdiffAlias = true;
+      extraPackages = dependencies;
+      plugins = (with pkgs.vimPlugins; [
+        nvim-treesitter.withAllGrammars
+        nvim-treesitter-context
+        haskell-tools-nvim
+        rustaceanvim
+        haskell-snippets-nvim
+      ]) ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
+      extraLuaConfig = ''
+
+      vim.g.sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3.so"
+      '' + init;
+    };
+  };
+}
 
