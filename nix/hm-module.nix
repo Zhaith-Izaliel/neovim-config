@@ -29,7 +29,7 @@ in
       vimdiffAlias = true;
       extraPackages = dependencies;
       plugins = (with pkgs.vimPlugins; [
-        nvim-treesitter.withAllGrammars
+        pkgs.vimPlugins.nvim-treesitter.withAllGrammars
         nvim-treesitter-context
         haskell-tools-nvim
         rustaceanvim
