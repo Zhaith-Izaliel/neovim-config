@@ -8,6 +8,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nil.url = "github:oxalica/nil";
+    haskell-snippets.url = "github:mrcjkb/haskell-snippets.nvim";
+    rustaceanvim.url = "github:mrcjkb/rustaceanvim";
+
     # Neovim plugins
     nvim-neogen = {
       url = "github:danymat/neogen";
@@ -27,10 +30,6 @@
     };
     nvim-nabla = {
       url = "github:jbyuki/nabla.nvim";
-      flake = false;
-    };
-    nvim-rust-rools = {
-      url = "github:Ciel-MC/rust-tools.nvim";
       flake = false;
     };
     nvim-typescript-tools = {
@@ -261,6 +260,10 @@
       url = "github:arthurxavierx/vim-caser";
       flake = false;
     };
+    nvim-auto-indent = {
+      url = "github:VidocqH/auto-indent.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
@@ -289,6 +292,8 @@
     };
     overlays.default = [
       inputs.haskell-tools-nvim.overlays.default
+      inputs.haskell-snippets.overlays.default
+      inputs.rustaceanvim.overlays.default
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
       inputs.nil.overlays.default
     ];

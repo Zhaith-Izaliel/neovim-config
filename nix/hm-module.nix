@@ -33,6 +33,8 @@ in
           nvim-treesitter.withAllGrammars
           nvim-treesitter-context
           haskell-tools-nvim
+          rustaceanvim
+          haskell-snippets-nvim
         ] ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
         extraLuaConfig = ''
 

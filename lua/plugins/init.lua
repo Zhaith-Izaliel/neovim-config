@@ -3,6 +3,7 @@
 -- -------------
 
 require('plugins.alpha')
+require('plugins.auto-indent')
 require('plugins.colorizer')
 require('plugins.comments')
 require('plugins.crates')
