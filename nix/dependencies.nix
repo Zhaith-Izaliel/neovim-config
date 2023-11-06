@@ -23,7 +23,6 @@ in
     ccls
     gopls
     cmake-language-server
-    omnisharp-roslyn
     ltex-ls
     nodejs-servers.stylelint-lsp
     nodejs-servers."@tailwindcss/language-server"

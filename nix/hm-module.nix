@@ -38,7 +38,6 @@ in
         ] ++ lib.attrsets.mapAttrsToList (name: value: value) plugins;
         extraLuaConfig = ''
 
-        omnisharp_path = "${pkgs.omnisharp-roslyn}/lib/omnisharp-roslyn/OmniSharp.dll"
         vim.g.sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3.so"
         '' + init;
       };
