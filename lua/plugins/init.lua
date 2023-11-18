@@ -3,7 +3,6 @@
 -- -------------
 
 require('plugins.alpha')
-require('plugins.auto-indent')
 require('plugins.colorizer')
 require('plugins.comments')
 require('plugins.crates')
@@ -18,7 +17,6 @@ require('plugins.nabla')
 require('plugins.neoclip')
 require('plugins.neogen')
 require('plugins.obsidian')
-require('plugins.pounce')
 require('plugins.smart-splits')
 require('plugins.telescope')
 require('plugins.todo')

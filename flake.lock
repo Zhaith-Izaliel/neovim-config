@@ -424,22 +424,6 @@
         "type": "github"
       }
     },
-    "nvim-auto-indent": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1699005956,
-        "narHash": "sha256-dubpVupLfc81Jvb4woSQ63n2+VsJCRjnvDzkFTQE2MQ=",
-        "owner": "VidocqH",
-        "repo": "auto-indent.nvim",
-        "rev": "46801cf8857d42a20a73c40b0a5d3dfe8b2b6192",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VidocqH",
-        "repo": "auto-indent.nvim",
-        "type": "github"
-      }
-    },
     "nvim-caser": {
       "flake": false,
       "locked": {
@@ -757,6 +741,22 @@
       "original": {
         "owner": "sindrets",
         "repo": "diffview.nvim",
+        "type": "github"
+      }
+    },
+    "nvim-flash": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1697529873,
+        "narHash": "sha256-j917u46PaOG6RmsKKoUQHuBMfXfGDD/uOBzDGhKlwTE=",
+        "owner": "folke",
+        "repo": "flash.nvim",
+        "rev": "48817af25f51c0590653bbc290866e4890fe1cbe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "flash.nvim",
         "type": "github"
       }
     },
@@ -1160,22 +1160,6 @@
         "type": "github"
       }
     },
-    "nvim-pounce": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1687235542,
-        "narHash": "sha256-ixzknnWkCJ+DhooYv7QeVou4ur0/bump3cWgD3O3wV0=",
-        "owner": "rlane",
-        "repo": "pounce.nvim",
-        "rev": "0c044cad69571d57d8f64a41cca95332859b6abc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rlane",
-        "repo": "pounce.nvim",
-        "type": "github"
-      }
-    },
     "nvim-rustaceanvim": {
       "flake": false,
       "locked": {
@@ -1505,7 +1489,6 @@
         "nil": "nil",
         "nixpkgs": "nixpkgs_3",
         "nvim-alpha": "nvim-alpha",
-        "nvim-auto-indent": "nvim-auto-indent",
         "nvim-caser": "nvim-caser",
         "nvim-catppuccin": "nvim-catppuccin",
         "nvim-cmp": "nvim-cmp",
@@ -1525,6 +1508,7 @@
         "nvim-dap": "nvim-dap_2",
         "nvim-dap-ui": "nvim-dap-ui",
         "nvim-diffview": "nvim-diffview",
+        "nvim-flash": "nvim-flash",
         "nvim-friendly-snippets": "nvim-friendly-snippets",
         "nvim-fundo": "nvim-fundo",
         "nvim-galaxyline": "nvim-galaxyline",
@@ -1550,7 +1534,6 @@
         "nvim-obsidian": "nvim-obsidian",
         "nvim-plenary": "nvim-plenary",
         "nvim-popup": "nvim-popup",
-        "nvim-pounce": "nvim-pounce",
         "nvim-rustaceanvim": "nvim-rustaceanvim",
         "nvim-smart-split": "nvim-smart-split",
         "nvim-sqlite-lua": "nvim-sqlite-lua",

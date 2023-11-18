@@ -22,8 +22,8 @@
       url = "github:danymat/neogen";
       flake = false;
     };
-    nvim-pounce = {
-      url = "github:rlane/pounce.nvim";
+    nvim-flash = {
+      url = "github:folke/flash.nvim";
       flake = false;
     };
     nvim-telescope = {
@@ -262,10 +262,6 @@
       url = "github:arthurxavierx/vim-caser";
       flake = false;
     };
-    nvim-auto-indent = {
-      url = "github:VidocqH/auto-indent.nvim";
-      flake = false;
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
@@ -278,10 +274,9 @@
 
     # Generate Neovim plugins from inputs
     plugins = lib.attrsets.mapAttrs
-      (name: value: pkgs.vimUtils.buildVimPlugin {
-        pname = name;
+      (pname: src: pkgs.vimUtils.buildVimPlugin {
+        inherit pname src;
         version = "git-flake-input";
-        src = value;
       })
       plugins-inputs
     ;

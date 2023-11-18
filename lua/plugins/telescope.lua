@@ -42,6 +42,8 @@ nnoremap('<leader>ff', builtin.find_files, 'Telescope: Find files.')
 nnoremap('<leader>fg', builtin.live_grep, 'Telescope: Live grep.')
 nnoremap('<leader>fb', builtin.buffers, 'Telescope: Switch buffers.')
 nnoremap('<leader>fh', builtin.help_tags, 'Telescope: Show help tags.')
+nnoremap('<leader>fo', builtin.oldfiles, 'Telescope: Show recent files.')
+
 
 nnoremap('<leader>fcd', extensions.zoxide.list, 'Telescope: Show Zoxide.')
 nnoremap('<leader>ft', '<CMD>Telescope bibtex<CR>', 'Telescope: Find Bibtex entries.')
