@@ -300,6 +300,14 @@
     packages.x86_64-linux.default =
       pkgs.callPackage ./nix {}
     ;
+    devShells.default = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        lua-language-server
+        nil
+        stylua
+        luajitPackages.luacheck
+      ];
+    };
   };
 }
 

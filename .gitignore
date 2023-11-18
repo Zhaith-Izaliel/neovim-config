@@ -85,3 +85,5 @@ cscope.po.out
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,lua,tags
 
+.direnv
+
