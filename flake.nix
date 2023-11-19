@@ -26,6 +26,10 @@
       url = "github:folke/flash.nvim";
       flake = false;
     };
+    nvim-conform = {
+      url = "github:stevearc/conform.nvim";
+      flake = false;
+    };
     nvim-telescope = {
       url = "github:nvim-telescope/telescope.nvim";
       flake = false;
