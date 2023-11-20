@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     haskell-tools-nvim = {
       url = "github:mrcjkb/haskell-tools.nvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -285,7 +286,7 @@
       plugins-inputs
     ;
   in
-  {
+  rec {
     homeManagerModules.default = import ./nix/hm-module.nix {
       inherit plugins;
       overlays = self.overlays.default;
@@ -296,11 +297,12 @@
       (final: prev: import ./nix/overlay.nix { inherit final prev; })
       inputs.nil.overlays.default
     ];
-    packages.x86_64-linux.default =
-      pkgs.callPackage ./nix {}
-    ;
+    packages.x86_64-linux = {
+      default = pkgs.callPackage ./nix {};
+      shell = devShells.default;
+    };
     devShells.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
+      nativeBuildInputs = with pkgs; [
         lua-language-server
         nil
         stylua

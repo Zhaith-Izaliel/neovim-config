@@ -63,7 +63,6 @@ dashboard.section.buttons.val = {
 	dashboard.button('e', ' ' .. ' New file', ':ene <BAR> startinsert <CR>'),
 	dashboard.button('d', ' ' .. ' Show Todo', ':TodoTelescope <CR>'),
 	dashboard.button('p', ' ' .. ' Find project', ":lua require('telescope').extensions.project.project {}<CR>"),
-	dashboard.button('z', ' ' .. ' Zoxide', ":lua require('telescope').extensions.zoxide.list {}<CR>"),
 	dashboard.button('r', '󰔚 ' .. ' Recent files', ':Telescope oldfiles <CR>'),
 	dashboard.button('t', ' ' .. ' Find text', ':Telescope live_grep <CR>'),
 	dashboard.button('o', ' ' .. ' Search Obsidian', ':ObsidianSearch<CR>'),
@@ -108,7 +107,7 @@ vim.api.nvim_create_autocmd('BufUnload', {
 alpha.setup({
 	layout = {
 		{ type = 'padding', val = 8 },
-		{ type = 'group', val = colorize_header() },
+		{ type = 'group',   val = colorize_header() },
 		{ type = 'padding', val = 3 },
 		dashboard.section.buttons,
 		{ type = 'padding', val = 1 },
