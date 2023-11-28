@@ -36,6 +36,7 @@ in
       extraLuaConfig = ''
 
       vim.g.sqlite_clib_path = "${pkgs.sqlite.out}/lib/libsqlite3.so"
+      CODEIUM_BIN = "${pkgs.codeium}/bin/codeium"
       '' + init;
     };
   };
