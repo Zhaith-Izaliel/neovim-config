@@ -104,7 +104,6 @@ cmp.setup {
       { name = 'crates' },
       { name = 'npm' },
       { name = 'obsidian.nvim' },
-      { name = 'codeium' }
     },
     {
       { name = 'buffer' },

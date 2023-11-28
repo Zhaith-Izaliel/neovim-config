@@ -650,22 +650,6 @@
         "type": "github"
       }
     },
-    "nvim-codium": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1701130201,
-        "narHash": "sha256-ijdcyjHS8TYmsThxP8KwNDZ0SkNpuws57B4XcSYU2QQ=",
-        "owner": "Exafunction",
-        "repo": "codeium.nvim",
-        "rev": "1b87c86686fe65561cf993f9bb06dad3c56184e0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Exafunction",
-        "repo": "codeium.nvim",
-        "type": "github"
-      }
-    },
     "nvim-colorizer": {
       "flake": false,
       "locked": {
@@ -1553,7 +1537,6 @@
         "nvim-cmp-lsp-signature-help": "nvim-cmp-lsp-signature-help",
         "nvim-cmp-luasnip": "nvim-cmp-luasnip",
         "nvim-cmp-npm": "nvim-cmp-npm",
-        "nvim-codium": "nvim-codium",
         "nvim-colorizer": "nvim-colorizer",
         "nvim-comment": "nvim-comment",
         "nvim-conform": "nvim-conform",
