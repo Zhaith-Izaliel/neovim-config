@@ -267,6 +267,10 @@
       url = "github:arthurxavierx/vim-caser";
       flake = false;
     };
+    nvim-codium = {
+      url = "github:Exafunction/codeium.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:

@@ -6,6 +6,7 @@ require('lsp.base')
 require('lsp.bash')
 require('lsp.c')
 require('lsp.cmake')
+require('lsp.codeium')
 require('lsp.eslint')
 require('lsp.go')
 require('lsp.haskell')
@@ -28,4 +29,3 @@ require('lsp.snippets')
 -- ----------------
 
 require('lsp.completion')
-

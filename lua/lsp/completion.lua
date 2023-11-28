@@ -95,16 +95,17 @@ cmp.setup {
     end,
   },
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
-    { name = 'async_path' },
-    { name = 'ctags' },
-    { name = 'dap' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'crates' },
-    { name = 'npm' },
-    { name = 'obsidian.nvim' },
-  },
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' }, -- For luasnip users.
+      { name = 'async_path' },
+      { name = 'ctags' },
+      { name = 'dap' },
+      { name = 'nvim_lsp_signature_help' },
+      { name = 'crates' },
+      { name = 'npm' },
+      { name = 'obsidian.nvim' },
+      { name = 'codeium' }
+    },
     {
       { name = 'buffer' },
     }
@@ -116,8 +117,8 @@ cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
   }, {
-      { name = 'buffer' },
-    })
+    { name = 'buffer' },
+  })
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -134,7 +135,6 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'async_path' }
   }, {
-      { name = 'cmdline' }
-    })
+    { name = 'cmdline' }
+  })
 })
-
