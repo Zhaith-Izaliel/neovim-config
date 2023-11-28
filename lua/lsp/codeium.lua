@@ -1,5 +1,4 @@
 require("codeium").setup {
-  tools = {
-    language_server = CODEIUM_BIN,
-  },
+  wrapper = CODEIUM_WRAPPER_SCRIPT
 }
+

@@ -14,5 +14,3 @@ LAST_COLUMN = 80
 
 TABSIZE = 2
 
-CODIUM_BIN = ''
-
