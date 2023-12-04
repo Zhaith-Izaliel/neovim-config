@@ -21,11 +21,7 @@ local get_tsserver_filetypes = function()
     }
   end
 
-  return {
-    'typescript',
-    'typescriptreact',
-    'typescript.tsx'
-  }
+  return {}
 end
 
 -- Typescript
@@ -33,4 +29,3 @@ require('typescript-tools').setup {
   capabilities = capabilities,
   filetypes = get_tsserver_filetypes(),
 }
-
