@@ -6,31 +6,40 @@ local M = {}
 
 function M.map(mode, lhs, rhs, desc, opts)
   opts = not opts and {} or opts
-  local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc,
-    remap = true, })
+  local tbl = vim.tbl_extend("keep", opts, {
+    silent = true,
+    desc = desc,
+    remap = true,
+  })
   vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.noremap(mode, lhs, rhs, desc, opts)
   opts = not opts and {} or opts
-  local tbl = vim.tbl_extend("keep", opts, { silent =  true, desc = desc, })
+  local tbl = vim.tbl_extend("keep", opts, { silent = true, desc = desc, })
   vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.exprnoremap(mode, lhs, rhs, desc, opts)
   opts = not opts and {} or opts
-  local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
-    desc = desc, })
+  local tbl = vim.tbl_extend("keep", opts, {
+    silent = true,
+    expr = true,
+    desc = desc,
+  })
   vim.keymap.set(mode, lhs, rhs, tbl)
 end
 
 function M.exprmap(mode, lhs, rhs, desc, opts)
   opts = not opts and {} or opts
-  local tbl = vim.tbl_extend("keep", opts, { silent =  true, expr = true,
-    desc = desc, remap = true, })
+  local tbl = vim.tbl_extend("keep", opts, {
+    silent = true,
+    expr = true,
+    desc = desc,
+    remap = true,
+  })
   vim.keymap.set(mode, lhs, rhs, tbl)
 end
-
 
 -- Useful mode-specific shortcuts
 -- nomenclature: "<expr?><mode><nore?>map(lhs, rhs)" where:
@@ -45,26 +54,35 @@ function M.imap(lhs, rhs, desc, opts) M.map('i', lhs, rhs, desc, opts) end
 
 function M.xmap(lhs, rhs, desc, opts) M.map('x', lhs, rhs, desc, opts) end
 
-function M.nnoremap(lhs, rhs, desc, opts) M.noremap('n', lhs, rhs, desc, opts)
+function M.nnoremap(lhs, rhs, desc, opts)
+  M.noremap('n', lhs, rhs, desc, opts)
 end
 
-function M.vnoremap(lhs, rhs, desc, opts) M.noremap('v', lhs, rhs, desc, opts)
+function M.vnoremap(lhs, rhs, desc, opts)
+  M.noremap('v', lhs, rhs, desc, opts)
 end
 
-function M.xnoremap(lhs, rhs, desc, opts) M.noremap('x', lhs, rhs, desc, opts)
+function M.xnoremap(lhs, rhs, desc, opts)
+  M.noremap('x', lhs, rhs, desc, opts)
 end
 
-function M.inoremap(lhs, rhs, desc, opts) M.noremap('i', lhs, rhs, desc, opts)
+function M.inoremap(lhs, rhs, desc, opts)
+  M.noremap('i', lhs, rhs, desc, opts)
 end
 
-function M.tnoremap(lhs, rhs, desc, opts) M.noremap('t', lhs, rhs, desc, opts)
+function M.tnoremap(lhs, rhs, desc, opts)
+  M.noremap('t', lhs, rhs, desc, opts)
 end
 
-function M.exprnnoremap(lhs, rhs, desc, opts) M.exprnoremap('n', lhs, rhs, desc,
-  opts) end
+function M.exprnnoremap(lhs, rhs, desc, opts)
+  M.exprnoremap('n', lhs, rhs, desc,
+    opts)
+end
 
-function M.exprinoremap(lhs, rhs, desc, opts) M.exprnoremap('i', lhs, rhs, desc,
-  opts) end
+function M.exprinoremap(lhs, rhs, desc, opts)
+  M.exprnoremap('i', lhs, rhs, desc,
+    opts)
+end
 
 function M.count(table)
   local count = 0
@@ -72,18 +90,18 @@ function M.count(table)
   return count
 end
 
-function M.split (inputstr, sep)
+function M.split(inputstr, sep)
   if sep == nil then
     sep = "%s"
   end
-  local t={}
-  for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+  local t = {}
+  for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
     table.insert(t, str)
   end
   return t
 end
 
-function M.command (name, command, opts)
+function M.command(name, command, opts)
   vim.api.nvim_create_user_command(name, command, opts)
 end
 
@@ -118,10 +136,12 @@ function M.is_npm_package_installed(package)
   end
 
   if package_json.dependencies and package_json.dependencies[package] then
+    vim.notify("Typescript In It")
     return true
   end
 
   if package_json.devDependencies and package_json.devDependencies[package] then
+    vim.notify("Typescript In It")
     return true
   end
 
@@ -129,4 +149,3 @@ function M.is_npm_package_installed(package)
 end
 
 return M
-
