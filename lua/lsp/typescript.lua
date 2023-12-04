@@ -21,7 +21,11 @@ local get_tsserver_filetypes = function()
     }
   end
 
-  return {}
+  return {
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx'
+  }
 end
 
 -- Typescript
