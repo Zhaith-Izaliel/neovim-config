@@ -136,13 +136,10 @@ function M.is_npm_package_installed(package)
   end
 
   if (package_json.dependencies ~= nil) and (package_json.dependencies[package] ~= nil) then
-    vim.notify("Typescript In It")
-    vim.notify(package_json.dependencies[package])
     return true
   end
 
   if (package_json.dependencies ~= nil) and (package_json.devDependencies[package] ~= nil) then
-    vim.notify("Typescript In It")
     return true
   end
 
