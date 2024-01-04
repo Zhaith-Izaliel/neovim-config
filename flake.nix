@@ -267,6 +267,10 @@
       url = "github:arthurxavierx/vim-caser";
       flake = false;
     };
+    nvim-comment-box = {
+      url = "github:LudoPinelli/comment-box.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:

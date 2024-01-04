@@ -3,8 +3,10 @@
 -- -------------
 
 require('plugins.alpha')
+require('plugins.caser')
 require('plugins.colorizer')
 require('plugins.comments')
+require('plugins.comment-box')
 require('plugins.crates')
 require('plugins.diffview')
 require('plugins.flash')
@@ -25,4 +27,3 @@ require('plugins.treesitter')
 require('plugins.trouble')
 require('plugins.tw-values')
 require('plugins.which-key')
-
