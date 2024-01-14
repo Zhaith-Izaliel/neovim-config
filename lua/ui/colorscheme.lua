@@ -23,13 +23,17 @@ require('catppuccin').setup({
     treesitter_context = true,
     neotest = true,
     gitsigns = true,
-    mini = true,
+    aerial = true,
+    ufo = true,
+    cmp = true,
+    mini = {
+      enabled = true,
+      indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+    },
     which_key = true,
-    pounce = true,
-    overseer = true,
+    flash = true,
     notify = true,
     illuminate = true,
-    telekasten = true,
     telescope = {
       enabled = true,
     },
@@ -57,10 +61,9 @@ require("dap")
 
 local sign = vim.fn.sign_define
 
-sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
-sign("DapBreakpointCondition", { text = "◉", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
-sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
+sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
+sign("DapBreakpointCondition", { text = "◉", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
 
 -- Apply Theme
 vim.cmd.colorscheme('catppuccin')
-
