@@ -271,6 +271,10 @@
       url = "github:LudoPinelli/comment-box.nvim";
       flake = false;
     };
+    nvim-twilight = {
+      url = "github:folke/twilight.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
