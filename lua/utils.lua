@@ -108,7 +108,6 @@ end
 -- https://github.com/JoosepAlviste/dotfiles
 function M.read_json_file(filename)
   local Path = require 'plenary.path'
-  vim.notify(filename)
 
   local path = Path:new(filename)
   if not path:exists() then
@@ -148,3 +147,4 @@ function M.is_npm_package_installed(package)
 end
 
 return M
+

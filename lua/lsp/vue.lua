@@ -10,7 +10,6 @@ local function get_filetypes()
   if is_npm_package_installed 'typescript' then
     table.insert(filetypes, 'typescript')
   end
-  vim.notify("filetypes: " .. table.concat(filetypes,", "))
   return filetypes
 end
 
