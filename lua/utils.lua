@@ -123,8 +123,11 @@ end
 
 function M.read_package_json()
   -- Get to the repo root
-  local root = vim.fn.finddir('.git/..', vim.fn.expand('%:p:h') .. ';')
-  return M.read_json_file(root .. "/package.json")
+  local root = vim.fn.findfile('package.json', vim.fn.expand('%:p:h') .. ';')
+  if root == "" then
+    root = vim.fn.getcwd() .. '/package.json'
+  end
+  return M.read_json_file(root)
 end
 
 ---Check if the given NPM package is installed in the current project.
