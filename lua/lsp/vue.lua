@@ -3,7 +3,7 @@ local is_npm_package_installed = require('utils').is_npm_package_installed
 
 local test = function(a)
   local value = ""
-  for v in pairs(a) do
+  for _,v in ipairs(a) do
     value = value .. " " .. v
   end
 end
