@@ -10,6 +10,7 @@ local get_filetypes = function()
   if is_npm_package_installed 'typescript' then
     table.insert(filetypes, 'typescript')
   end
+  return filetypes
 end
 
 require('lspconfig').volar.setup {
