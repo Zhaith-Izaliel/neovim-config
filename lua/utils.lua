@@ -124,9 +124,6 @@ end
 function M.read_package_json()
   -- Get to the repo root
   local root = vim.fn.findfile('package.json', vim.fn.expand('%:p:h') .. ';')
-  if root == "" then
-    root = vim.fn.getcwd() .. '/package.json'
-  end
   return M.read_json_file(root)
 end
 
@@ -140,12 +137,10 @@ function M.is_npm_package_installed(package)
   end
 
   if (package_json.dependencies ~= nil) and (package_json.dependencies[package] ~= nil) then
-    vim.notify("found package: " .. package)
     return true
   end
 
   if (package_json.devDependencies ~= nil) and (package_json.devDependencies[package] ~= nil) then
-    vim.notify("found dev package: " .. package)
     return true
   end
 

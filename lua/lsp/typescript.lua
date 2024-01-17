@@ -3,7 +3,6 @@ local is_npm_package_installed = require('utils').is_npm_package_installed
 
 local get_tsserver_filetypes = function()
   if is_npm_package_installed 'vue' then
-    vim.notify("I'm in boi")
     return {
       'javascriptreact',
       'javascript.jsx',
