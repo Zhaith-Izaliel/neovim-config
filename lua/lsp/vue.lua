@@ -1,13 +1,6 @@
 local capabilities = require('lsp.utils').capabilities
 local is_npm_package_installed = require('utils').is_npm_package_installed
 
-local function test(a)
-  local value = ""
-  for _,v in ipairs(a) do
-    value = value .. " " .. v
-  end
-end
-
 local function get_filetypes()
   local filetypes = { 'vue' }
   if is_npm_package_installed('vue') then
@@ -17,7 +10,7 @@ local function get_filetypes()
   if is_npm_package_installed 'typescript' then
     table.insert(filetypes, 'typescript')
   end
-  vim.notify("filetypes:" .. test({ 'vue' }))
+  vim.notify("filetypes: " .. table.concat(filetypes,", "))
   return filetypes
 end
 
