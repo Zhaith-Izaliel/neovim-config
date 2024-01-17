@@ -11,11 +11,11 @@ end
 local get_filetypes = function()
   local filetypes = { 'vue' }
   if is_npm_package_installed('vue') then
-    table.insert(filetypes, 1, 'javascript')
+    table.insert(filetypes, 'javascript')
   end
 
   if is_npm_package_installed 'typescript' then
-    table.insert(filetypes, 1, 'typescript')
+    table.insert(filetypes, 'typescript')
   end
   vim.notify("filetypes:" .. test(filetypes))
   return filetypes
@@ -25,3 +25,4 @@ require('lspconfig').volar.setup {
   capabilities = capabilities,
   filetypes = get_filetypes(),
 }
+
