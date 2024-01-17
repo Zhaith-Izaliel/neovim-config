@@ -17,7 +17,7 @@ local function get_filetypes()
   if is_npm_package_installed 'typescript' then
     table.insert(filetypes, 'typescript')
   end
-  vim.notify("filetypes:" .. test(filetypes))
+  vim.notify("filetypes:" .. test({ 'vue' }))
   return filetypes
 end
 
