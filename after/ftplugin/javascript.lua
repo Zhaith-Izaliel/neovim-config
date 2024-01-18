@@ -1,2 +1,3 @@
-vim.opt_local.isfname = vim.opt_local.isfname:get() .. "@-@"
-vim.opt_local.includeexpr = [[substitute(v:fname,'^@\/','src/','')]]
+vim.opt_local.isfname:append({ "@-@" })
+vim.opt_local.includeexpr = vim.fn.substitute(vim.v.fname, [[^@\/]], 'src/', '')
+
