@@ -123,6 +123,9 @@ end
 function M.read_package_json()
   -- Get to the repo root
   local root = vim.fn.findfile('package.json', vim.fn.expand('%:p:h') .. ';')
+  if root == '' then
+    return nil
+  end
   return M.read_json_file(root)
 end
 
@@ -144,6 +147,17 @@ function M.is_npm_package_installed(package)
   end
 
   return false
+end
+
+function M.get_lsp_format_options()
+  return {
+    filter = function(client)
+      local isEslint M.is_npm_package_installed('eslint')
+      local isClientTsserver = client.name == 'tsserver'
+      return not (isEslint and isClientTsserver)
+    end,
+    async = true,
+  }
 end
 
 return M

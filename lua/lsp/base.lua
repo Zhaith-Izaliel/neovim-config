@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     noremap({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, 'LSP: Select a code action available at the current cursor position.', opts)
     nnoremap('gr', vim.lsp.buf.references, 'LSP: Get references of the token under the cursor.', opts)
     nnoremap('<leader>ft', function()
-      vim.lsp.buf.format { async = true }
+      vim.lsp.buf.format(Utils.get_lsp_format_options())
     end, 'LSP: Format buffer.', opts)
   end,
 })
