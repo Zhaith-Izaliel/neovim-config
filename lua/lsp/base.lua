@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       'LSP: Select a code action available at the current cursor position.', opts)
     nnoremap('gr', vim.lsp.buf.references, 'LSP: Get references of the token under the cursor.', opts)
     nnoremap('<leader>ft', function()
-      vim.lsp.buf.format(Utils.get_lsp_format_options())
+      vim.lsp.buf.format { async = true }
     end, 'LSP: Format buffer.', opts)
   end,
 })
@@ -50,11 +50,4 @@ vim.diagnostic.config({
   update_in_insert = false,
   underline = true,
   signs = true, -- Keep gutter signs
-})
-
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = vim.api.nvim_create_augroup('LSPBufFormatting', {}),
-  callback = function()
-    vim.lsp.buf.format(Utils.get_lsp_format_options())
-  end,
 })

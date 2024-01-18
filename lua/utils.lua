@@ -149,11 +149,5 @@ function M.is_npm_package_installed(package)
   return false
 end
 
-function M.get_lsp_format_options()
-  return {
-    filter = function(client) return client.name ~= "tsserver" end,
-    async = true,
-  }
-end
-
 return M
+
