@@ -12,7 +12,7 @@ stdenv.mkDerivation {
 
   installPhase = ''
     mkdir $out
-    cp -r -t $out lua init.lua
+    cp -r -t $out lua ftplugin after init.lua
   '';
 }
 
