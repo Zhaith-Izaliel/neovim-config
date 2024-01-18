@@ -151,11 +151,7 @@ end
 
 function M.get_lsp_format_options()
   return {
-    filter = function(client)
-      local is_eslint = M.is_npm_package_installed('eslint')
-      local is_client_tsserver = client.name == 'tsserver'
-      return not (is_eslint and is_client_tsserver)
-    end,
+    filter = function(client) return client.name ~= "tsserver" end,
     async = true,
   }
 end
