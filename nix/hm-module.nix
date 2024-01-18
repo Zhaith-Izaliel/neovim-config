@@ -4,7 +4,7 @@
 let
   cfg = config.programs.neovim.zhaith-config;
   init = builtins.readFile "${package}/init.lua";
-  lua = lib.cleanSource "${package}/lua";
+  packagePath = lib.cleanSource "${package}";
   dependencies = (import ./dependencies.nix { inherit pkgs stdenv; }).packages;
 in
 {
@@ -14,7 +14,9 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    home.file.".config/nvim/lua".source = lua; # Import config
+    home.file.".config/nvim/lua".source = "${packagePath}/lua"; # Import config
+    home.file.".config/nvim/after/ftplugins".source = "${packagePath}/after/ftplugin";
+    home.file.".config/nvim/ftplugins".source = "${packagePath}/ftplugin";
 
     nixpkgs = {
       inherit overlays;
