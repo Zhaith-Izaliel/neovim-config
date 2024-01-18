@@ -24,6 +24,7 @@ in
     gopls
     cmake-language-server
     ltex-ls
+    eslint_d
     nodejs-servers.stylelint-lsp
     nodejs-servers."@tailwindcss/language-server"
     nodejs-servers."@volar/vue-language-server"
