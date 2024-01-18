@@ -970,6 +970,22 @@
         "type": "github"
       }
     },
+    "nvim-jsgf": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656203954,
+        "narHash": "sha256-cvd3ieCdYH1x3Hu6/LXLnMM5FMDCGZ3Jb4TV/hwYr4o=",
+        "owner": "hotoo",
+        "repo": "jsgf.vim",
+        "rev": "df8cf2b40d97250e95af14b05561ae8c38725f47",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hotoo",
+        "repo": "jsgf.vim",
+        "type": "github"
+      }
+    },
     "nvim-lspconfig": {
       "flake": false,
       "locked": {
@@ -1588,6 +1604,7 @@
         "nvim-haskell-snippets": "nvim-haskell-snippets",
         "nvim-hypersonic": "nvim-hypersonic",
         "nvim-illuminate": "nvim-illuminate",
+        "nvim-jsgf": "nvim-jsgf",
         "nvim-lspconfig": "nvim-lspconfig",
         "nvim-luasnip": "nvim-luasnip",
         "nvim-markdown-toc": "nvim-markdown-toc",

@@ -275,6 +275,10 @@
       url = "github:folke/twilight.nvim";
       flake = false;
     };
+    nvim-jsgf = {
+      url = "github:hotoo/jsgf.vim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
