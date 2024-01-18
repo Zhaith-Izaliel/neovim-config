@@ -3,11 +3,10 @@ local capabilities = require('lsp.utils').capabilities
 
 require('lspconfig').eslint.setup { -- JS/TS
   capabilities = capabilities,
-  on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd('BufWritePre', {
-      buffer = bufnr,
-      command = 'EslintFixAll',
-    })
-  end,
+  -- on_attach = function(client, bufnr)
+  --   vim.api.nvim_create_autocmd('BufWritePre', {
+  --     buffer = bufnr,
+  --     command = 'EslintFixAll',
+  --   })
+  -- end,
 }
-

@@ -28,24 +28,8 @@ local get_tsserver_filetypes = function()
   }
 end
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = vim.api.nvim_create_augroup('TypescriptToolsBufFormatting', {}),
-  pattern = {
-    '*.ts',
-    '*.js',
-    '*.jsx',
-    '*.tsx',
-  },
-  callback = function()
-    vim.lsp.buf.format {
-      filter = function(client) return client.name ~= 'typescript-tools' end
-    }
-  end,
-})
-
 -- Typescript
 require('typescript-tools').setup {
   capabilities = capabilities,
   filetypes = get_tsserver_filetypes(),
 }
-
