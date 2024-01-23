@@ -279,6 +279,10 @@
       url = "github:hotoo/jsgf.vim";
       flake = false;
     };
+    nvim-autotag = {
+      url = "github:windwp/nvim-ts-autotag";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:

@@ -442,6 +442,22 @@
         "type": "github"
       }
     },
+    "nvim-autotag": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702195293,
+        "narHash": "sha256-O10jzgh4aznTQ1EIEL8OGBsgjN9arsM6XZC2FBKevS4=",
+        "owner": "windwp",
+        "repo": "nvim-ts-autotag",
+        "rev": "8515e48a277a2f4947d91004d9aa92c29fdc5e18",
+        "type": "github"
+      },
+      "original": {
+        "owner": "windwp",
+        "repo": "nvim-ts-autotag",
+        "type": "github"
+      }
+    },
     "nvim-caser": {
       "flake": false,
       "locked": {
@@ -1572,6 +1588,7 @@
         "nil": "nil",
         "nixpkgs": "nixpkgs_3",
         "nvim-alpha": "nvim-alpha",
+        "nvim-autotag": "nvim-autotag",
         "nvim-caser": "nvim-caser",
         "nvim-catppuccin": "nvim-catppuccin",
         "nvim-cmp": "nvim-cmp",
