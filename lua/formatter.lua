@@ -14,7 +14,7 @@ require("conform").setup({
     typescript = { { "eslint_d", "prettierd", "prettier" } },
     vue = { { "eslint_d", "prettierd", "prettier" } },
     json = { "jq" },
-    markdown = { "markdownlint" },
+    markdown = { "mdformat" },
     bash = { "shellcheck" },
   },
 })

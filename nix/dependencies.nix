@@ -15,8 +15,9 @@ in
     rust-analyzer
     nodePackages.vscode-langservers-extracted # CSS, HTML, JSON, ESLint
     nodePackages.typescript-language-server
-    nodePackages.eslint
+    eslint_d
     marksman
+    python311Packages.mdformat
     nodePackages.bash-language-server
     haskell-language-server
     nodePackages.vls
@@ -24,7 +25,6 @@ in
     gopls
     cmake-language-server
     ltex-ls
-    eslint_d
     nodejs-servers.stylelint-lsp
     nodejs-servers."@tailwindcss/language-server"
     nodejs-servers."@volar/vue-language-server"
