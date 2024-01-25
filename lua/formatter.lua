@@ -11,19 +11,10 @@ require('conform').setup({
     lua = { 'stylua' },
     json = { 'jq' },
     -- Use a sub-list to run only the first available formatter
-    javascript = { { 'eslint_d', 'prettierd', 'prettier' } },
-    typescript = { { 'eslint_d', 'prettierd', 'prettier' } },
-    vue = { { 'eslint_d', 'prettierd', 'prettier' } },
+    javascript = {},
+    typescript = {},
+    vue = {},
     markdown = { 'mdformat' },
     bash = { 'shellcheck' },
   },
 })
-
-require('conform.formatters.eslint_d').cwd = require('conform.util').root_file({
-  '.eslint.js',
-  '.eslint.cjs',
-  '.eslint.yaml',
-  '.eslint.yml',
-  '.eslint.json',
-})
-require('conform.formatters.eslint_d').require_cwd = true
