@@ -18,5 +18,3 @@ require("conform").setup({
     bash = { "shellcheck" },
   },
 })
-
-vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
