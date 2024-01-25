@@ -1002,6 +1002,22 @@
         "type": "github"
       }
     },
+    "nvim-lint": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706124110,
+        "narHash": "sha256-5AvqCs02USgkKXRvFsTLqizglZjl0yKlTpg+iTIReh8=",
+        "owner": "mfussenegger",
+        "repo": "nvim-lint",
+        "rev": "8e5920f9ce9f24c283a2e64be5fe58d1d37d1744",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mfussenegger",
+        "repo": "nvim-lint",
+        "type": "github"
+      }
+    },
     "nvim-lspconfig": {
       "flake": false,
       "locked": {
@@ -1622,6 +1638,7 @@
         "nvim-hypersonic": "nvim-hypersonic",
         "nvim-illuminate": "nvim-illuminate",
         "nvim-jsgf": "nvim-jsgf",
+        "nvim-lint": "nvim-lint",
         "nvim-lspconfig": "nvim-lspconfig",
         "nvim-luasnip": "nvim-luasnip",
         "nvim-markdown-toc": "nvim-markdown-toc",

@@ -283,6 +283,10 @@
       url = "github:windwp/nvim-ts-autotag";
       flake = false;
     };
+    nvim-lint = {
+      url = "github:mfussenegger/nvim-lint";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
