@@ -27,3 +27,5 @@ require('conform.formatters.eslint_d').cwd = require('conform.util').root_file({
   '.eslint.json',
 })
 require('conform.formatters.eslint_d').require_cwd = true
+
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
