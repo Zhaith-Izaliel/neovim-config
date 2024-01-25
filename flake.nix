@@ -283,8 +283,8 @@
       url = "github:windwp/nvim-ts-autotag";
       flake = false;
     };
-    nvim-lint = {
-      url = "github:mfussenegger/nvim-lint";
+    nvim-none-ls = {
+      url = "github:nvimtools/none-ls.nvim";
       flake = false;
     };
   };

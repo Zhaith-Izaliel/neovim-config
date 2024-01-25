@@ -1002,22 +1002,6 @@
         "type": "github"
       }
     },
-    "nvim-lint": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1706124110,
-        "narHash": "sha256-5AvqCs02USgkKXRvFsTLqizglZjl0yKlTpg+iTIReh8=",
-        "owner": "mfussenegger",
-        "repo": "nvim-lint",
-        "rev": "8e5920f9ce9f24c283a2e64be5fe58d1d37d1744",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mfussenegger",
-        "repo": "nvim-lint",
-        "type": "github"
-      }
-    },
     "nvim-lspconfig": {
       "flake": false,
       "locked": {
@@ -1175,6 +1159,22 @@
       "original": {
         "owner": "folke",
         "repo": "noice.nvim",
+        "type": "github"
+      }
+    },
+    "nvim-none-ls": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706069423,
+        "narHash": "sha256-s+Hp0Yzge7FKKDez4DO8uytsNORIqeNWYOLSO7kSZbo=",
+        "owner": "nvimtools",
+        "repo": "none-ls.nvim",
+        "rev": "a311c7cc8f17543143a7482cdbe3a384c371d56a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvimtools",
+        "repo": "none-ls.nvim",
         "type": "github"
       }
     },
@@ -1638,7 +1638,6 @@
         "nvim-hypersonic": "nvim-hypersonic",
         "nvim-illuminate": "nvim-illuminate",
         "nvim-jsgf": "nvim-jsgf",
-        "nvim-lint": "nvim-lint",
         "nvim-lspconfig": "nvim-lspconfig",
         "nvim-luasnip": "nvim-luasnip",
         "nvim-markdown-toc": "nvim-markdown-toc",
@@ -1649,6 +1648,7 @@
         "nvim-neogen": "nvim-neogen",
         "nvim-nix": "nvim-nix",
         "nvim-noice": "nvim-noice",
+        "nvim-none-ls": "nvim-none-ls",
         "nvim-notify": "nvim-notify",
         "nvim-nui": "nvim-nui",
         "nvim-obsidian": "nvim-obsidian",
