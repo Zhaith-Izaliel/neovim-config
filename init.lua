@@ -6,6 +6,7 @@ require('commands')
 require('ui')
 require('statusline')
 require('lsp')
-require('formatter')
+-- require('formatter')
 require('dap-config')
 require('plugins')
+
