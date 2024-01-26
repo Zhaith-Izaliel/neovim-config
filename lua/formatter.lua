@@ -35,11 +35,11 @@ require('conform').setup({
 
 vim.o.formatexpr = "v:lua.require('conform').formatexpr()"
 
--- require("conform.formatters.eslint_d").cwd = require("conform.util").root_file({
---   ".eslint.js",
---   ".eslint.cjs",
---   ".eslint.yaml",
---   ".eslint.yml",
---   ".eslint.json",
--- })
--- require("conform.formatters.eslint_d").require_cwd = true
+require('conform.formatters.eslint_d').cwd = require('conform.util').root_file({
+  '.eslint.js',
+  '.eslint.cjs',
+  '.eslint.yaml',
+  '.eslint.yml',
+  '.eslint.json',
+})
+require('conform.formatters.eslint_d').require_cwd = true
